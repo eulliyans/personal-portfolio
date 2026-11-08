@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063f3d">
+  <meta name="description" content="EULLIYAN’S — Build, Create, Preserve. Personal portfolio and digital projects.">
+  <title>EULLIYAN’S | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="EULLIYAN’S home">
+      <span class="brand-mark">E</span>
+      <span><strong>EULLIYAN’S</strong><small>Build, Create, Preserve.</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#websites">Websites</a>
+      <a href="#media">Videos</a>
+      <a href="#media">Reels</a>
+      <a href="#connect">QR</a>
+    </nav>
+    <button class="language-button" type="button" aria-label="Language selector">◎ <span>EN</span>⌄</button>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Assalamu Alaikum!</p>
+        <h1>I’m <span data-profile="displayName">EULLIYAN</span></h1>
+        <p class="roles" data-profile="roles">Web Developer&nbsp; | &nbsp;Digital Creator&nbsp; | &nbsp;Problem Solver</p>
+        <p class="intro" data-profile="intro">Welcome to my personal portfolio. Explore my projects, websites and digital works. Let’s build something great together!</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">▣ &nbsp; View My Projects <span>→</span></a>
+          <a class="button button-outline" href="#media">▶ &nbsp; Watch Videos</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Decorative teal gradient waves">
+        <div class="quote-mark">“</div>
+        <p class="hero-quote">Dream Big,<br>Build Better.</p>
+        <div class="portrait-placeholder"><span>YOUR<br>PHOTO</span></div>
+      </div>
+    </section>
+
+    <section class="skills-strip section-wrap" id="about" aria-label="Skills and values">
+      <article><span class="skill-icon">&lt;/&gt;</span><div><strong>Web Development</strong><small>HTML, CSS, JavaScript</small></div></article>
+      <article><span class="skill-icon">▤</span><div><strong>Supabase</strong><small>Database &amp; Auth</small></div></article>
+      <article><span class="skill-icon">◎</span><div><strong>Digital Solutions</strong><small>Web &amp; Mobile Ready</small></div></article>
+      <article><span class="skill-icon">♥</span><div><strong>Islamic Values</strong><small>Peace &amp; Positivity</small></div></article>
+    </section>
+
+    <section class="projects-section section-wrap" id="projects">
+      <div class="section-heading"><span></span><div><h2>🚀 My Projects</h2><p>Innovative solutions for a better community</p></div><span></span></div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="lower-grid section-wrap">
+      <section class="connect-card" id="connect">
+        <div class="connect-copy"><span class="large-icon">●</span><div><h2>Connect With Me</h2><p>Follow for updates &amp; more</p></div></div>
+        <div class="social-links" id="socialLinks"></div>
+        <div class="qr-area"><div class="qr-placeholder" aria-label="QR code placeholder">QR</div><small>Scan QR</small></div>
+      </section>
+      <section class="media-card" id="media">
+        <div class="media-copy"><span class="play-icon">▶</span><div><h2>Videos &amp; Reels</h2><p>Watch my latest content</p><a class="button button-primary" data-link="videos" href="#media">Watch Now&nbsp; →</a></div></div>
+        <div class="media-preview"><span>▶</span><small>EULLIYAN’S</small></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="websites">
+    <div class="footer-main section-wrap">
+      <div class="footer-brand"><strong>EULLIYAN’S</strong><span>Build, Create, Preserve.</span></div>
+      <div><h3>Quick Links</h3><a href="#home">⌂ &nbsp; Home</a><a href="#projects">▣ &nbsp; Projects</a><a href="#media">▶ &nbsp; Videos</a><a href="#connect">✉ &nbsp; Contact</a></div>
+      <div><h3>Stay Connected</h3><div class="footer-social" id="footerSocial"></div></div>
+      <p class="footer-dua">May Allah accept<br>our efforts. Ameen.</p>
+    </div>
+    <div class="copyright">© <span id="year"></span> EULLIYAN’S. All rights reserved. &nbsp; | &nbsp; Designed with ♥ for a better digital world.</div>
+  </footer>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
