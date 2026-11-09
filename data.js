@@ -1,13 +1,15 @@
+
 /*
   EULLIYAN’S PORTFOLIO CONTENT
-  Future edits: change the values below. Keep the keys unchanged.
-  Add/remove projects by editing the projects list.
+  Future edits: change the values below.
+  Keep the keys unchanged.
 */
 window.PORTFOLIO_DATA = {
   profile: {
     displayName: "EULLIYAN",
     roles: "Web Developer  |  Digital Creator  |  Problem Solver",
-    intro: "Welcome to my personal portfolio. Explore my projects, websites and digital works. Let’s build something great together!"
+    intro: "Welcome to my personal portfolio. Explore my projects, websites and digital works. Let’s build something great together!",
+    bio: "I’m EULLIYAN, a Web Developer and Digital Creator passionate about building modern, responsive and user-friendly digital solutions. I work with HTML, CSS, JavaScript, GitHub and Supabase. My goal is to turn creative ideas into useful digital experiences."
   },
   projects: [
     { name: "Digital Mosque Prayer Board", description: "Live prayer times & Adhkar", symbol: "◈", link: "#", label: "PRAYER BOARD" },
