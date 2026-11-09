@@ -13,8 +13,8 @@ window.PORTFOLIO_DATA = {
   },
   projects: [
    { name: "Digital Mosque Prayer Board", description: "Live prayer times & Adhkar", symbol: "◈", link: "https://eulliyans.github.io/masjid-prayer-board/", label: "PRAYER BOARD" },
-    { name: "Fawaz Cafeteria", description: "Restaurant Website with Online Ordering", symbol: "F", link: "#", label: "FAWAZ CAFETERIA" },
-    { name: "Bufia Zamzam", description: "Food & Rewards Marketplace", symbol: "B", link: "#", label: "BUFIA ZAMZAM" },
+    { name: "Fawaz Cafeteria", description: "Restaurant Website with Online Ordering", symbol: "F", link: link: "https://eulliyans.github.io/Fawaz-Cafeteria/", label: "FAWAZ CAFETERIA" },
+    { name: "Bufia Zamzam", description: "Food & Rewards Marketplace", symbol: "B", link: link: "https://eulliyans.github.io/Bufia-Zamzam/", label: "BUFIA ZAMZAM" },
     { name: "Arthik Swachchhota", description: "Citizen Financial Transparency", symbol: "A", link: "#", label: "CIVIC PROJECT" }
   ],
   socials: [
