@@ -20,7 +20,7 @@ window.PORTFOLIO_DATA = {
   socials: [
     { name: "Facebook", short: "f", url: "#", className: "facebook" },
     { name: "YouTube", short: "▶", url: "#", className: "youtube" },
-    { name: "GitHub", short: "GH", url: "#", className: "github" },
+    { name: "GitHub", short: "GH", url: "https://github.com/eulliyans", className: "github" },
     { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },
     { name: "WhatsApp", short: "WA", url: "#", className: "whatsapp" }
   ],
