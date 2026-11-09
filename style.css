@@ -16,6 +16,14 @@ a{color:inherit;text-decoration:none}.section-wrap{width:min(1180px,calc(100% - 
 .hero-art:before,.hero-art:after{content:"";position:absolute;left:-8%;width:120%;height:130px;border-radius:50%;transform:rotate(-12deg)}.hero-art:before{bottom:12px;background:linear-gradient(90deg,#b9f7f2,#35c9c4 60%,#087b79)}.hero-art:after{bottom:-45px;background:linear-gradient(90deg,#0a7774,#004d4c);height:115px}
 .quote-mark{position:absolute;right:31%;top:25px;font-size:70px;color:var(--deep);font-family:Georgia}.hero-quote{position:absolute;right:5%;top:68px;z-index:2;font-family:Georgia,serif;font-style:italic;font-size:23px;line-height:1.25;color:var(--deep);transform:rotate(-5deg)}
 .portrait-placeholder{position:absolute;z-index:3;bottom:0;left:34%;width:190px;height:255px;border-radius:100px 100px 0 0;background:linear-gradient(145deg,#fff,#cce8e7);border:5px solid #fff;box-shadow:0 8px 30px #075b5230;display:grid;place-items:center;color:#4b8582;font-weight:800;text-align:center;letter-spacing:2px}
+.portrait-placeholder img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:inherit;
+  display:block;
+}
 .skills-strip{display:grid;grid-template-columns:repeat(4,1fr);background:linear-gradient(100deg,#effdfc,#e4f8f7);border:1px solid var(--line);border-radius:17px;padding:19px 16px;box-shadow:var(--shadow);position:relative;z-index:4}
 .skills-strip article{display:flex;align-items:center;justify-content:center;gap:13px;padding:0 12px;border-right:1px solid #52c9c5}.skills-strip article:last-child{border:0}.skill-icon{font-size:29px;color:var(--deep);font-weight:800}.skills-strip strong,.skills-strip small{display:block}.skills-strip strong{font-size:14px}.skills-strip small{font-size:12px;color:var(--muted);margin-top:2px}
 .projects-section{padding-top:28px;padding-bottom:24px}.section-heading{display:flex;align-items:center;justify-content:center;gap:25px;text-align:center;margin-bottom:18px}.section-heading>span{height:2px;width:145px;background:linear-gradient(90deg,transparent,#0b7773)}.section-heading>span:last-child{transform:rotate(180deg)}.section-heading h2{font-size:27px;margin:0;color:var(--deep)}.section-heading p{font-size:13px;margin:3px 0 0;color:var(--muted)}
