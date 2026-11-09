@@ -23,5 +23,5 @@ window.PORTFOLIO_DATA = {
     { name: "YouTube", short: "▶", url: "https://www.youtube.com/@Eulliyans-l1v", className: "youtube" },
     { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },{ name: "WhatsApp", short: "WA", url: "https://wa.me/966538491649", className: "whatsapp" }
   ],
-  links: { videos: "#" }
+  links: { videos: "https://www.youtube.com/@Eulliyans-l1v" }
 };
