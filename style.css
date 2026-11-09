@@ -84,3 +84,24 @@ a{color:inherit;text-decoration:none}.section-wrap{width:min(1180px,calc(100% - 
     font-size: 23px;
   }
 }
+/* Arabic RTL QR Code Layout Fix */
+html[dir="rtl"] .connect-card{
+  padding-right:17px;
+  padding-left:115px;
+}
+
+html[dir="rtl"] .qr-area{
+  right:auto;
+  left:16px;
+}
+
+@media(max-width:640px){
+  html[dir="rtl"] .connect-card{
+    padding:15px 13px 13px 105px;
+  }
+
+  html[dir="rtl"] .qr-area{
+    right:auto;
+    left:12px;
+  }
+}
