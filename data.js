@@ -12,7 +12,7 @@ window.PORTFOLIO_DATA = {
     bio: "I’m EULLIYAN, a Web Developer and Digital Creator passionate about building modern, responsive and user-friendly digital solutions. I work with HTML, CSS, JavaScript, GitHub and Supabase. My goal is to turn creative ideas into useful digital experiences."
   },
   projects: [
-    { name: "Digital Mosque Prayer Board", description: "Live prayer times & Adhkar", symbol: "◈", link: "#", label: "PRAYER BOARD" },
+   { name: "Digital Mosque Prayer Board", description: "Live prayer times & Adhkar", symbol: "◈", link: "https://eulliyans.github.io/masjid-prayer-board/", label: "PRAYER BOARD" },
     { name: "Fawaz Cafeteria", description: "Restaurant Website with Online Ordering", symbol: "F", link: "#", label: "FAWAZ CAFETERIA" },
     { name: "Bufia Zamzam", description: "Food & Rewards Marketplace", symbol: "B", link: "#", label: "BUFIA ZAMZAM" },
     { name: "Arthik Swachchhota", description: "Citizen Financial Transparency", symbol: "A", link: "#", label: "CIVIC PROJECT" }
