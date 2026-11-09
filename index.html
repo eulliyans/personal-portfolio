@@ -70,22 +70,46 @@
       </div>
     </section>
 
+    
     <section class="projects-section section-wrap" id="projects">
-      <div class="section-heading"><span></span><div><h2>🚀 My Projects</h2><p>Innovative solutions for a better community</p></div><span></span></div>
+      <div class="section-heading">
+        <span></span>
+        <div>
+          <h2><span>🚀</span> <span data-i18n="myProjects">My Projects</span></h2>
+          <p data-i18n="projectSubtitle">Innovative solutions for a better community</p>
+        </div>
+        <span></span>
+      </div>
       <div class="project-grid" id="projectGrid"></div>
     </section>
 
     <section class="lower-grid section-wrap">
       <section class="connect-card" id="connect">
-        <div class="connect-copy"><span class="large-icon">●</span><div><h2>Connect With Me</h2><p>Follow for updates &amp; more</p></div></div>
+        <div class="connect-copy">
+          <span class="large-icon">●</span>
+          <div>
+            <h2 data-i18n="connect">Connect With Me</h2>
+            <p data-i18n="follow">Follow for updates &amp; more</p>
+          </div>
+        </div>
         <div class="social-links" id="socialLinks"></div>
         <div class="qr-area">
-  <img src="eulliyans-portfolio-qr.png" alt="Portfolio QR" width="100" style="display:block;">
-  <small style="display:block; text-align:center;">Scan QR</small>
-</div>
+          <img src="eulliyans-portfolio-qr.png" alt="Portfolio QR" width="100" style="display:block;">
+          <small style="display:block; text-align:center;" data-i18n="scanQR">Scan QR</small>
+        </div>
       </section>
+
       <section class="media-card" id="media">
-        <div class="media-copy"><span class="play-icon">▶</span><div><h2>Videos &amp; Reels</h2><p>Watch my latest content</p><a class="button button-primary" data-link="videos" href="#media">Watch Now&nbsp; →</a></div></div>
+        <div class="media-copy">
+          <span class="play-icon">▶</span>
+          <div>
+            <h2 data-i18n="mediaTitle">Videos &amp; Reels</h2>
+            <p data-i18n="mediaSubtitle">Watch my latest content</p>
+            <a class="button button-primary" data-link="videos" href="#media">
+              <span data-i18n="watchNow">Watch Now</span>&nbsp; →
+            </a>
+          </div>
+        </div>
         <div class="media-preview"><span>▶</span><small>EULLIYAN’S</small></div>
       </section>
     </section>
@@ -93,13 +117,34 @@
 
   <footer class="site-footer" id="websites">
     <div class="footer-main section-wrap">
-      <div class="footer-brand"><strong>EULLIYAN’S</strong><span>Build, Create, Preserve.</span></div>
-      <div><h3>Quick Links</h3><a href="#home">⌂ &nbsp; Home</a><a href="#projects">▣ &nbsp; Projects</a><a href="#media">▶ &nbsp; Videos</a><a href="#connect">✉ &nbsp; Contact</a></div>
-      <div><h3>Stay Connected</h3><div class="footer-social" id="footerSocial"></div></div>
-      <p class="footer-dua">May Allah accept<br>our efforts. Ameen.</p>
+      <div class="footer-brand">
+        <strong>EULLIYAN’S</strong>
+        <span data-i18n="motto">Build, Create, Preserve.</span>
+      </div>
+      <div>
+        <h3 data-i18n="quickLinks">Quick Links</h3>
+        <a href="#home">⌂ &nbsp; <span data-i18n="home">Home</span></a>
+        <a href="#projects">▣ &nbsp; <span data-i18n="projects">Projects</span></a>
+        <a href="#media">▶ &nbsp; <span data-i18n="videos">Videos</span></a>
+        <a href="#connect">✉ &nbsp; <span data-i18n="contact">Contact</span></a>
+      </div>
+      <div>
+        <h3 data-i18n="stayConnected">Stay Connected</h3>
+        <div class="footer-social" id="footerSocial"></div>
+      </div>
+      <p class="footer-dua">
+        <span data-i18n="duaLine1">May Allah accept</span><br>
+        <span data-i18n="duaLine2">our efforts. Ameen.</span>
+      </p>
     </div>
-    <div class="copyright">© <span id="year"></span> EULLIYAN’S. All rights reserved. &nbsp; | &nbsp; Designed with ♥ for a better digital world.</div>
+    <div class="copyright">
+      © <span id="year"></span> EULLIYAN’S.
+      <span data-i18n="rights">All rights reserved.</span>
+      &nbsp; | &nbsp;
+      <span data-i18n="designed">Designed with ♥ for a better digital world.</span>
+    </div>
   </footer>
+
   <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
