@@ -18,7 +18,7 @@ window.PORTFOLIO_DATA = {
     { name: "Arthik Swachchhota", description: "Citizen Financial Transparency", symbol: "A", link: "https://arthikswachchhota.github.io/Artik-cwachchhota-/", label: "CIVIC PROJECT" }
   ],
   socials: [
-    { name: "Facebook", short: "f", url: "#", className: "facebook" },
+    { name: "Facebook", short: "f", url: "https://www.facebook.com/share/1JnxwTwMct/?mibextid=wwXIfr", className: "facebook" },
     { name: "YouTube", short: "▶", url: "#", className: "youtube" },
     { name: "GitHub", short: "GH", url: "https://github.com/eulliyans", className: "github" },
     { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },
