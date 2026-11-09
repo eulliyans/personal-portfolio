@@ -23,5 +23,43 @@ window.PORTFOLIO_DATA = {
     { name: "YouTube", short: "▶", url: "https://www.youtube.com/@Eulliyans-l1v", className: "youtube" },
     { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },{ name: "WhatsApp", short: "WA", url: "https://wa.me/966538491649", className: "whatsapp" }
   ],
-  links: { videos: "https://www.youtube.com/@Eulliyans-l1v" }
+  links: { videos: "https://www.youtube.com/@Eulliyans-l1v" },
+
+translations: {
+  en: {
+    home: "Home",
+    about: "About",
+    projects: "Projects",
+    websites: "Websites",
+    videos: "Videos",
+    reels: "Reels",
+    aboutMe: "ABOUT ME",
+    who: "Who Is EULLIYAN?",
+    connect: "Connect With Me"
+  },
+
+  bn: {
+    home: "হোম",
+    about: "পরিচিতি",
+    projects: "প্রজেক্টসমূহ",
+    websites: "ওয়েবসাইট",
+    videos: "ভিডিও",
+    reels: "রিলস",
+    aboutMe: "আমার পরিচিতি",
+    who: "EULLIYAN কে?",
+    connect: "যোগাযোগ করুন"
+  },
+
+  ar: {
+    home: "الرئيسية",
+    about: "نبذة عني",
+    projects: "المشاريع",
+    websites: "المواقع",
+    videos: "الفيديوهات",
+    reels: "ريلز",
+    aboutMe: "نبذة عني",
+    who: "من هو EULLIYAN؟",
+    connect: "تواصل معي"
+  }
+}
 };
