@@ -21,8 +21,7 @@ window.PORTFOLIO_DATA = {
     { name: "Facebook", short: "f", url: "https://www.facebook.com/share/1JnxwTwMct/?mibextid=wwXIfr", className: "facebook" },
     { name: "YouTube", short: "▶", url: "#", className: "youtube" },
     { name: "GitHub", short: "GH", url: "https://github.com/eulliyans", className: "github" },
-    { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },
-    { name: "WhatsApp", short: "WA", url: "#", className: "whatsapp" }
+    { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },{ name: "WhatsApp", short: "WA", url: "https://wa.me/966538491649", className: "whatsapp" }
   ],
   links: { videos: "#" }
 };
