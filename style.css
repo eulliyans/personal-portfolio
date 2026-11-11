@@ -129,3 +129,9 @@ html[dir="rtl"] .connect-card .qr-area img{
     grid-template-columns:minmax(0,1fr) 85px !important;
   }
 }
+/* Mobile Hero Photo Position Fix */
+@media (max-width: 640px) {
+  .portrait-placeholder {
+    left: 24%;
+  }
+}
