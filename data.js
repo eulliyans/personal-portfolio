@@ -21,7 +21,7 @@ window.PORTFOLIO_DATA = {
     { name: "Facebook", short: "f", url: "https://www.facebook.com/share/1JnxwTwMct/?mibextid=wwXIfr", className: "facebook" },
     { name: "YouTube", short: "▶", url: "#", className: "youtube" },
     { name: "YouTube", short: "▶", url: "https://www.youtube.com/@Eulliyans-l1v", className: "youtube" },
-    { name: "LinkedIn", short: "in", url: "#", className: "linkedin" },{ name: "WhatsApp", short: "WA", url: "https://wa.me/966538491649", className: "whatsapp" }
+    { name: "LinkedIn", short: "in", url: "https://www.linkedin.com/in/opu-ahmed-18469244a", className: "linkedin" },{ name: "WhatsApp", short: "WA", url: "https://wa.me/966538491649", className: "whatsapp" }
   ],
   links: { videos: "https://www.youtube.com/@Eulliyans-l1v" },
 
