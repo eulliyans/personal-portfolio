@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Websites | EULLIYAN'S</title>
+
+<style>
+:root {
+  --green: #123b2b;
+  --deep: #064e3b;
+  --light: #e0f2f1;
+  --border: #80cbc4;
+  --red: #b45d68;
+  --text: #111827;
+  --muted: #4b5563;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #f7faf9;
+  color: var(--text);
+}
+
+header {
+  background: var(--green);
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-bottom: 4px solid var(--red);
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #b2dfdb;
+}
+
+.language {
+  position: relative;
+}
+
+.language button {
+  background: transparent;
+  border: 1px solid #80cbc4;
+  color: white;
+  padding: 7px 11px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.language-menu {
+  display: none;
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: white;
+  min-width: 125px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 5px 15px #0002;
+}
+
+.language-menu.show {
+  display: block;
+}
+
+.language-menu button {
+  display: block;
+  width: 100%;
+  color: var(--text);
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  padding: 10px 12px;
+}
+
+.language-menu button:hover {
+  background: var(--light);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 48px 20px 55px;
+}
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.page-heading h1 {
+  color: var(--green);
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.page-heading p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.website-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.website-card {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #123b2b0d;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.website-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 22px #123b2b18;
+}
+
+/* Preview designs */
+
+.preview {
+  height: 185px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.preview-prayer {
+  background: linear-gradient(135deg, #123b2b, #08745a);
+}
+
+.preview-cafeteria {
+  background: linear-gradient(135deg, #713b25, #d28b48);
+}
+
+.preview-bufia {
+  background: linear-gradient(135deg, #163d62, #278b9b);
+}
+
+.preview-finance {
+  background: linear-gradient(135deg, #263b55, #507b75);
+}
+
+.preview-window {
+  width: 85%;
+  height: 125px;
+  background: #ffffffed;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 5px 15px #0003;
+}
+
+.preview-dots {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 13px;
+}
+
+.preview-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b0b8b5;
+}
+
+.preview-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-lines span {
+  height: 8px;
+  border-radius: 5px;
+  background: #dce8e4;
+}
+
+.preview-lines span:nth-child(1) {
+  width: 65%;
+  height: 13px;
+  background: #80b9a8;
+}
+
+.preview-lines span:nth-child(2) {
+  width: 90%;
+}
+
+.preview-lines span:nth-child(3) {
+  width: 75%;
+}
+
+.preview-blocks {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.preview-blocks span {
+  flex: 1;
+  height: 28px;
+  border-radius: 5px;
+  background: #c4ded5;
+}
+
+.preview-cafeteria .preview-lines span:nth-child(1) {
+  background: #e2ad71;
+}
+
+.preview-cafeteria .preview-blocks span {
+  background: #f1d2ad;
+}
+
+.preview-bufia .preview-lines span:nth-child(1) {
+  background: #75b9c2;
+}
+
+.preview-bufia .preview-blocks span {
+  background: #b8dfe2;
+}
+
+.preview-finance .preview-lines span:nth-child(1) {
+  background: #8db8a8;
+}
+
+.preview-finance .preview-blocks span {
+  background: #c5dcd2;
+}
+
+/* Card information */
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  color: var(--green);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 45px;
+  margin-bottom: 15px;
+}
+
+.visit-link {
+  display: inline-block;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 3px;
+}
+
+.visit-link:hover {
+  color: var(--deep);
+  border-color: var(--deep);
+}
+
+footer {
+  width: 100%;
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 16px;
+  font-size: 13px;
+  border-top: 4px solid var(--red);
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  main {
+    padding: 35px 15px 40px;
+  }
+
+  .page-heading h1 {
+    font-size: 27px;
+  }
+
+  .website-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .preview {
+    height: 165px;
+  }
+
+  .card-content p {
+    min-height: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EULLIYAN’S</div>
+
+  <nav>
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="about.html" data-i18n="about">About Us</a>
+    <a href="projects.html" data-i18n="projects">Our Projects</a>
+    <a href="websites.html" data-i18n="websites">Websites</a>
+
+    <div class="language">
+      <button onclick="toggleLanguages()" id="languageButton">🌐 EN⌄</button>
+      <div class="language-menu" id="languageMenu">
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('bn')">বাংলা</button>
+        <button onclick="changeLanguage('ar')">العربية</button>
+        <button onclick="changeLanguage('hi')">हिन्दी</button>
+        <button onclick="changeLanguage('ur')">اردو</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-heading">
+    <h1 data-i18n="title">Websites I've Built</h1>
+    <p data-i18n="subtitle">Explore my live websites and digital creations.</p>
+  </section>
+
+  <section class="website-grid">
+
+    <article class="website-card">
+      <div class="preview preview-prayer">
+        <div class="preview-window">
+          <div class="preview-dots"><span></span><span></span><span></span></div>
+          <div class="preview-lines">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-blocks"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <h2 data-i18n="prayerTitle">PRAYER BOARD</h2>
+        <p data-i18n="prayerDesc">A digital mosque prayer board displaying prayer times and useful information.</p>
+        <a class="visit-link" href="https://eulliyans.github.io/masjid-prayer-board/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
+      </div>
+    </article>
+
+    <article class="website-card">
+      <div class="preview preview-cafeteria">
+        <div class="preview-window">
+          <div class="preview-dots"><span></span><span></span><span></span></div>
+          <div class="preview-lines">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-blocks"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <h2 data-i18n="fawazTitle">FAWAZ CAFETERIA</h2>
+        <p data-i18n="fawazDesc">A cafeteria website with food menus and online ordering features.</p>
+        <a class="visit-link" href="https://eulliyans.github.io/Fawaz-Cafeteria/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
+      </div>
+    </article>
+
+    <article class="website-card">
+      <div class="preview preview-bufia">
+        <div class="preview-window">
+          <div class="preview-dots"><span></span><span></span><span></span></div>
+          <div class="preview-lines">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-blocks"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <h2 data-i18n="bufiaTitle">BUFIA ZAMZAM</h2>
+        <p data-i18n="bufiaDesc">A food and rewards marketplace connecting customers with offers.</p>
+        <a class="visit-link" href="https://eulliyans.github.io/Bufia-Zamzam/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
+      </div>
+    </article>
+
+    <article class="website-card">
+      <div class="preview preview-finance">
+        <div class="preview-window">
+          <div class="preview-dots"><span></span><span></span><span></span></div>
+          <div class="preview-lines">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-blocks"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <h2 data-i18n="arthikTitle">ARTHIK SWACHCHHOTA</h2>
+        <p data-i18n="arthikDesc">A citizen-focused platform for financial transparency.</p>
+        <a class="visit-link" href="https://arthikswachchhota.github.io/Artik-cwachchhota-/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<footer data-i18n="footer">© EULLIYAN’S · Build, Create, Preserve.</footer>
+
+<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
+
+<script>
+const pageTranslations = {
+  en: {
+    home: "Home",
+    about: "About Us",
+    projects: "Our Projects",
+    websites: "Websites",
+    title: "Websites I've Built",
+    subtitle: "Explore my live websites and digital creations.",
+    prayerTitle: "PRAYER BOARD",
+    prayerDesc: "A digital mosque prayer board displaying prayer times and useful information.",
+    fawazTitle: "FAWAZ CAFETERIA",
+    fawazDesc: "A cafeteria website with food menus and online ordering features.",
+    bufiaTitle: "BUFIA ZAMZAM",
+    bufiaDesc: "A food and rewards marketplace connecting customers with offers.",
+    arthikTitle: "ARTHIK SWACHCHHOTA",
+    arthikDesc: "A citizen-focused platform for financial transparency.",
+    visit: "Visit Website →",
+    footer: "© EULLIYAN’S · Build, Create, Preserve."
+  },
+  bn: {
+    home: "হোম",
+    about: "আমার পরিচিতি",
+    projects: "আমার প্রজেক্ট",
+    websites: "ওয়েবসাইট",
+    title: "আমার তৈরি ওয়েবসাইট",
+    subtitle: "আমার লাইভ ওয়েবসাইট ও ডিজিটাল কাজগুলো দেখুন।",
+    prayerTitle: "প্রেয়ার বোর্ড",
+    prayerDesc: "নামাজের সময়সূচি ও প্রয়োজনীয় তথ্য প্রদর্শনের ডিজিটাল মসজিদ বোর্ড।",
+    fawazTitle: "ফাওয়াজ ক্যাফেটেরিয়া",
+    fawazDesc: "খাবারের মেনু ও অনলাইন অর্ডার সুবিধাসহ একটি ক্যাফেটেরিয়া ওয়েবসাইট।",
+    bufiaTitle: "বুফিয়া যমযম",
+    bufiaDesc: "খাবার ও পুরস্কারের অফার নিয়ে তৈরি একটি মার্কেটপ্লেস।",
+    arthikTitle: "আর্থিক স্বচ্ছতা",
+    arthikDesc: "আর্থিক স্বচ্ছতার জন্য নাগরিকদের উপযোগী একটি প্ল্যাটফর্ম।",
+    visit: "ওয়েবসাইট দেখুন →",
+    footer: "© EULLIYAN’S · তৈরি, সৃষ্টি, সংরক্ষণ।"
+  },
+  ar: {
+    home: "الرئيسية",
+    about: "من أنا",
+    projects: "مشاريعي",
+    websites: "المواقع",
+    title: "مواقع قمت بإنشائها",
+    subtitle: "اكتشف مواقعي المباشرة وإبداعاتي الرقمية.",
+    prayerTitle: "لوحة الصلاة",
+    prayerDesc: "لوحة رقمية للمسجد تعرض أوقات الصلاة والمعلومات المفيدة.",
+    fawazTitle: "كافتيريا فواز",
+    fawazDesc: "موقع كافتيريا يضم قوائم الطعام وخدمة الطلب عبر الإنترنت.",
+    bufiaTitle: "بوفيا زمزم",
+    bufiaDesc: "سوق للطعام والمكافآت يربط العملاء بالعروض.",
+    arthikTitle: "الشفافية المالية",
+    arthikDesc: "منصة موجهة للمواطنين لتعزيز الشفافية المالية.",
+    visit: "زيارة الموقع ←",
+    footer: "© EULLIYAN’S · نبني ونبدع ونحافظ."
+  },
+  hi: {
+    home: "होम",
+    about: "मेरे बारे में",
+    projects: "मेरे प्रोजेक्ट",
+    websites: "वेबसाइट",
+    title: "मेरे बनाए हुए वेबसाइट",
+    subtitle: "मेरी लाइव वेबसाइट और डिजिटल रचनाएँ देखें।",
+    prayerTitle: "प्रेयर बोर्ड",
+    prayerDesc: "नमाज़ के समय और उपयोगी जानकारी दिखाने वाला डिजिटल मस्जिद बोर्ड।",
+    fawazTitle: "फवाज़ कैफेटेरिया",
+    fawazDesc: "खाने के मेनू और ऑनलाइन ऑर्डर की सुविधा वाली कैफेटेरिया वेबसाइट।",
+    bufiaTitle: "बुफिया ज़मज़म",
+    bufiaDesc: "खाने और रिवॉर्ड ऑफ़र का एक मार्केटप्लेस।",
+    arthikTitle: "आर्थिक स्वच्छता",
+    arthikDesc: "वित्तीय पारदर्शिता के लिए नागरिक-केंद्रित प्लेटफ़ॉर्म।",
+    visit: "वेबसाइट देखें →",
+    footer: "© EULLIYAN’S · बनाएँ, रचें, सुरक्षित रखें।"
+  },
+  ur: {
+    home: "ہوم",
+    about: "تعارف",
+    projects: "میرے منصوبے",
+    websites: "ویب سائٹس",
+    title: "میری بنائی ہوئی ویب سائٹس",
+    subtitle: "میری لائیو ویب سائٹس اور ڈیجیٹل تخلیقات دیکھیں۔",
+    prayerTitle: "نماز بورڈ",
+    prayerDesc: "مسجد کے لیے ایک ڈیجیٹل بورڈ جو نماز کے اوقات اور مفید معلومات دکھاتا ہے۔",
+    fawazTitle: "فواز کیفے ٹیریا",
+    fawazDesc: "کھانے کے مینو اور آن لائن آرڈر کی سہولت والی ویب سائٹ۔",
+    bufiaTitle: "بوفیا زمزم",
+    bufiaDesc: "کھانے اور انعامات کی پیشکشوں کا ایک مارکیٹ پلیس۔",
+    arthikTitle: "مالی شفافیت",
+    arthikDesc: "مالی شفافیت کے لیے شہریوں پر مرکوز ایک پلیٹ فارم۔",
+    visit: "ویب سائٹ دیکھیں ←",
+    footer: "© EULLIYAN’S · بنائیں، تخلیق کریں، محفوظ رکھیں۔"
+  }
+};
+
+function toggleLanguages() {
+  document.getElementById("languageMenu").classList.toggle("show");
+}
+
+function changeLanguage(code) {
+  const engine = window.EULLIYANS_LANG;
+
+  if (engine && engine.hasLanguage(code)) {
+    engine.setLanguage(code);
+  }
+
+  applyPageLanguage(code);
+  document.getElementById("languageButton").textContent =
+    "🌐 " + code.toUpperCase() + "⌄";
+
+  document.getElementById("languageMenu").classList.remove("show");
+}
+
+function applyPageLanguage(code) {
+  const translations = pageTranslations[code] || pageTranslations.en;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
+  });
+}
+
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".language")) {
+    document.getElementById("languageMenu").classList.remove("show");
+  }
+});
+
+window.addEventListener("load", function() {
+  const engine = window.EULLIYANS_LANG;
+  let current = "en";
+
+  if (engine) {
+    if (typeof engine.init === "function") {
+      engine.init();
+    }
+    if (typeof engine.getLanguage === "function") {
+      current = engine.getLanguage() || "en";
+    }
+  }
+
+  if (!pageTranslations[current]) current = "en";
+
+  applyPageLanguage(current);
+  document.getElementById("languageButton").textContent =
+    "🌐 " + current.toUpperCase() + "⌄";
+});
+</script>
+
+</body>
+</html>
