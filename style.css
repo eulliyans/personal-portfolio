@@ -283,9 +283,11 @@ a {
   font-family: Georgia, serif;
   font-style: italic;
   font-size: 23px;
-  line-height: 1.25;
+  line-height: 1.5;
   color: var(--deep);
   transform: rotate(-5deg);
+  max-width: 230px;
+   white-space: pre-line;
 }
 
 .portrait-placeholder {
@@ -1187,7 +1189,4 @@ html[dir="rtl"] .connect-card .qr-area img {
   html[dir="rtl"] .connect-card {
     grid-template-columns: minmax(0, 1fr) 85px !important;
   }
-}
-html[lang="bn"] .hero-quote {
-  font-size: 18px;
 }
