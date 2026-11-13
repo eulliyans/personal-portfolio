@@ -7,6 +7,7 @@
 <title>Websites | EULLIYAN'S</title>
 
 <style>
+
 :root {
   --green: #123b2b;
   --deep: #064e3b;
@@ -35,17 +36,17 @@ body {
 header {
   background: var(--green);
   color: white;
-  padding: 18px 6%;
+  padding: 12px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
-  border-bottom: 4px solid var(--red);
+  border-bottom: 3px solid var(--red);
 }
 
 .logo {
-  font-size: 21px;
+  font-size: 19px;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -53,14 +54,14 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 nav a:hover {
@@ -73,23 +74,23 @@ nav a:hover {
 
 .language button {
   background: transparent;
-  border: 1px solid #80cbc4;
+  border: 1px solid var(--border);
   color: white;
-  padding: 7px 11px;
-  border-radius: 7px;
+  padding: 6px 9px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .language-menu {
   display: none;
   position: absolute;
-  top: 38px;
+  top: 34px;
   right: 0;
   background: white;
-  min-width: 125px;
+  min-width: 120px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 7px;
   overflow: hidden;
   z-index: 10;
   box-shadow: 0 5px 15px #0002;
@@ -106,7 +107,7 @@ nav a:hover {
   border: none;
   border-radius: 0;
   text-align: left;
-  padding: 10px 12px;
+  padding: 9px 11px;
 }
 
 .language-menu button:hover {
@@ -116,52 +117,52 @@ nav a:hover {
 main {
   flex: 1;
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
-  padding: 48px 20px 55px;
+  padding: 30px 18px 38px;
 }
 
 .page-heading {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 23px;
 }
 
 .page-heading h1 {
   color: var(--green);
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 6px;
 }
 
 .page-heading p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .website-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
+  gap: 16px;
 }
 
 .website-card {
   background: white;
-  border: 2px solid var(--border);
-  border-radius: 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px #123b2b0d;
+  box-shadow: 0 3px 10px #123b2b0d;
   transition: transform .2s, box-shadow .2s;
 }
 
 .website-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 9px 22px #123b2b18;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px #123b2b18;
 }
 
-/* Preview designs */
+/* Compact previews */
 
 .preview {
-  height: 185px;
-  padding: 15px;
+  height: 105px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,23 +186,23 @@ main {
 }
 
 .preview-window {
-  width: 85%;
-  height: 125px;
+  width: 78%;
+  height: 75px;
   background: #ffffffed;
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 5px 15px #0003;
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0 3px 9px #0003;
 }
 
 .preview-dots {
   display: flex;
-  gap: 5px;
-  margin-bottom: 13px;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
 .preview-dots span {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #b0b8b5;
 }
@@ -209,18 +210,18 @@ main {
 .preview-lines {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 .preview-lines span {
-  height: 8px;
-  border-radius: 5px;
+  height: 5px;
+  border-radius: 4px;
   background: #dce8e4;
 }
 
 .preview-lines span:nth-child(1) {
   width: 65%;
-  height: 13px;
+  height: 8px;
   background: #80b9a8;
 }
 
@@ -234,14 +235,14 @@ main {
 
 .preview-blocks {
   display: flex;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 5px;
+  margin-top: 7px;
 }
 
 .preview-blocks span {
   flex: 1;
-  height: 28px;
-  border-radius: 5px;
+  height: 15px;
+  border-radius: 4px;
   background: #c4ded5;
 }
 
@@ -269,34 +270,33 @@ main {
   background: #c5dcd2;
 }
 
-/* Card information */
+/* Compact card details */
 
 .card-content {
-  padding: 20px;
+  padding: 12px 14px 14px;
 }
 
 .card-content h2 {
   color: var(--green);
-  font-size: 19px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .card-content p {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 45px;
-  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 9px;
 }
 
 .visit-link {
   display: inline-block;
   color: var(--red);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   text-decoration: none;
   border-bottom: 1px solid var(--red);
-  padding-bottom: 3px;
+  padding-bottom: 2px;
 }
 
 .visit-link:hover {
@@ -309,43 +309,43 @@ footer {
   background: var(--green);
   color: white;
   text-align: center;
-  padding: 16px;
-  font-size: 13px;
-  border-top: 4px solid var(--red);
+  padding: 12px;
+  font-size: 12px;
+  border-top: 3px solid var(--red);
 }
 
 @media (max-width: 650px) {
   header {
-    padding: 15px 5%;
+    padding: 11px 4%;
   }
 
   nav {
-    gap: 13px;
+    gap: 10px;
   }
 
   nav a {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   main {
-    padding: 35px 15px 40px;
+    padding: 25px 13px 32px;
   }
 
   .page-heading h1 {
-    font-size: 27px;
+    font-size: 23px;
   }
 
   .website-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 14px;
   }
 
   .preview {
-    height: 165px;
+    height: 95px;
   }
 
-  .card-content p {
-    min-height: auto;
+  .preview-window {
+    height: 70px;
   }
 }
 </style>
