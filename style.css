@@ -132,6 +132,6 @@ html[dir="rtl"] .connect-card .qr-area img{
 /* Mobile Hero Photo Position Fix */
 @media (max-width: 640px) {
   .portrait-placeholder {
-    left: 14%;
+    left: 8%;
   }
 }
