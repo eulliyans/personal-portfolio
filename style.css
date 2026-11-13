@@ -1190,3 +1190,22 @@ html[dir="rtl"] .connect-card .qr-area img {
     grid-template-columns: minmax(0, 1fr) 85px !important;
   }
 }
+/* HERO PROFILE POSITION FIX FOR RTL */
+
+html[dir="rtl"] .hero {
+  direction: ltr;
+}
+
+html[dir="rtl"] .hero-copy {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-art {
+  direction: ltr;
+}
+
+html[dir="rtl"] .portrait-placeholder {
+  left: auto;
+  right: 8%;
+}
