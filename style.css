@@ -12,10 +12,79 @@ a{color:inherit;text-decoration:none}.section-wrap{width:min(1180px,calc(100% - 
 .hero{min-height:365px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding-top:35px;padding-bottom:24px}
 .hero-copy{position:relative;z-index:2;padding:16px 0 30px}.eyebrow{font-size:22px;font-weight:600;margin:0 0 8px}.hero h1{font-size:clamp(48px,6vw,76px);line-height:1.02;letter-spacing:-3px;margin:0 0 10px;color:var(--deep)}.hero h1 span{background:linear-gradient(90deg,#063c3b,#0c8c88);background-clip:text;color:transparent}.roles{font-size:17px;font-weight:800;margin:0 0 17px}.intro{max-width:560px;line-height:1.6;color:#263f40;margin:0 0 22px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .button{min-height:46px;padding:0 21px;border-radius:28px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:14px;font-weight:800;transition:.2s}.button:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.button-primary{background:linear-gradient(100deg,#005b59,#078c87);color:#fff;box-shadow:0 5px 12px #007c7830}.button-outline{border:1.5px solid var(--deep);color:var(--deep);background:#fff}
-.hero-art{height:330px;position:relative;align-self:stretch;border-radius:48% 0 0 38%;background:radial-gradient(ellipse at 70% 25%,#c6fbf8 0,transparent 54%),linear-gradient(145deg,#f0ffff,#b9f3ef 70%,#e5ffff);overflow:hidden}
-.hero-art:before,.hero-art:after{content:"";position:absolute;left:-8%;width:120%;height:130px;border-radius:50%;transform:rotate(-12deg)}.hero-art:before{bottom:12px;background:linear-gradient(90deg,#b9f7f2,#35c9c4 60%,#087b79)}.hero-art:after{bottom:-45px;background:linear-gradient(90deg,#0a7774,#004d4c);height:115px}
-.quote-mark{position:absolute;right:31%;top:25px;font-size:70px;color:var(--deep);font-family:Georgia}.hero-quote{position:absolute;right:5%;top:68px;z-index:2;font-family:Georgia,serif;font-style:italic;font-size:23px;line-height:1.25;color:var(--deep);transform:rotate(-5deg)}
-.portrait-placeholder{position:absolute;z-index:3;bottom:0;left:34%;width:190px;height:255px;border-radius:100px 100px 0 0;background:linear-gradient(145deg,#fff,#cce8e7);border:5px solid #fff;box-shadow:0 8px 30px #075b5230;display:grid;place-items:center;color:#4b8582;font-weight:800;text-align:center;letter-spacing:2px}
+.hero-art{
+  height:330px;
+  position:relative;
+  align-self:stretch;
+  border-radius:48% 0 0 38%;
+  background:radial-gradient(ellipse at 70% 25%,#c6fbf8 0,transparent 54%),linear-gradient(145deg,#f0ffff,#b9f3ef 70%,#e5ffff);
+  overflow:hidden;
+}
+
+.hero-art:before,
+.hero-art:after{
+  content:"";
+  position:absolute;
+  left:-8%;
+  width:120%;
+  height:130px;
+  border-radius:50%;
+  transform:rotate(-12deg);
+}
+
+.hero-art:before{
+  bottom:12px;
+  background:linear-gradient(90deg,#b9f7f2,#35c9c4 60%,#087b79);
+}
+
+.hero-art:after{
+  bottom:-45px;
+  background:linear-gradient(90deg,#0a7774,#004d4c);
+  height:115px;
+}
+
+.quote-mark{
+  position:absolute;
+  right:31%;
+  top:25px;
+  font-size:70px;
+  color:var(--deep);
+  font-family:Georgia;
+}
+
+.hero-quote{
+  position:absolute;
+  right:5%;
+  top:68px;
+  z-index:2;
+  max-width:55%;
+  font-family:Georgia,serif;
+  font-style:italic;
+  font-size:23px;
+  line-height:1.3;
+  color:var(--deep);
+  transform:rotate(-5deg);
+  text-align:center;
+}
+
+.portrait-placeholder{
+  position:absolute;
+  z-index:3;
+  bottom:0;
+  left:34%;
+  width:190px;
+  height:255px;
+  border-radius:100px 100px 0 0;
+  background:linear-gradient(145deg,#fff,#cce8e7);
+  border:5px solid #fff;
+  box-shadow:0 8px 30px #075b5230;
+  display:grid;
+  place-items:center;
+  color:#4b8582;
+  font-weight:800;
+  text-align:center;
+  letter-spacing:2px;
+}
 .portrait-placeholder img{
   width:100%;
   height:100%;
@@ -129,9 +198,31 @@ html[dir="rtl"] .connect-card .qr-area img{
     grid-template-columns:minmax(0,1fr) 85px !important;
   }
 }
-/* Mobile Hero Photo Position Fix */
-@media (max-width: 640px) {
-  .portrait-placeholder {
-    left: 14%;
+/* Mobile Profile Layout */
+@media (max-width:640px){
+  .hero-art{
+    height:220px;
+  }
+
+  .portrait-placeholder{
+    width:125px;
+    height:165px;
+    left:35%;
+    bottom:0;
+  }
+
+  .hero-quote{
+    max-width:52%;
+    right:4%;
+    top:42px;
+    font-size:17px;
+    line-height:1.3;
+    transform:rotate(-3deg);
+  }
+
+  .quote-mark{
+    right:34%;
+    top:4px;
+    font-size:50px;
   }
 }
