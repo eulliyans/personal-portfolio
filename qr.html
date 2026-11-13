@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code | EULLIYAN'S</title>
+
+<style>
+:root {
+  --green: #123b2b;
+  --deep: #064e3b;
+  --light: #e0f2f1;
+  --border: #80cbc4;
+  --red: #b45d68;
+  --text: #111827;
+  --muted: #4b5563;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #f7faf9;
+  color: var(--text);
+}
+
+header {
+  background: var(--green);
+  color: white;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--red);
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: #b2dfdb;
+}
+
+.language {
+  position: relative;
+}
+
+.language button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+  padding: 6px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.language-menu {
+  display: none;
+  position: absolute;
+  top: 34px;
+  right: 0;
+  background: white;
+  min-width: 120px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 5px 15px #0002;
+}
+
+.language-menu.show {
+  display: block;
+}
+
+.language-menu button {
+  display: block;
+  width: 100%;
+  color: var(--text);
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  padding: 9px 11px;
+}
+
+.language-menu button:hover {
+  background: var(--light);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 42px 18px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--green);
+  font-size: 27px;
+  margin-bottom: 9px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 27px;
+}
+
+.qr-card {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  padding: 24px 18px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 13px;
+  box-shadow: 0 4px 14px #123b2b12;
+}
+
+.qr-frame {
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
+  margin: 0 auto 17px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5e7e1;
+  border-radius: 9px;
+  background: white;
+}
+
+#qrcode img,
+#qrcode canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-card h2 {
+  color: var(--green);
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.qr-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 17px;
+}
+
+.download-btn {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: var(--deep);
+}
+
+.status {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+footer {
+  width: 100%;
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  border-top: 3px solid var(--red);
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 11px 4%;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  main {
+    padding: 35px 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .qr-card {
+    max-width: 330px;
+  }
+}
+
+html[dir="rtl"] .language-menu {
+  right: auto;
+  left: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EULLIYAN’S</div>
+
+  <nav>
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="about.html" data-i18n="about">About Us</a>
+    <a href="projects.html" data-i18n="projects">Our Projects</a>
+    <a href="websites.html" data-i18n="websites">Websites</a>
+
+    <div class="language">
+      <button onclick="toggleLanguages()" id="languageButton">🌐 EN⌄</button>
+      <div class="language-menu" id="languageMenu">
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('bn')">বাংলা</button>
+        <button onclick="changeLanguage('ar')">العربية</button>
+        <button onclick="changeLanguage('hi')">हिन्दी</button>
+        <button onclick="changeLanguage('ur')">اردو</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1 data-i18n="title">My Portfolio QR Code</h1>
+
+  <p class="subtitle" data-i18n="subtitle">
+    Scan this QR code to visit my personal portfolio website.
+  </p>
+
+  <section class="qr-card">
+    <div class="qr-frame">
+      <div id="qrcode"></div>
+    </div>
+
+    <h2 data-i18n="cardTitle">EULLIYAN’S Portfolio</h2>
+
+    <p data-i18n="description">
+      Scan with your phone camera to explore my work and projects.
+    </p>
+
+    <button class="download-btn"
+      onclick="downloadQR()"
+      data-i18n="download">
+      Download QR Code
+    </button>
+
+    <div class="status" id="qrStatus">Loading QR Code...</div>
+  </section>
+</main>
+
+<footer data-i18n="footer">
+  © EULLIYAN’S · Build, Create, Preserve.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
+
+<script>
+const portfolioURL = "https://eulliyans.github.io/personal-portfolio/";
+
+const pageTranslations = {
+  en: {
+    home: "Home",
+    about: "About Us",
+    projects: "Our Projects",
+    websites: "Websites",
+    title: "My Portfolio QR Code",
+    subtitle: "Scan this QR code to visit my personal portfolio website.",
+    cardTitle: "EULLIYAN’S Portfolio",
+    description: "Scan with your phone camera to explore my work and projects.",
+    download: "Download QR Code",
+    footer: "© EULLIYAN’S · Build, Create, Preserve."
+  },
+  bn: {
+    home: "হোম",
+    about: "আমার পরিচিতি",
+    projects: "আমার প্রজেক্ট",
+    websites: "ওয়েবসাইট",
+    title: "আমার পোর্টফোলিও QR কোড",
+    subtitle: "আমার ব্যক্তিগত পোর্টফোলিও দেখতে QR কোডটি স্ক্যান করুন।",
+    cardTitle: "EULLIYAN’S পোর্টফোলিও",
+    description: "আমার কাজ ও প্রজেক্ট দেখতে ফোনের ক্যামেরা দিয়ে স্ক্যান করুন।",
+    download: "QR কোড ডাউনলোড",
+    footer: "© EULLIYAN’S · তৈরি, সৃষ্টি, সংরক্ষণ।"
+  },
+  ar: {
+    home: "الرئيسية",
+    about: "من أنا",
+    projects: "مشاريعي",
+    websites: "المواقع",
+    title: "رمز QR لمحفظتي",
+    subtitle: "امسح رمز QR لزيارة موقعي الشخصي.",
+    cardTitle: "محفظة EULLIYAN’S",
+    description: "امسح باستخدام كاميرا هاتفك لاستكشاف أعمالي ومشاريعي.",
+    download: "تحميل رمز QR",
+    footer: "© EULLIYAN’S · نبني ونبدع ونحافظ."
+  },
+  hi: {
+    home: "होम",
+    about: "मेरे बारे में",
+    projects: "मेरे प्रोजेक्ट",
+    websites: "वेबसाइट",
+    title: "मेरे पोर्टफोलियो का QR कोड",
+    subtitle: "मेरी व्यक्तिगत पोर्टफोलियो वेबसाइट देखने के लिए QR कोड स्कैन करें।",
+    cardTitle: "EULLIYAN’S पोर्टफोलियो",
+    description: "मेरे काम और प्रोजेक्ट देखने के लिए फोन के कैमरे से स्कैन करें।",
+    download: "QR कोड डाउनलोड करें",
+    footer: "© EULLIYAN’S · बनाएँ, रचें, सुरक्षित रखें।"
+  },
+  ur: {
+    home: "ہوم",
+    about: "تعارف",
+    projects: "میرے منصوبے",
+    websites: "ویب سائٹس",
+    title: "میرے پورٹ فولیو کا QR کوڈ",
+    subtitle: "میری ذاتی پورٹ فولیو ویب سائٹ دیکھنے کے لیے QR کوڈ اسکین کریں۔",
+    cardTitle: "EULLIYAN’S پورٹ فولیو",
+    description: "میرے کام اور منصوبے دیکھنے کے لیے فون کے کیمرے سے اسکین کریں۔",
+    download: "QR کوڈ ڈاؤن لوڈ کریں",
+    footer: "© EULLIYAN’S · بنائیں، تخلیق کریں، محفوظ رکھیں۔"
+  }
+};
+
+function generateQR() {
+  const status = document.getElementById("qrStatus");
+
+  if (typeof QRCode === "undefined") {
+    status.textContent = "QR Code could not load. Please refresh.";
+    return;
+  }
+
+  new QRCode(document.getElementById("qrcode"), {
+    text: portfolioURL,
+    width: 220,
+    height: 220,
+    colorDark: "#123b2b",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+
+  status.textContent = "QR Code ready!";
+}
+
+function downloadQR() {
+  const canvas = document.querySelector("#qrcode canvas");
+  const image = document.querySelector("#qrcode img");
+  let imageURL = "";
+
+  if (canvas) {
+    imageURL = canvas.toDataURL("image/png");
+  } else if (image && image.src) {
+    imageURL = image.src;
+  }
+
+  if (!imageURL) {
+    document.getElementById("qrStatus").textContent =
+      "QR Code is not ready yet.";
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.href = imageURL;
+  link.download = "eulliyans-portfolio-qr.png";
+  link.click();
+}
+
+function toggleLanguages() {
+  document.getElementById("languageMenu").classList.toggle("show");
+}
+
+function changeLanguage(code) {
+  const engine = window.EULLIYANS_LANG;
+
+  if (engine && engine.hasLanguage(code)) {
+    engine.setLanguage(code);
+  }
+
+  applyPageLanguage(code);
+
+  document.getElementById("languageButton").textContent =
+    "🌐 " + code.toUpperCase() + "⌄";
+
+  document.getElementById("languageMenu").classList.remove("show");
+}
+
+function applyPageLanguage(code) {
+  const translations = pageTranslations[code] || pageTranslations.en;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
+  });
+
+  document.documentElement.lang = code;
+  document.documentElement.dir =
+    (code === "ar" || code === "ur") ? "rtl" : "ltr";
+}
+
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".language")) {
+    document.getElementById("languageMenu").classList.remove("show");
+  }
+});
+
+window.addEventListener("load", function() {
+  generateQR();
+
+  const engine = window.EULLIYANS_LANG;
+  let current = "en";
+
+  if (engine) {
+    if (typeof engine.init === "function") engine.init();
+    if (typeof engine.getLanguage === "function") {
+      current = engine.getLanguage() || "en";
+    }
+  }
+
+  if (!pageTranslations[current]) current = "en";
+
+  applyPageLanguage(current);
+
+  document.getElementById("languageButton").textContent =
+    "🌐 " + current.toUpperCase() + "⌄";
+});
+</script>
+
+</body>
+</html>
