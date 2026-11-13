@@ -278,7 +278,6 @@ a {
 .hero-quote {
   position: absolute;
   right: 5%;
-left: auto;
   top: 68px;
   z-index: 2;
   font-family: Georgia, serif;
@@ -293,10 +292,9 @@ left: auto;
   position: absolute;
   z-index: 3;
   bottom: 0;
-  left: auto;
-right: 8%;
-  width: 130px;
-height: 180px;
+  left: 26%;
+  width: 170px;
+  height: 230px;
   border-radius: 100px 100px 0 0;
   background: linear-gradient(145deg, #fff, #cce8e7);
   border: 5px solid #fff;
@@ -848,9 +846,9 @@ height: 180px;
     border-radius: 35px;
   }
 
-    .portrait-placeholder {
-    width: 95px;
-    height: 130px;
+  .portrait-placeholder {
+    width: 115px;
+    height: 155px;
     left: 5%;
     font-size: 11px;
   }
@@ -1189,23 +1187,4 @@ html[dir="rtl"] .connect-card .qr-area img {
   html[dir="rtl"] .connect-card {
     grid-template-columns: minmax(0, 1fr) 85px !important;
   }
-}
-/* HERO PROFILE POSITION FIX FOR RTL */
-
-html[dir="rtl"] .hero {
-  direction: ltr;
-}
-
-html[dir="rtl"] .hero-copy {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .hero-art {
-  direction: ltr;
-}
-
-html[dir="rtl"] .portrait-placeholder {
-  left: auto;
-  right: 8%;
 }
