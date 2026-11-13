@@ -277,8 +277,8 @@ a {
 
 .hero-quote {
   position: absolute;
-  left: 5%;
-right: auto;
+  right: 5%;
+left: auto;
   top: 68px;
   z-index: 2;
   font-family: Georgia, serif;
@@ -295,8 +295,8 @@ right: auto;
   bottom: 0;
   left: auto;
 right: 8%;
-  width: 170px;
-  height: 230px;
+  width: 130px;
+height: 180px;
   border-radius: 100px 100px 0 0;
   background: linear-gradient(145deg, #fff, #cce8e7);
   border: 5px solid #fff;
@@ -848,11 +848,10 @@ right: 8%;
     border-radius: 35px;
   }
 
-  .portrait-placeholder {
-    width: 115px;
-    height: 155px;
-    left: auto;
-right: 5%;
+    .portrait-placeholder {
+    width: 95px;
+    height: 130px;
+    left: 5%;
     font-size: 11px;
   }
 
