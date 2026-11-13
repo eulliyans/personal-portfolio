@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Me | EULLIYAN</title>
+
+  <meta name="description" content="Learn about EULLIYAN, a Web Developer and Digital Creator.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080d18;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    header {
+      width: 100%;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .languages {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .languages button {
+      background: #172235;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      padding: 7px 11px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .languages button.active,
+    .languages button:hover {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: white;
+    }
+
+    main {
+      max-width: 850px;
+      margin: auto;
+      padding: 85px 25px;
+    }
+
+    .eyebrow {
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      color: #cbd5e1;
+      font-size: 18px;
+      margin-bottom: 55px;
+    }
+
+    .section {
+      margin-bottom: 38px;
+      padding: 25px;
+      background: #111c2e;
+      border: 1px solid #243247;
+      border-radius: 13px;
+    }
+
+    .section h2 {
+      color: #38bdf8;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      color: #cbd5e1;
+      font-size: 16px;
+    }
+
+    .motto {
+      text-align: center;
+      color: #38bdf8;
+      font-size: 19px;
+      font-weight: bold;
+      margin-top: 45px;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: 12px;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    html[dir="rtl"] body {
+      text-align: right;
+    }
+
+    html[dir="rtl"] .eyebrow {
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      main {
+        padding: 55px 18px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">EULLIYAN’S</a>
+
+    <nav>
+      <a href="index.html" data-i18n="navigation.home">Home</a>
+      <a href="about.html" data-i18n="navigation.about">About Us</a>
+      <a href="projects.html" data-i18n="navigation.projects">Our Projects</a>
+    </nav>
+
+    <div class="languages" aria-label="Select language">
+      <button type="button" data-language="en">EN</button>
+      <button type="button" data-language="bn">বাংলা</button>
+      <button type="button" data-language="ar">العربية</button>
+    </div>
+  </header>
+
+  <main>
+
+    <p class="eyebrow" data-i18n="aboutPage.eyebrow">
+      ABOUT ME
+    </p>
+
+    <h1 data-i18n="aboutPage.title">
+      Who Is EULLIYAN?
+    </h1>
+
+    <p class="intro" data-i18n="aboutPage.intro">
+      I’m EULLIYAN, a Web Developer and Digital Creator who believes in learning, creating, and building a better future through technology.
+    </p>
+
+    <section class="section">
+      <h2 data-i18n="aboutPage.journeyTitle">
+        My Journey
+      </h2>
+
+      <p data-i18n="aboutPage.journeyText">
+        I started with curiosity and a dream. Step by step, I learned web development and built my first website. That small beginning gave me the confidence to dream bigger.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="aboutPage.visionTitle">
+        My Vision
+      </h2>
+
+      <p data-i18n="aboutPage.visionText">
+        I’m still learning, growing, and creating. My goal is to turn ideas into meaningful digital experiences. With hard work and Allah’s blessings, InshaAllah, I’ll keep moving forward.
+      </p>
+    </section>
+
+    <p class="motto" data-i18n="aboutPage.motto">
+      Still Learning. Still Building. Still Dreaming.
+    </p>
+
+    <p class="tagline" data-i18n="aboutPage.tagline">
+      Build, Create, Preserve.
+    </p>
+
+  </main>
+
+  <footer>
+    © EULLIYAN’S — <span data-i18n="footer.copyright">All Rights Reserved</span>
+  </footer>
+
+  <!-- EULLIYAN'S Universal Language System -->
+  <script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
+
+  <!-- Language Dictionaries -->
+  <script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
+  <script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
+  <script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+
+  <script>
+    (function () {
+      const engine = window.EULLIYANS_LANG;
+
+      if (!engine) {
+        console.error("EULLIYAN Language Engine failed to load.");
+        return;
+      }
+
+      engine.init();
+
+      const buttons = document.querySelectorAll("[data-language]");
+
+      function updateActiveButton() {
+        const current = engine.getLanguage();
+
+        buttons.forEach(function (button) {
+          const active = button.dataset.language === current;
+
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          engine.setLanguage(button.dataset.language);
+          updateActiveButton();
+        });
+      });
+
+      updateActiveButton();
+
+      window.addEventListener("eulliyans:languageChanged", updateActiveButton);
+    })();
+  </script>
+
+</body>
+</html>
