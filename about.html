@@ -230,6 +230,102 @@
       font-size: 18px;
     }
   }
+  @media (max-width: 600px) {
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: initial;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: clamp(7px, 2.2vw, 13px);
+    width: 100%;
+  }
+
+  nav a {
+    font-size: clamp(10px, 2.8vw, 12px);
+    white-space: nowrap;
+  }
+
+  .languages {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .language-toggle {
+    padding: 5px 7px;
+    font-size: 11px;
+  }
+
+  main {
+    padding: 28px 14px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: 27px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .intro {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .section {
+    padding: 15px 13px;
+    margin-bottom: 13px;
+    border-radius: 11px;
+    border-inline-start-width: 4px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .motto {
+    font-size: 15px;
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+
+  .tagline {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+
+  footer {
+    padding: 14px 10px;
+    font-size: 11px;
+  }
+}
 </style>
 </head>
 
