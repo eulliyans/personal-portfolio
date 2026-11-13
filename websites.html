@@ -33,7 +33,8 @@ body {
   color: var(--text);
 }
 
-/* HEADER - PRESERVE ORIGINAL DESIGN */
+
+/* HEADER - SAME LAYOUT ON ALL DEVICES */
 
 header {
   background: var(--green);
@@ -43,32 +44,48 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
   border-bottom: 3px solid var(--red);
+  scrollbar-width: none;
+}
+
+header::-webkit-scrollbar {
+  display: none;
+}
+
+header > * {
+  flex-shrink: 0;
 }
 
 .logo {
   font-size: 19px;
   font-weight: bold;
   letter-spacing: 1px;
+  flex-shrink: 0;
 }
 
 nav {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-size: 13px;
+  flex-shrink: 0;
 }
 
 nav a:hover {
   color: #b2dfdb;
 }
+
 
 /* LANGUAGE */
 
