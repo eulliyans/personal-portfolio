@@ -4,12 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>About Me | EULLIYAN</title>
-
   <meta name="description" content="Learn about EULLIYAN, a Web Developer and Digital Creator.">
-
-  
 
 <style>
   * {
@@ -63,27 +59,57 @@
     color: #f3aaaa;
   }
 
+  /* Compact Language Selector */
   .languages {
-    display: flex;
-    gap: 7px;
-    align-items: center;
+    position: relative;
   }
 
-  .languages button {
-    background: #ffffff;
+  .language-toggle {
+    background: #e0f2f1;
     color: #123b2b;
-    border: 1px solid #d1d5db;
-    padding: 7px 11px;
-    border-radius: 7px;
+    border: 1px solid #80cbc4;
+    padding: 6px 10px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 13px;
+    font-weight: bold;
   }
 
-  .languages button.active,
-  .languages button:hover {
-    background: #e8a0a0;
-    border-color: #e8a0a0;
-    color: #111827;
+  .language-menu {
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: 0;
+    min-width: 115px;
+    background: #ffffff;
+    border: 1px solid #80cbc4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    z-index: 20;
+  }
+
+  .language-menu.show {
+    display: block;
+  }
+
+  .language-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: #ffffff;
+    color: #123b2b;
+    text-align: left;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .language-menu button:hover,
+  .language-menu button.active {
+    background: #e0f2f1;
+    color: #064e3b;
+    font-weight: bold;
   }
 
   main {
@@ -178,10 +204,6 @@
       gap: 15px;
     }
 
-    .languages {
-      justify-content: center;
-    }
-
     main {
       padding: 55px 18px;
     }
@@ -209,120 +231,161 @@
     }
   }
 </style>
-
-
 </head>
 
 <body>
 
-  <header>
-    <a href="index.html" class="logo">EULLIYAN’S</a>
+<header>
+  <a href="index.html" class="logo">EULLIYAN’S</a>
 
-    <nav>
-      <a href="index.html" data-i18n="navigation.home">Home</a>
-      <a href="about.html" data-i18n="navigation.about">About Us</a>
-      <a href="projects.html" data-i18n="navigation.projects">Our Projects</a>
-    </nav>
+  <nav>
+    <a href="index.html" data-i18n="navigation.home">Home</a>
+    <a href="about.html" data-i18n="navigation.about">About Us</a>
+    <a href="projects.html" data-i18n="navigation.projects">Our Projects</a>
+  </nav>
 
-    <div class="languages" aria-label="Select language">
-      <button type="button" data-language="en">EN</button>
+  <div class="languages">
+    <button
+      class="language-toggle"
+      id="languageToggle"
+      type="button"
+      aria-expanded="false"
+      aria-label="Select language">
+      🌐 <span id="currentLanguage">EN</span>⌄
+    </button>
+
+    <div class="language-menu" id="languageMenu">
+      <button type="button" data-language="en">English</button>
       <button type="button" data-language="bn">বাংলা</button>
       <button type="button" data-language="ar">العربية</button>
+      <button type="button" data-language="hi">हिन्दी</button>
+      <button type="button" data-language="ur">اردو</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
+<main>
 
-    <p class="eyebrow" data-i18n="aboutPage.eyebrow">
-      ABOUT ME
+  <p class="eyebrow" data-i18n="aboutPage.eyebrow">
+    ABOUT ME
+  </p>
+
+  <h1 data-i18n="aboutPage.title">
+    Who Is EULLIYAN?
+  </h1>
+
+  <p class="intro" data-i18n="aboutPage.intro">
+    I’m EULLIYAN, a Web Developer and Digital Creator who believes in learning, creating, and building a better future through technology.
+  </p>
+
+  <section class="section">
+    <h2 data-i18n="aboutPage.journeyTitle">My Journey</h2>
+    <p data-i18n="aboutPage.journeyText">
+      I started with curiosity and a dream. Step by step, I learned web development and built my first website. That small beginning gave me the confidence to dream bigger.
     </p>
+  </section>
 
-    <h1 data-i18n="aboutPage.title">
-      Who Is EULLIYAN?
-    </h1>
-
-    <p class="intro" data-i18n="aboutPage.intro">
-      I’m EULLIYAN, a Web Developer and Digital Creator who believes in learning, creating, and building a better future through technology.
+  <section class="section">
+    <h2 data-i18n="aboutPage.visionTitle">My Vision</h2>
+    <p data-i18n="aboutPage.visionText">
+      I’m still learning, growing, and creating. My goal is to turn ideas into meaningful digital experiences. With hard work and Allah’s blessings, InshaAllah, I’ll keep moving forward.
     </p>
+  </section>
 
-    <section class="section">
-      <h2 data-i18n="aboutPage.journeyTitle">
-        My Journey
-      </h2>
+  <p class="motto" data-i18n="aboutPage.motto">
+    Still Learning. Still Building. Still Dreaming.
+  </p>
 
-      <p data-i18n="aboutPage.journeyText">
-        I started with curiosity and a dream. Step by step, I learned web development and built my first website. That small beginning gave me the confidence to dream bigger.
-      </p>
-    </section>
+  <p class="tagline" data-i18n="aboutPage.tagline">
+    Build, Create, Preserve.
+  </p>
 
-    <section class="section">
-      <h2 data-i18n="aboutPage.visionTitle">
-        My Vision
-      </h2>
+</main>
 
-      <p data-i18n="aboutPage.visionText">
-        I’m still learning, growing, and creating. My goal is to turn ideas into meaningful digital experiences. With hard work and Allah’s blessings, InshaAllah, I’ll keep moving forward.
-      </p>
-    </section>
+<footer>
+  © EULLIYAN’S — <span data-i18n="footer.copyright">All Rights Reserved</span>
+</footer>
 
-    <p class="motto" data-i18n="aboutPage.motto">
-      Still Learning. Still Building. Still Dreaming.
-    </p>
+<!-- Language System -->
+<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
 
-    <p class="tagline" data-i18n="aboutPage.tagline">
-      Build, Create, Preserve.
-    </p>
+<!-- Language Dictionaries -->
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
 
-  </main>
+<script>
+(function () {
+  const engine = window.EULLIYANS_LANG;
 
-  <footer>
-    © EULLIYAN’S — <span data-i18n="footer.copyright">All Rights Reserved</span>
-  </footer>
+  if (!engine) {
+    console.error("EULLIYAN Language Engine failed to load.");
+    return;
+  }
 
-  <!-- EULLIYAN'S Universal Language System -->
-  <script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
+  engine.init();
 
-  <!-- Language Dictionaries -->
-  <script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
-  <script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
-  <script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+  const toggle = document.getElementById("languageToggle");
+  const menu = document.getElementById("languageMenu");
+  const currentLabel = document.getElementById("currentLanguage");
+  const buttons = document.querySelectorAll("[data-language]");
 
-  <script>
-    (function () {
-      const engine = window.EULLIYANS_LANG;
+  const codes = {
+    en: "EN",
+    bn: "BN",
+    ar: "AR",
+    hi: "HI",
+    ur: "UR"
+  };
 
-      if (!engine) {
-        console.error("EULLIYAN Language Engine failed to load.");
-        return;
+  function updateLanguageSelector() {
+    const current = engine.getLanguage();
+
+    currentLabel.textContent = codes[current] || "EN";
+
+    buttons.forEach(function (button) {
+      const active = button.dataset.language === current;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  toggle.addEventListener("click", function () {
+    const isOpen = menu.classList.toggle("show");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const language = button.dataset.language;
+
+      if (engine.hasLanguage(language)) {
+        engine.setLanguage(language);
+        updateLanguageSelector();
       }
 
-      engine.init();
+      menu.classList.remove("show");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
 
-      const buttons = document.querySelectorAll("[data-language]");
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".languages")) {
+      menu.classList.remove("show");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
 
-      function updateActiveButton() {
-        const current = engine.getLanguage();
+  updateLanguageSelector();
 
-        buttons.forEach(function (button) {
-          const active = button.dataset.language === current;
-
-          button.classList.toggle("active", active);
-          button.setAttribute("aria-pressed", String(active));
-        });
-      }
-
-      buttons.forEach(function (button) {
-        button.addEventListener("click", function () {
-          engine.setLanguage(button.dataset.language);
-          updateActiveButton();
-        });
-      });
-
-      updateActiveButton();
-
-      window.addEventListener("eulliyans:languageChanged", updateActiveButton);
-    })();
-  </script>
+  window.addEventListener(
+    "eulliyans:languageChanged",
+    updateLanguageSelector
+  );
+})();
+</script>
 
 </body>
 </html>
