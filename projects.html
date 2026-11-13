@@ -26,12 +26,18 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.6;
-    }
+  font-family: Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+main {
+  flex: 1;
+}
     header {
       background: var(--green);
       color: white;
@@ -231,6 +237,18 @@
         font-size: 10px;
       }
     }
+    .visit-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #064e3b;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.visit-link:hover {
+  color: #b45d68;
+}
   </style>
 </head>
 
@@ -270,28 +288,32 @@
   <section class="projects-grid" id="projectsGrid">
 
     <article class="project-box">
-      <span class="project-number">PROJECT 01</span>
-      <h2 data-project="prayerTitle">PRAYER BOARD</h2>
-      <p data-project="prayerDesc">Digital Mosque Prayer Board</p>
-    </article>
+  <span class="project-number">PROJECT 01</span>
+  <h2 data-project="prayerTitle">PRAYER BOARD</h2>
+  <p data-project="prayerDesc">Digital Mosque Prayer Board</p>
+  <a class="visit-link" href="https://eulliyans.github.io/masjid-prayer-board/" target="_blank" rel="noopener">Visit Project →</a>
+</article>
 
-    <article class="project-box">
-      <span class="project-number">PROJECT 02</span>
-      <h2 data-project="fawazTitle">FAWAZ CAFETERIA</h2>
-      <p data-project="fawazDesc">Restaurant Website & Online Ordering</p>
-    </article>
+<article class="project-box">
+  <span class="project-number">PROJECT 02</span>
+  <h2 data-project="fawazTitle">FAWAZ CAFETERIA</h2>
+  <p data-project="fawazDesc">Restaurant Website & Online Ordering</p>
+  <a class="visit-link" href="https://eulliyans.github.io/Fawaz-Cafeteria/" target="_blank" rel="noopener">Visit Project →</a>
+</article>
 
-    <article class="project-box">
-      <span class="project-number">PROJECT 03</span>
-      <h2 data-project="bufiaTitle">BUFIA ZAMZAM</h2>
-      <p data-project="bufiaDesc">Food & Rewards Marketplace</p>
-    </article>
+<article class="project-box">
+  <span class="project-number">PROJECT 03</span>
+  <h2 data-project="bufiaTitle">BUFIA ZAMZAM</h2>
+  <p data-project="bufiaDesc">Food & Rewards Marketplace</p>
+  <a class="visit-link" href="https://eulliyans.github.io/Bufia-Zamzam/" target="_blank" rel="noopener">Visit Project →</a>
+</article>
 
-    <article class="project-box">
-      <span class="project-number">PROJECT 04</span>
-      <h2 data-project="arthikTitle">ARTHIK SWACHCHHOTA</h2>
-      <p data-project="arthikDesc">Citizen Financial Transparency</p>
-    </article>
+<article class="project-box">
+  <span class="project-number">PROJECT 04</span>
+  <h2 data-project="arthikTitle">ARTHIK SWACHCHHOTA</h2>
+  <p data-project="arthikDesc">Citizen Financial Transparency</p>
+  <a class="visit-link" href="https://arthikswachchhota.github.io/Artik-cwachchhota-/" target="_blank" rel="noopener">Visit Project →</a>
+</article>
 
   </section>
 </main>
