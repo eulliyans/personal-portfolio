@@ -1188,3 +1188,6 @@ html[dir="rtl"] .connect-card .qr-area img {
     grid-template-columns: minmax(0, 1fr) 85px !important;
   }
 }
+html[lang="bn"] .hero-quote {
+  font-size: 18px;
+}
