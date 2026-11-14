@@ -135,36 +135,41 @@ h1 {
   margin-bottom: 27px;
 }
 
+
+/* QR CARD - MATCH PROJECT BOX DESIGN */
+
 .qr-card {
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   margin: auto;
-  padding: 24px 18px;
+  padding: 18px 15px;
   background: white;
-  border: 1.5px solid var(--border);
-  border-radius: 13px;
-  box-shadow: 0 4px 14px #123b2b12;
+  border: 1.5px solid #80aaa0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #123b2b0d;
 }
 
 .qr-frame {
-  width: 240px;
-  height: 240px;
+  width: 190px;
+  height: 190px;
   max-width: 100%;
-  margin: 0 auto 17px;
-  padding: 10px;
+  margin: 0 auto 15px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #d5e7e1;
-  border-radius: 9px;
+  border-radius: 8px;
   background: white;
 }
 
 #qrcode img,
 #qrcode canvas {
+  width: 170px !important;
+  height: 170px !important;
   max-width: 100%;
-  height: auto;
 }
+
 
 .qr-card h2 {
   color: var(--green);
@@ -240,6 +245,23 @@ footer {
 html[dir="rtl"] .language-menu {
   right: auto;
   left: 0;
+}
+  header {
+  direction: ltr !important;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: visible;
+}
+
+header nav {
+  direction: ltr !important;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header .language-menu {
+  right: 0;
+  left: auto;
 }
 </style>
 </head>
@@ -388,8 +410,8 @@ function generateQR() {
 
   new QRCode(document.getElementById("qrcode"), {
     text: portfolioURL,
-    width: 220,
-    height: 220,
+    width: 170,
+   height: 170,
     colorDark: "#123b2b",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.H
