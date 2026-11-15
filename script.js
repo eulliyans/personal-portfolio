@@ -23,24 +23,77 @@
       ? escapeHTML(url) : "#";
   }
 
-  function renderProjects(lang) {
-    const t = translations[lang];
+  
+function renderProjects(lang) {
+  const t = translations[lang];
 
-    projectGrid.innerHTML = data.projects.map((project, i) => `
-      <article class="project-card">
-        <div class="project-visual">
-          <span>${escapeHTML(t.projectLabels[i] || project.label || project.symbol)}</span>
+  const previewLabels = [
+    "PRAYER TIMES",
+    "FOOD & ORDER",
+    "FOOD MARKET",
+    "FINANCIAL DASHBOARD"
+  ];
+
+  const previewContent = [
+    `<div class="mini-prayer">
+       <strong>🕌 DIGITAL MOSQUE</strong>
+       <span>FAJR　 DHUHR　 ASR</span>
+       <b>04:45　12:45　15:30</b>
+       <small>Prayer & Adhkar</small>
+     </div>`,
+
+    `<div class="mini-cafe">
+       <strong>FAWAZ</strong>
+       <span>Fresh Food · Great Taste</span>
+       <div class="mini-food">🍔　🍕　🥤</div>
+       <b>ORDER NOW →</b>
+     </div>`,
+
+    `<div class="mini-bufia">
+       <strong>BUFIA ZAMZAM</strong>
+       <span>Food Marketplace</span>
+       <div class="mini-food">🍗　🍟　🍰</div>
+       <b>SHOP & EARN REWARDS</b>
+     </div>`,
+
+    `<div class="mini-arthik">
+       <strong>📊 FINANCIAL REPORT</strong>
+       <span>Total Budget</span>
+       <b>৳ 12,50,000</b>
+       <div class="mini-bar"><i></i></div>
+       <small>Transparency · Accountability</small>
+     </div>`
+  ];
+
+  projectGrid.innerHTML = data.projects.map((project, i) => `
+    <article class="project-card">
+      <div class="project-visual project-visual-${i + 1}">
+        <div class="project-mini-preview">
+          ${previewContent[i]}
         </div>
-        <div class="project-content">
-          <h3>${escapeHTML(project.name)}</h3>
-          <p>${escapeHTML(t.projectDescriptions[i] || project.description)}</p>
+      </div>
+
+      <div class="project-content">
+        <h3>${escapeHTML(project.name)}</h3>
+        <p>${escapeHTML(t.projectDescriptions[i] || project.description)}</p>
+
+        <div class="project-actions">
           <a class="button button-primary" href="${safeURL(project.link)}">
-            ${escapeHTML(t.viewProject)}&nbsp; →
+            ${escapeHTML(t.viewProject)} →
           </a>
+
+          <button class="button button-secondary"
+                  type="button"
+                  data-view-card="${i}">
+            ${lang === "bn" ? "কার্ড দেখুন" :
+              lang === "ar" ? "عرض البطاقة" : "View Card"}
+          </button>
         </div>
-      </article>
-    `).join("");
-  }
+      </div>
+    </article>
+  `).join("");
+}
+
 
   const socialMarkup = data.socials.map(item => `
     <a class="social-link ${escapeHTML(item.className)}"
