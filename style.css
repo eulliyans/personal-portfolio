@@ -927,27 +927,28 @@ a {
   }
 
   .project-visual {
-    height: 90px;
-  }
+  height: 80px;
+}
 
-  .project-content {
-    padding: 10px 8px 12px;
-  }
+.project-content {
+  padding: 8px 8px 8px;
+}
 
-  .project-content h3 {
-    font-size: 13px;
-  }
+.project-content h3 {
+  font-size: 13px;
+}
 
-  .project-content p {
-    font-size: 11px;
-    min-height: 42px;
-  }
+.project-content p {
+  font-size: 11px;
+  min-height: 30px;
+  margin-bottom: 6px;
+}
 
-  .project-content .button {
-    font-size: 10px;
-    padding: 0 11px;
-    min-height: 34px;
-  }
+.project-content .button {
+  font-size: 10px;
+  padding: 0 11px;
+  min-height: 30px;
+}
 
 
   /* Connect & Media */
