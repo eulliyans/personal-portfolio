@@ -94,6 +94,81 @@ function renderProjects(lang) {
   `).join("");
 }
 
+  // PROJECT CARD PREVIEW POPUP
+  const projectModal = document.createElement("div");
+  projectModal.className = "project-modal";
+  projectModal.hidden = true;
+
+  projectModal.innerHTML = `
+    <div class="project-modal-backdrop" data-modal-close></div>
+
+    <section class="project-modal-dialog"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="projectModalTitle">
+
+      <button class="project-modal-close"
+              type="button"
+              data-modal-close
+              aria-label="Close">×</button>
+
+      <span class="project-modal-label">PROJECT PREVIEW</span>
+
+      <h2 id="projectModalTitle"></h2>
+
+      <div class="project-modal-preview"></div>
+
+      <p class="project-modal-description"></p>
+    </section>
+  `;
+
+  document.body.appendChild(projectModal);
+
+  function closeProjectModal() {
+    projectModal.hidden = true;
+    document.body.classList.remove("project-modal-open");
+  }
+
+  projectGrid.addEventListener("click", function(event) {
+    const button = event.target.closest("[data-view-card]");
+    if (!button) return;
+
+    const index = Number(button.dataset.viewCard);
+    const project = data.projects[index];
+
+    if (!project) return;
+
+    const card = button.closest(".project-card");
+    const preview = card.querySelector(".project-visual");
+
+    projectModal.querySelector("#projectModalTitle").textContent =
+      project.name;
+
+    projectModal.querySelector(".project-modal-description").textContent =
+      translations[document.documentElement.lang]?.projectDescriptions[index]
+      || project.description;
+
+    projectModal.querySelector(".project-modal-preview").innerHTML =
+      preview.innerHTML;
+
+    projectModal.hidden = false;
+    document.body.classList.add("project-modal-open");
+
+    projectModal.querySelector(".project-modal-close").focus();
+  });
+
+  projectModal.addEventListener("click", function(event) {
+    if (event.target.closest("[data-modal-close]")) {
+      closeProjectModal();
+    }
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && !projectModal.hidden) {
+      closeProjectModal();
+    }
+  });
+
 
   const socialMarkup = data.socials.map(item => `
     <a class="social-link ${escapeHTML(item.className)}"
