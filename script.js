@@ -49,7 +49,10 @@
         <h3>${escapeHTML(project.name)}</h3>
 
         <p>${escapeHTML(t.projectDescriptions[i] || project.description)}</p>
-
+<a class="button button-outline"
+   href="project-card.html?project=${projectSlugs[i]}">
+  Card
+</a>
         <a class="button button-primary" href="${safeURL(project.link)}">
           ${escapeHTML(t.viewProject)}&nbsp; →
         </a>
