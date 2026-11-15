@@ -432,7 +432,7 @@ a {
 }
 
 .project-visual {
-  height: 112px;
+  height: 85px;
   background: linear-gradient(135deg, #d7f7f5, #078b87);
   display: grid;
   place-items: center;
@@ -448,7 +448,7 @@ a {
 }
 
 .project-content {
-  padding: 8px 12px;
+  padding: 5px 10px;
   display: flex;
   flex: 1;
   align-items: center;
