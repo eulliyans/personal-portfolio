@@ -459,17 +459,17 @@ a {
 }
 
 .project-content p {
-  font-size: 13px;
+  font-size: 11px;
   color: #385354;
   margin: 0 0 13px;
-  min-height: 34px;
+  min-height: 42px;
 }
 
 .project-content .button {
   min-height: 37px;
   padding: 0 18px;
   font-size: 12px;
-  margin-top: auto;
+  margin-top: 0;
 }
 
 
