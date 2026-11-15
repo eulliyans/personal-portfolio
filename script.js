@@ -24,23 +24,40 @@
   }
 
   function renderProjects(lang) {
-    const t = translations[lang];
+  const t = translations[lang];
 
-    projectGrid.innerHTML = data.projects.map((project, i) => `
-      <article class="project-card">
-        <div class="project-visual">
-          <span>${escapeHTML(t.projectLabels[i] || project.label || project.symbol)}</span>
-        </div>
-        <div class="project-content">
-          <h3>${escapeHTML(project.name)}</h3>
-          <p>${escapeHTML(t.projectDescriptions[i] || project.description)}</p>
-          <a class="button button-primary" href="${safeURL(project.link)}">
-            ${escapeHTML(t.viewProject)}&nbsp; →
-          </a>
-        </div>
-      </article>
-    `).join("");
-  }
+  const projectSlugs = [
+    "digital-mosque",
+    "fawaz-cafeteria",
+    "bufia-zamzam",
+    "arthik-swachchhota"
+  ];
+
+  projectGrid.innerHTML = data.projects.map((project, i) => `
+    <article class="project-card">
+
+      <a class="project-visual"
+         href="project-card.html?project=${projectSlugs[i]}"
+         aria-label="Open ${escapeHTML(project.name)} card">
+
+        <span>${escapeHTML(t.projectLabels[i] || project.label || project.symbol)}</span>
+
+      </a>
+
+      <div class="project-content">
+
+        <h3>${escapeHTML(project.name)}</h3>
+
+        <p>${escapeHTML(t.projectDescriptions[i] || project.description)}</p>
+
+        <a class="button button-primary" href="${safeURL(project.link)}">
+          ${escapeHTML(t.viewProject)}&nbsp; →
+        </a>
+
+      </div>
+    </article>
+  `).join("");
+}
 
   const socialMarkup = data.socials.map(item => `
     <a class="social-link ${escapeHTML(item.className)}"
