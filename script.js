@@ -50,7 +50,8 @@
 
         <p>${escapeHTML(t.projectDescriptions[i] || project.description)}</p>
 <a class="button button-outline"
-   href="project-card.html?project=${projectSlugs[i]}">
+   href="project-card.html?project=${projectSlugs[i]}"
+   style="margin-bottom: 12px;">
   Card
 </a>
         <a class="button button-primary" href="${safeURL(project.link)}">
