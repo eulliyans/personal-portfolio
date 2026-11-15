@@ -445,7 +445,7 @@ a {
 }
 
 .project-content {
-  padding: 12px 12px 14px;
+  padding: 8px 12px 8px;
   display: flex;
   flex: 1;
   align-items: center;
@@ -461,8 +461,8 @@ a {
 .project-content p {
   font-size: 11px;
   color: #385354;
-  margin: 0 0 13px;
-  min-height: 42px;
+  margin: 0 0 8px;
+  min-height: 34px;
 }
 
 .project-content .button {
