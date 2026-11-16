@@ -34,6 +34,7 @@ header {
 /* 3. LOGO */
 .logo,
 .brand {
+   margin: 0 auto;
   color: #ffffff;
   font-size: 22px;
   font-weight: bold;
