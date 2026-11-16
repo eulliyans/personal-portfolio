@@ -899,7 +899,6 @@ body.websites-page {
   .websites-page .visit-link {
     font-size: 10px;
   }
-}
 .websites-page header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -927,4 +926,5 @@ body.websites-page {
   grid-row: 1;
   justify-self: end;
   margin-left: 0;
+}
 }
