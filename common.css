@@ -208,7 +208,7 @@ html[dir="rtl"] .language-menu {
 .language {
   grid-column: 3;
   grid-row: 1;
-  justify-self: end;
+  justify-self: right;
   margin-left: 0;
 }
 
