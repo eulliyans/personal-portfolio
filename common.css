@@ -181,6 +181,7 @@ html[dir="rtl"] .language-menu {
   .logo,
 .brand {
   grid-column: 2;
+   grid-row: 1;
   justify-self: center;
   font-size: 17px;
 }
