@@ -546,13 +546,13 @@ body.websites-page {
 
 /* LANGUAGE */
 
-.websites-page header nav .language {
+.websites-page header  .language {
   position: relative;
   margin-left: 0;
   flex-shrink: 0;
 }
 
-.websites-page header nav .language > button {
+.websites-page header  .language > button {
   background: transparent;
   border: 1px solid #80aaa0;
   color: #fff;
@@ -563,7 +563,7 @@ body.websites-page {
   font-weight: normal;
 }
 
-.websites-page header nav .language-menu {
+.websites-page header  .language-menu {
   display: none;
   position: absolute;
   top: calc(100% + 6px);
@@ -578,11 +578,11 @@ body.websites-page {
   box-shadow: 0 5px 15px #0002;
 }
 
-.websites-page header nav .language-menu.show {
+.websites-page header  .language-menu.show {
   display: block;
 }
 
-.websites-page header nav .language-menu button {
+.websites-page header  .language-menu button {
   display: block;
   width: 100%;
   color: #111827;
@@ -595,7 +595,7 @@ body.websites-page {
   cursor: pointer;
 }
 
-.websites-page header nav .language-menu button:hover {
+.websites-page header  .language-menu button:hover {
   background: #e0f2f1;
 }
 
