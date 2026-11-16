@@ -224,3 +224,101 @@ html[dir="rtl"] .language-menu {
     font-size: 11px;
   }
 }
+
+/* ========================================
+   10. ABOUT PAGE DESIGN
+======================================== */
+
+.about-page main {
+  max-width: 900px;
+  margin: auto;
+  padding: 75px 25px;
+  text-align: center;
+}
+
+.about-page .intro {
+  max-width: 750px;
+  margin: 0 auto 55px;
+  color: #374151;
+  font-size: 18px;
+}
+
+.about-page .section {
+  margin-bottom: 30px;
+  padding: 32px 28px;
+  background: #e0f2f1;
+  border: 1px solid #80cbc4;
+  border-inline-start: 6px solid #064e3b;
+  border-radius: 16px;
+}
+
+.about-page .section h2 {
+  color: #123b2b;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.about-page .section p {
+  max-width: 700px;
+  margin: auto;
+  color: #263b38;
+  font-size: 16px;
+}
+
+.about-page .motto {
+  text-align: center;
+  color: #123b2b;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 48px;
+}
+
+.about-page .tagline {
+  text-align: center;
+  color: #b45d68;
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* ABOUT PAGE MOBILE */
+@media (max-width: 600px) {
+  .about-page main {
+    padding: 28px 14px;
+  }
+
+  .about-page .intro {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .about-page .section {
+    padding: 15px 13px;
+    margin-bottom: 13px;
+    border-radius: 11px;
+    border-inline-start-width: 4px;
+  }
+
+  .about-page .section h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .about-page .section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .about-page .motto {
+    font-size: 15px;
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+
+  .about-page .tagline {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
