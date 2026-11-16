@@ -501,51 +501,47 @@ body.websites-page {
 
 .websites-page header {
   width: 100%;
-  background: #123b2b;
-  color: #fff;
-  padding: 12px 5%;
+  padding: 20px 7%;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: nowrap;
-  white-space: normal;
-  overflow: visible;
-  border-bottom: 3px solid #b45d68;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  background: #123b2b;
+  border-bottom: 3px solid #e8a0a0;
   direction: ltr !important;
 }
 
 .websites-page header .logo {
-  width: 100%;
+  width: auto;
   margin: 0;
-  color: #fff;
-  font-size: 19px;
+  color: #ffffff;
+  font-size: 22px;
   font-weight: bold;
   letter-spacing: 1px;
-  text-align: center;
+  text-align: left;
+  text-decoration: none;
 }
 
 .websites-page header nav {
-  width: 100%;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px 16px;
+  gap: 22px;
   flex-wrap: wrap;
-  white-space: normal;
-  overflow: visible;
 }
 
 .websites-page header nav a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
 .websites-page header nav a:hover {
-  color: #b2dfdb;
+  color: #f3aaaa;
 }
 
 /* LANGUAGE */
