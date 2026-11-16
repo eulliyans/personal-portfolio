@@ -27,11 +27,11 @@
   }
 
   html {
-    width: 100%;
-    overflow-x: hidden;
-  }
+  width: 100%;
+  overflow-x: hidden;
+}
 
-  header {
+.site-header {
   width: 100%;
   background: var(--green);
   color: white;
@@ -55,7 +55,7 @@
   letter-spacing: .5px;
 }
 
-nav {
+.main-nav {
   grid-column: 2;
   grid-row: 2;
   display: flex;
@@ -65,15 +65,17 @@ nav {
   flex-wrap: wrap;
   min-width: 0;
 }
-nav a {
+
+.main-nav a {
   color: white;
   text-decoration: none;
   font-size: 14px;
 }
 
-nav a:hover {
+.main-nav a:hover {
   color: var(--red);
 }
+
 .language {
   grid-column: 3;
   grid-row: 1 / 3;
