@@ -204,12 +204,12 @@ html[dir="rtl"] .language-menu {
   }
 
   .languages,
-  .language {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-    margin-left: 0;
-  }
+.language {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  margin-left: 0;
+}
 
   .language-toggle,
   .language-button,
