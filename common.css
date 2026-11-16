@@ -168,7 +168,10 @@ html[dir="rtl"] .language-menu {
 ======================================== */
 
 @media (max-width: 600px) {
-
+  .about-page header,
+  .projects-page header {
+    direction: ltr;
+  }
   header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
