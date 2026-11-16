@@ -1,0 +1,222 @@
+
+/* ========================================
+   EULLIYAN'S PORTFOLIO
+   COMMON DESIGN SYSTEM
+======================================== */
+
+/* 1. GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.8;
+}
+
+/* 2. HEADER */
+header {
+  width: 100%;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  background: #123b2b;
+  border-bottom: 3px solid #e8a0a0;
+}
+
+/* 3. LOGO */
+.logo,
+.brand {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* 4. NAVIGATION */
+nav,
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav a,
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+.main-nav a:hover {
+  color: #f3aaaa;
+}
+
+/* ========================================
+   5. LANGUAGE POSITION CONTROL
+   EDIT THIS SECTION TO MOVE LANGUAGE
+======================================== */
+
+.languages,
+.language {
+  position: relative;
+  margin-left: auto;
+}
+
+/* LANGUAGE BUTTON */
+.language-toggle,
+.language-button,
+.language > button {
+  background: #e0f2f1;
+  color: #123b2b;
+  border: 1px solid #80cbc4;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* LANGUAGE DROPDOWN */
+.language-menu {
+  display: none;
+  position: absolute;
+  top: 38px;
+  right: 0;
+  min-width: 115px;
+  background: #ffffff;
+  border: 1px solid #80cbc4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,.12);
+  z-index: 100;
+}
+
+.language-menu.show {
+  display: block;
+}
+
+.language-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: #ffffff;
+  color: #123b2b;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.language-menu button:hover,
+.language-menu button.active {
+  background: #e0f2f1;
+  color: #064e3b;
+  font-weight: bold;
+}
+
+/* 6. COMMON PAGE TITLES */
+.eyebrow {
+  color: #b45d68;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  color: #123b2b;
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+/* 7. COMMON FOOTER */
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  background: #123b2b;
+  border-top: 3px solid #e8a0a0;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+/* 8. RTL SUPPORT */
+html[dir="rtl"] .eyebrow {
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .language-menu {
+  right: auto;
+  left: 0;
+}
+
+/* ========================================
+   9. MOBILE DESIGN
+======================================== */
+
+@media (max-width: 600px) {
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: initial;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+  }
+
+  .logo,
+  .brand {
+    font-size: 17px;
+  }
+
+  nav,
+  .main-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: clamp(7px, 2.2vw, 13px);
+    width: 100%;
+  }
+
+  nav a,
+  .main-nav a {
+    font-size: clamp(10px, 2.8vw, 12px);
+    white-space: nowrap;
+  }
+
+  .languages,
+  .language {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    margin-left: 0;
+  }
+
+  .language-toggle,
+  .language-button,
+  .language > button {
+    padding: 5px 7px;
+    font-size: 11px;
+  }
+
+  footer {
+    padding: 14px 10px;
+    font-size: 11px;
+  }
+}
