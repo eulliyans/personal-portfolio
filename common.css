@@ -932,3 +932,148 @@ body.websites-page {
   margin-left: 0;
 }
 }
+
+/* ========================================
+   12. VIDEOS & REELS PAGE FOUNDATION
+======================================== */
+
+body.videos-page,
+body.reels-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7faf9;
+  color: #111827;
+  line-height: normal;
+}
+
+/* MAIN CONTENT */
+
+.videos-page main,
+.reels-page main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 55px 22px 65px;
+  text-align: center;
+}
+
+/* PAGE HEADING */
+
+.videos-page .page-heading,
+.reels-page .page-heading {
+  margin-bottom: 30px;
+}
+
+.videos-page .page-heading h1,
+.reels-page .page-heading h1 {
+  margin: 0 0 8px;
+  color: #123b2b;
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+.videos-page .page-heading p,
+.reels-page .page-heading p {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+/* FUTURE CONTENT AREA */
+
+.videos-page .content-placeholder,
+.reels-page .content-placeholder {
+  width: 100%;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 35px 20px;
+  background: #ffffff;
+  border: 1.5px dashed #80aaa0;
+  border-radius: 14px;
+  color: #123b2b;
+}
+
+.videos-page .content-placeholder .placeholder-icon,
+.reels-page .content-placeholder .placeholder-icon {
+  font-size: 38px;
+  line-height: 1;
+}
+
+.videos-page .content-placeholder h2,
+.reels-page .content-placeholder h2 {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.videos-page .content-placeholder p,
+.reels-page .content-placeholder p {
+  max-width: 520px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+.videos-page footer,
+.reels-page footer {
+  width: 100%;
+  padding: 16px;
+  background: #123b2b;
+  border-top: 3px solid #e8a0a0;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .videos-page main,
+  .reels-page main {
+    padding: 30px 14px 38px;
+  }
+
+  .videos-page .page-heading,
+  .reels-page .page-heading {
+    margin-bottom: 20px;
+  }
+
+  .videos-page .page-heading h1,
+  .reels-page .page-heading h1 {
+    font-size: 25px;
+  }
+
+  .videos-page .page-heading p,
+  .reels-page .page-heading p {
+    font-size: 12px;
+  }
+
+  .videos-page .content-placeholder,
+  .reels-page .content-placeholder {
+    min-height: 210px;
+    padding: 25px 14px;
+    border-radius: 11px;
+  }
+
+  .videos-page .content-placeholder h2,
+  .reels-page .content-placeholder h2 {
+    font-size: 16px;
+  }
+
+  .videos-page .content-placeholder p,
+  .reels-page .content-placeholder p {
+    font-size: 11px;
+  }
+
+  .videos-page footer,
+  .reels-page footer {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+}
