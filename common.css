@@ -1077,3 +1077,120 @@ body.reels-page {
     font-size: 11px;
   }
 }
+
+/* ========================================
+   13. QR CODE PAGE DESIGN
+======================================== */
+
+.qr-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7faf9;
+}
+
+.qr-page main {
+  flex: 1;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 42px 18px;
+  text-align: center;
+}
+
+.qr-page h1 {
+  color: #123b2b;
+  font-size: 27px;
+  line-height: 1.3;
+  margin-bottom: 9px;
+}
+
+.qr-page .subtitle {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 27px;
+}
+
+.qr-page .qr-card {
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
+  padding: 18px 15px;
+  background: #ffffff;
+  border: 1.5px solid #80aaa0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #123b2b0d;
+}
+
+.qr-page .qr-frame {
+  width: 190px;
+  height: 190px;
+  max-width: 100%;
+  margin: 0 auto 15px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5e7e1;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.qr-page #qrcode img,
+.qr-page #qrcode canvas {
+  width: 170px !important;
+  height: 170px !important;
+  max-width: 100%;
+}
+
+.qr-page .qr-card h2 {
+  color: #123b2b;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.qr-page .qr-card p {
+  color: #4b5563;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 17px;
+}
+
+.qr-page .download-btn {
+  display: inline-block;
+  background: #123b2b;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qr-page .download-btn:hover {
+  background: #064e3b;
+}
+
+.qr-page .status {
+  color: #4b5563;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* QR MOBILE DESIGN */
+
+@media (max-width: 600px) {
+  .qr-page main {
+    padding: 35px 15px;
+  }
+
+  .qr-page h1 {
+    font-size: 24px;
+  }
+
+  .qr-page .qr-card {
+    max-width: 330px;
+  }
+}
