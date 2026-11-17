@@ -12,28 +12,36 @@
 <body class="qr-page">
 
 <header>
-  <div class="logo">EULLIYAN’S</div>
+  <a href="index.html" class="logo">EULLIYAN’S</a>
 
   <nav>
     <a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="websites.html">Websites</a>
-<a href="videos.html">Videos</a>
-<a href="reels.html">Reels</a>
-<a href="qr.html">QR</a>
-
-    <div class="language">
-      <button onclick="toggleLanguages()" id="languageButton">🌐 EN⌄</button>
-      <div class="language-menu" id="languageMenu">
-        <button onclick="changeLanguage('en')">English</button>
-        <button onclick="changeLanguage('bn')">বাংলা</button>
-        <button onclick="changeLanguage('ar')">العربية</button>
-        <button onclick="changeLanguage('hi')">हिन्दी</button>
-        <button onclick="changeLanguage('ur')">اردو</button>
-      </div>
-    </div>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="websites.html">Websites</a>
+    <a href="videos.html">Videos</a>
+    <a href="reels.html">Reels</a>
+    <a href="qr.html">QR</a>
   </nav>
+
+  <div class="languages">
+    <button
+      class="language-toggle"
+      id="languageToggle"
+      type="button"
+      aria-expanded="false"
+      aria-label="Select language">
+      🌐 <span id="currentLanguage">EN</span>⌄
+    </button>
+
+    <div class="language-menu" id="languageMenu">
+      <button type="button" data-language="en">English</button>
+      <button type="button" data-language="bn">বাংলা</button>
+      <button type="button" data-language="ar">العربية</button>
+      <button type="button" data-language="hi">हिन्दी</button>
+      <button type="button" data-language="ur">اردو</button>
+    </div>
+  </div>
 </header>
 
 <main>
