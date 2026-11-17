@@ -1,1 +1,193 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reels | EULLIYAN’S</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+
+<body class="reels-page">
+
+<header>
+  <a href="index.html" class="logo">EULLIYAN’S</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="websites.html">Websites</a>
+    <a href="videos.html">Videos</a>
+    <a href="reels.html">Reels</a>
+    <a href="qr.html">QR</a>
+  </nav>
+
+  <div class="language">
+    <button id="languageButton" type="button">🌐 EN⌄</button>
+
+    <div class="language-menu" id="languageMenu">
+      <button type="button" data-lang="en">English</button>
+      <button type="button" data-lang="bn">বাংলা</button>
+      <button type="button" data-lang="ar">العربية</button>
+      <button type="button" data-lang="hi">हिन्दी</button>
+      <button type="button" data-lang="ur">اردو</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-heading">
+    <h1 id="pageTitle">My Reels</h1>
+    <p id="pageDescription">
+      Explore my short videos and creative moments.
+    </p>
+  </section>
+
+  <section class="content-placeholder">
+
+    <div class="placeholder-icon">🎬</div>
+
+    <h2 id="placeholderTitle">Reels Coming Soon</h2>
+
+    <p id="placeholderDescription">
+      My short video collection will be added here.
+      Stay connected for future updates.
+    </p>
+
+  </section>
+
+</main>
+
+<footer id="footerText">
+  © EULLIYAN’S · Build, Create, Preserve.
+</footer>
+
+<!-- EULLIYAN'S Language System -->
+
+<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
+
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
+
+<script>
+
+const pageTranslations = {
+
+  en: {
+    title: "My Reels",
+    description: "Explore my short videos and creative moments.",
+    placeholderTitle: "Reels Coming Soon",
+    placeholderDescription: "My short video collection will be added here. Stay connected for future updates.",
+    footer: "© EULLIYAN’S · Build, Create, Preserve."
+  },
+
+  bn: {
+    title: "আমার রিলস",
+    description: "আমার ছোট ভিডিও ও সৃজনশীল মুহূর্তগুলো দেখুন।",
+    placeholderTitle: "রিলস আসছে শীঘ্রই",
+    placeholderDescription: "আমার ছোট ভিডিওর সংগ্রহ এখানে যুক্ত করা হবে। নতুন আপডেটের জন্য সঙ্গে থাকুন।",
+    footer: "© EULLIYAN’S · তৈরি, সৃষ্টি, সংরক্ষণ।"
+  },
+
+  ar: {
+    title: "مقاطعي القصيرة",
+    description: "اكتشف مقاطعي القصيرة ولحظاتي الإبداعية.",
+    placeholderTitle: "المقاطع قريباً",
+    placeholderDescription: "ستتم إضافة مجموعة المقاطع القصيرة هنا. تابعنا لمعرفة التحديثات القادمة.",
+    footer: "© EULLIYAN’S · نبني ونبدع ونحافظ."
+  },
+
+  hi: {
+    title: "मेरी रील्स",
+    description: "मेरे छोटे वीडियो और रचनात्मक पल देखें।",
+    placeholderTitle: "रील्स जल्द आ रही हैं",
+    placeholderDescription: "मेरे छोटे वीडियो यहाँ जोड़े जाएँगे। नए अपडेट के लिए जुड़े रहें।",
+    footer: "© EULLIYAN’S · बनाएँ, रचें, सुरक्षित रखें।"
+  },
+
+  ur: {
+    title: "میری ریلز",
+    description: "میری مختصر ویڈیوز اور تخلیقی لمحات دیکھیں۔",
+    placeholderTitle: "ریلز جلد آرہی ہیں",
+    placeholderDescription: "میری مختصر ویڈیوز کا مجموعہ یہاں شامل کیا جائے گا۔ نئی معلومات کے لیے ہمارے ساتھ رہیں۔",
+    footer: "© EULLIYAN’S · بنائیں، تخلیق کریں، محفوظ رکھیں۔"
+  }
+
+};
+
+const languageButton = document.getElementById("languageButton");
+const languageMenu = document.getElementById("languageMenu");
+
+function applyPageLanguage(code) {
+
+  const data = pageTranslations[code] || pageTranslations.en;
+
+  document.documentElement.lang = code;
+  document.documentElement.dir =
+    code === "ar" || code === "ur" ? "rtl" : "ltr";
+
+  document.getElementById("pageTitle").textContent = data.title;
+  document.getElementById("pageDescription").textContent = data.description;
+  document.getElementById("placeholderTitle").textContent = data.placeholderTitle;
+  document.getElementById("placeholderDescription").textContent = data.placeholderDescription;
+  document.getElementById("footerText").textContent = data.footer;
+
+  languageButton.textContent = "🌐 " + code.toUpperCase() + "⌄";
+}
+
+function changeLanguage(code) {
+
+  const engine = window.EULLIYANS_LANG;
+
+  if (engine && engine.hasLanguage(code)) {
+    engine.setLanguage(code);
+  }
+
+  applyPageLanguage(code);
+  languageMenu.classList.remove("show");
+}
+
+languageButton.addEventListener("click", function() {
+  languageMenu.classList.toggle("show");
+});
+
+document.querySelectorAll("[data-lang]").forEach(button => {
+  button.addEventListener("click", function() {
+    changeLanguage(button.dataset.lang);
+  });
+});
+
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".language")) {
+    languageMenu.classList.remove("show");
+  }
+});
+
+window.addEventListener("load", function() {
+
+  const engine = window.EULLIYANS_LANG;
+  let current = "en";
+
+  if (engine) {
+    engine.init();
+    current = engine.getLanguage() || "en";
+  }
+
+  if (!pageTranslations[current]) {
+    current = "en";
+  }
+
+  applyPageLanguage(current);
+
+});
+
+</script>
+
+</body>
+</html>
+
