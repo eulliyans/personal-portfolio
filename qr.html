@@ -194,30 +194,12 @@ function downloadQR() {
   link.click();
 }
 
-function toggleLanguages() {
-  document.getElementById("languageMenu").classList.toggle("show");
-}
-
-function changeLanguage(code) {
-  const engine = window.EULLIYANS_LANG;
-
-  if (engine && engine.hasLanguage(code)) {
-    engine.setLanguage(code);
-  }
-
-  applyPageLanguage(code);
-
-  document.getElementById("languageButton").textContent =
-    "🌐 " + code.toUpperCase() + "⌄";
-
-  document.getElementById("languageMenu").classList.remove("show");
-}
-
 function applyPageLanguage(code) {
   const translations = pageTranslations[code] || pageTranslations.en;
 
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
+
     if (translations[key]) {
       element.textContent = translations[key];
     }
@@ -228,32 +210,78 @@ function applyPageLanguage(code) {
     (code === "ar" || code === "ur") ? "rtl" : "ltr";
 }
 
-document.addEventListener("click", function(event) {
-  if (!event.target.closest(".language")) {
-    document.getElementById("languageMenu").classList.remove("show");
-  }
-});
-
 window.addEventListener("load", function() {
   generateQR();
 
   const engine = window.EULLIYANS_LANG;
+  const toggle = document.getElementById("languageToggle");
+  const menu = document.getElementById("languageMenu");
+  const currentLabel = document.getElementById("currentLanguage");
+  const buttons = document.querySelectorAll("[data-language]");
+
+  const codes = {
+    en: "EN",
+    bn: "BN",
+    ar: "AR",
+    hi: "HI",
+    ur: "UR"
+  };
+
+  if (engine && typeof engine.init === "function") {
+    engine.init();
+  }
+
+  function updateLanguageSelector(code) {
+    currentLabel.textContent = codes[code] || "EN";
+
+    buttons.forEach(button => {
+      const active = button.dataset.language === code;
+
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
   let current = "en";
 
-  if (engine) {
-    if (typeof engine.init === "function") engine.init();
-    if (typeof engine.getLanguage === "function") {
-      current = engine.getLanguage() || "en";
-    }
+  if (engine && typeof engine.getLanguage === "function") {
+    current = engine.getLanguage() || "en";
   }
 
   if (!pageTranslations[current]) current = "en";
 
   applyPageLanguage(current);
+  updateLanguageSelector(current);
 
-  document.getElementById("languageButton").textContent =
-    "🌐 " + current.toUpperCase() + "⌄";
+  toggle.addEventListener("click", function() {
+    const isOpen = menu.classList.toggle("show");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function() {
+      const language = button.dataset.language;
+
+      if (engine && engine.hasLanguage(language)) {
+        engine.setLanguage(language);
+      }
+
+      applyPageLanguage(language);
+      updateLanguageSelector(language);
+
+      menu.classList.remove("show");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", function(event) {
+    if (!event.target.closest(".languages")) {
+      menu.classList.remove("show");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
 });
+
 </script>
 
 </body>
