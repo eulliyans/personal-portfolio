@@ -2,15 +2,7 @@
 /*
   EULLIYAN'S PERSONAL PORTFOLIO
   Shared Page System
-  Version: 1.1.0
-
-  Purpose:
-  - Load the correct page template.
-  - Preserve original page URLs.
-  - Prepare shared Header and Footer support.
-  - Prepare Language Engine integration.
-  - Keep QR Code functionality.
-  - Never interfere with the Home page.
+  Version: 1.2.0
 */
 
 (function () {
@@ -50,7 +42,7 @@
 
   const page = PAGE_CONFIG[pageName];
 
-  // Keep the Home page untouched.
+  // Never interfere with Home.
   if (!page) return;
 
   document.body.classList.add(page.bodyClass);
@@ -81,19 +73,38 @@
         "text/html"
       );
 
-      const template = templateDocument.getElementById(
-        page.template
-      );
+      const contentTemplate =
+        templateDocument.getElementById(page.template);
 
-      if (!template) {
-        throw new Error(
-          "Page template not found: " + page.template
-        );
+      const headerTemplate =
+        templateDocument.getElementById("shared-header");
+
+      const footerTemplate =
+        templateDocument.getElementById("shared-footer");
+
+      if (!contentTemplate || !headerTemplate || !footerTemplate) {
+        throw new Error("A required page template is missing.");
       }
 
+      // Load page content.
       pageRoot.replaceChildren(
-        template.content.cloneNode(true)
+        contentTemplate.content.cloneNode(true)
       );
+
+      // Add shared header.
+      const header = headerTemplate.content
+        .firstElementChild.cloneNode(true);
+
+      // Add shared footer.
+      const footer = footerTemplate.content
+        .firstElementChild.cloneNode(true);
+
+      // Prevent duplicate shared elements.
+      document.querySelector("header")?.remove();
+      document.querySelector("footer")?.remove();
+
+      pageRoot.before(header);
+      pageRoot.after(footer);
 
       initializeSharedPage();
       initializeLanguageSystem();
@@ -112,59 +123,118 @@
       );
 
     } catch (error) {
-      console.error(
-        "Portfolio Page System:",
-        error
-      );
+      console.error("Portfolio Page System:", error);
 
       pageRoot.textContent =
         "This page could not be loaded. Please refresh.";
     }
   }
 
-  // Shared page initialization.
+  // Shared page setup.
   function initializeSharedPage() {
     document.documentElement.dataset.portfolioPage =
       pageName.replace(".html", "");
 
-    // Shared Header and Footer will be connected
-    // after their templates are added.
+    const homeLink = document.querySelector(
+      '.main-nav a[href="index.html"]'
+    );
+
+    if (homeLink) {
+      homeLink.href = "index.html";
+    }
   }
 
-  // Language Engine integration.
+  // Shared Language System.
   function initializeLanguageSystem() {
     const engine = window.EULLIYANS_LANG;
+    const dictionary = window.PORTFOLIO_DICTIONARY;
 
-    if (!engine) {
+    if (!engine || !dictionary) {
       console.warn(
-        "Portfolio Page System: Language Engine not found."
+        "Portfolio Page System: Language Engine or dictionary not found."
       );
       return;
     }
 
-    if (typeof engine.init === "function") {
-      engine.init();
+    const supportedLanguages = [
+      "en",
+      "bn",
+      "ar",
+      "hi",
+      "ur"
+    ];
+
+    supportedLanguages.forEach(function (language) {
+      if (dictionary[language]) {
+        engine.register(language, dictionary[language]);
+      }
+    });
+
+    engine.init({
+      defaultLanguage: "en",
+      fallbackLanguage: "en",
+      storageKey: "eulliyans_language",
+      directionMap: {
+        en: "ltr",
+        bn: "ltr",
+        ar: "rtl",
+        hi: "ltr",
+        ur: "rtl"
+      }
+    });
+
+    const toggle = document.getElementById("languageToggle");
+    const menu = document.getElementById("languageMenu");
+    const currentLanguage =
+      document.getElementById("currentLanguage");
+
+    if (!toggle || !menu || !currentLanguage) return;
+
+    function updateLanguageButton(language) {
+      currentLanguage.textContent =
+        language.toUpperCase();
     }
 
-    const currentLanguage =
-      typeof engine.getLanguage === "function"
-        ? engine.getLanguage() || "en"
-        : "en";
+    updateLanguageButton(engine.getLanguage());
 
-    document.documentElement.lang = currentLanguage;
+    toggle.addEventListener("click", function () {
+      const isOpen = menu.classList.toggle("show");
 
-    document.documentElement.dir =
-      currentLanguage === "ar" ||
-      currentLanguage === "ur"
-        ? "rtl"
-        : "ltr";
+      toggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+    });
 
-    document.dispatchEvent(
-      new CustomEvent("portfolio:languageReady", {
-        detail: {
-          language: currentLanguage
-        }
-      })
+    menu.querySelectorAll("[data-language]").forEach(
+      function (button) {
+        button.addEventListener("click", function () {
+          const language = button.dataset.language;
+
+          if (engine.setLanguage(language)) {
+            updateLanguageButton(language);
+            menu.classList.remove("show");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    );
+
+    document.addEventListener("click", function (event) {
+      if (
+        !toggle.contains(event.target) &&
+        !menu.contains(event.target)
+      ) {
+        menu.classList.remove("show");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener(
+      "eulliyans:languageChanged",
+      function (event) {
+        updateLanguageButton(event.detail.language);
+      }
     );
   }
 
@@ -173,18 +243,12 @@
     const portfolioURL =
       "https://eulliyans.github.io/personal-portfolio/";
 
-    const qrContainer =
-      document.getElementById("qrcode");
-
-    const status =
-      document.getElementById("qrStatus");
-
+    const qrContainer = document.getElementById("qrcode");
+    const status = document.getElementById("qrStatus");
     const downloadButton =
       document.getElementById("downloadQRButton");
 
-    if (!qrContainer || !status || !downloadButton) {
-      return;
-    }
+    if (!qrContainer || !status || !downloadButton) return;
 
     function generateQR() {
       if (typeof QRCode === "undefined") {
@@ -208,11 +272,8 @@
     }
 
     function downloadQR() {
-      const canvas =
-        qrContainer.querySelector("canvas");
-
-      const image =
-        qrContainer.querySelector("img");
+      const canvas = qrContainer.querySelector("canvas");
+      const image = qrContainer.querySelector("img");
 
       let imageURL = "";
 
@@ -231,16 +292,11 @@
       const link = document.createElement("a");
 
       link.href = imageURL;
-      link.download =
-        "eulliyans-portfolio-qr.png";
-
+      link.download = "eulliyans-portfolio-qr.png";
       link.click();
     }
 
-    downloadButton.addEventListener(
-      "click",
-      downloadQR
-    );
+    downloadButton.addEventListener("click", downloadQR);
 
     if (typeof QRCode !== "undefined") {
       generateQR();
