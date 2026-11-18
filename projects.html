@@ -1,240 +1,48 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
+  <!-- =====================================
+       01. PAGE INFORMATION
+       STATUS: ACTIVE
+  ====================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Our Projects | EULLIYAN’S</title>
 
-  
-<style>
-  :root {
-    --green: #123b2b;
-    --deep-green: #064e3b;
-    --light: #e0f2f1;
-    --border: #80cbc4;
-    --red: #e8a0a0;
-    --accent: #b45d68;
-    --text: #111827;
-    --muted: #374151;
-    --white: #ffffff;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-</style>
-<link rel="stylesheet" href="common.css">
+  <!-- =====================================
+       02. SHARED STYLES
+       STATUS: ACTIVE
+  ====================================== -->
+  <link rel="stylesheet" href="common.css">
 </head>
 
-<body class="projects-page">
+<body>
 
-<header class="site-header">
-  <a class="brand" href="index.html">EULLIYAN’S</a>
+  <!-- =====================================
+       03. SHARED PAGE ROOT
+       STATUS: ACTIVE
+  ====================================== -->
+  <div id="page-root"></div>
 
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="websites.html">Websites</a>
-<a href="videos.html">Videos</a>
-<a href="reels.html">Reels</a>
-<a href="qr.html">QR</a>
-  </nav>
+  <!-- =====================================
+       04. CORE LANGUAGE ENGINE
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
 
-  <div class="language">
-    <button class="language-button" id="languageButton" type="button">
-      🌐 <span id="currentLanguage">EN</span>⌄
-    </button>
+  <!-- =====================================
+       05. PORTFOLIO LANGUAGE DICTIONARY
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="languages/portfolio-dictionary.js"></script>
 
-    <div class="language-menu" id="languageMenu">
-      <button type="button" data-lang="en">English</button>
-      <button type="button" data-lang="bn">বাংলা</button>
-      <button type="button" data-lang="ar">العربية</button>
-      <button type="button" data-lang="hi">हिन्दी</button>
-      <button type="button" data-lang="ur">اردو</button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <section class="heading">
-    <small id="eyebrow">DREAM BIG, BUILD BETTER</small>
-    <h1 id="pageTitle">Our Projects</h1>
-    <p id="pageDescription">Ideas turned into digital experiences.</p>
-  </section>
-
-  <section class="projects-grid" id="projectsGrid">
-
-    <article class="project-box">
-  <span class="project-number">PROJECT 01</span>
-  <h2 data-project="prayerTitle">PRAYER BOARD</h2>
-  <p data-project="prayerDesc">Digital Mosque Prayer Board</p>
-  
-</article>
-
-<article class="project-box">
-  <span class="project-number">PROJECT 02</span>
-  <h2 data-project="fawazTitle">FAWAZ CAFETERIA</h2>
-  <p data-project="fawazDesc">Restaurant Website & Online Ordering</p>
-  
-</article>
-
-<article class="project-box">
-  <span class="project-number">PROJECT 03</span>
-  <h2 data-project="bufiaTitle">BUFIA ZAMZAM</h2>
-  <p data-project="bufiaDesc">Food & Rewards Marketplace</p>
-  
-</article>
-
-<article class="project-box">
-  <span class="project-number">PROJECT 04</span>
-  <h2 data-project="arthikTitle">ARTHIK SWACHCHHOTA</h2>
-  <p data-project="arthikDesc">Citizen Financial Transparency</p>
-  
-</article>
-
-  </section>
-</main>
-
-<footer>
-  <span id="footerText">EULLIYAN’S · Build, Create, Preserve.</span>
-</footer>
-
-<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
-
-<script>
-  const translations = {
-    en: {
-      title: "Our Projects",
-      description: "Ideas turned into digital experiences.",
-      projects: [
-        ["PRAYER BOARD", "Digital Mosque Prayer Board"],
-        ["FAWAZ CAFETERIA", "Restaurant Website & Online Ordering"],
-        ["BUFIA ZAMZAM", "Food & Rewards Marketplace"],
-        ["ARTHIK SWACHCHHOTA", "Citizen Financial Transparency"]
-      ]
-    },
-    bn: {
-      title: "আমাদের প্রজেক্ট",
-      description: "ভাবনা থেকে তৈরি ডিজিটাল অভিজ্ঞতা।",
-      projects: [
-        ["প্রেয়ার বোর্ড", "ডিজিটাল মসজিদ নামাজ বোর্ড"],
-        ["ফাওয়াজ ক্যাফেটেরিয়া", "রেস্টুরেন্ট ওয়েবসাইট ও অনলাইন অর্ডার"],
-        ["বুফিয়া যমযম", "খাবার ও রিওয়ার্ড মার্কেটপ্লেস"],
-        ["আর্থিক স্বচ্ছতা", "নাগরিক আর্থিক স্বচ্ছতা ব্যবস্থা"]
-      ]
-    },
-    ar: {
-      title: "مشاريعنا",
-      description: "أفكار تتحول إلى تجارب رقمية.",
-      projects: [
-        ["لوحة الصلاة", "لوحة صلاة رقمية للمساجد"],
-        ["فواز كافتيريا", "موقع مطعم وطلبات عبر الإنترنت"],
-        ["بوفيا زمزم", "منصة الطعام والمكافآت"],
-        ["الشفافية المالية", "الشفافية المالية للمواطنين"]
-      ]
-    },
-    hi: {
-      title: "हमारे प्रोजेक्ट",
-      description: "विचारों से डिजिटल अनुभव तक।",
-      projects: [
-        ["प्रेयर बोर्ड", "डिजिटल मस्जिद नमाज़ बोर्ड"],
-        ["फवाज़ कैफेटेरिया", "रेस्टोरेंट वेबसाइट और ऑनलाइन ऑर्डर"],
-        ["बुफिया ज़मज़म", "फूड और रिवॉर्ड मार्केटप्लेस"],
-        ["आर्थिक पारदर्शिता", "नागरिक वित्तीय पारदर्शिता"]
-      ]
-    },
-    ur: {
-      title: "ہمارے منصوبے",
-      description: "خیالات سے ڈیجیٹل تجربات تک۔",
-      projects: [
-        ["نماز بورڈ", "مسجد کے لیے ڈیجیٹل نماز بورڈ"],
-        ["فواز کیفے ٹیریا", "ریستوران ویب سائٹ اور آن لائن آرڈر"],
-        ["بوفیا زمزم", "کھانے اور انعامات کا پلیٹ فارم"],
-        ["مالی شفافیت", "شہری مالی شفافیت"]
-      ]
-    }
-  };
-
-  const languageCodes = {
-    en: "EN",
-    bn: "BN",
-    ar: "AR",
-    hi: "HI",
-    ur: "UR"
-  };
-
-  function renderPage(language) {
-    const data = translations[language] || translations.en;
-
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === "ar" || language === "ur" ? "rtl" : "ltr";
-
-    document.getElementById("currentLanguage").textContent =
-      languageCodes[language] || "EN";
-
-    document.getElementById("pageTitle").textContent = data.title;
-    document.getElementById("pageDescription").textContent = data.description;
-
-    const boxes = document.querySelectorAll(".project-box");
-
-    boxes.forEach((box, index) => {
-      box.querySelector("h2").textContent = data.projects[index][0];
-      box.querySelector("p").textContent = data.projects[index][1];
-    });
-  }
-
-  const languageButton = document.getElementById("languageButton");
-  const languageMenu = document.getElementById("languageMenu");
-
-  languageButton.addEventListener("click", () => {
-    languageMenu.classList.toggle("show");
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".language")) {
-      languageMenu.classList.remove("show");
-    }
-  });
-
-  document.querySelectorAll("[data-lang]").forEach(button => {
-    button.addEventListener("click", () => {
-      const language = button.dataset.lang;
-      const engine = window.EULLIYANS_LANG;
-
-      if (engine && engine.hasLanguage(language)) {
-        engine.setLanguage(language);
-      }
-
-      renderPage(language);
-      languageMenu.classList.remove("show");
-    });
-  });
-
-  const engine = window.EULLIYANS_LANG;
-
-  if (engine) {
-    engine.init();
-    const savedLanguage = engine.getLanguage();
-    renderPage(savedLanguage);
-  } else {
-    renderPage("en");
-  }
-</script>
+  <!-- =====================================
+       06. SHARED PAGE SYSTEM
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="page-system.js"></script>
 
 </body>
 </html>
