@@ -158,9 +158,10 @@ html[dir="rtl"] .eyebrow {
   letter-spacing: 0;
 }
 
+/* RTL LANGUAGE DROPDOWN — KEEP INSIDE THE BUTTON BOX */
 html[dir="rtl"] .language-menu {
-  right: auto;
-  left: 0;
+  right: 0;
+  left: auto;
 }
 
 /* ========================================
