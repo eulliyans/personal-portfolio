@@ -2,13 +2,15 @@
 /*
   EULLIYAN'S PERSONAL PORTFOLIO
   Shared Page System
-  Version: 1.0.0
+  Version: 1.1.0
 
   Purpose:
-  - Load the correct page template automatically.
-  - Keep the original page URLs.
-  - Initialize QR Code functionality.
-  - Avoid changing the existing Home page.
+  - Load the correct page template.
+  - Preserve original page URLs.
+  - Prepare shared Header and Footer support.
+  - Prepare Language Engine integration.
+  - Keep QR Code functionality.
+  - Never interfere with the Home page.
 */
 
 (function () {
@@ -48,12 +50,21 @@
 
   const page = PAGE_CONFIG[pageName];
 
-  // Do not interfere with the Home page.
+  // Keep the Home page untouched.
   if (!page) return;
 
   document.body.classList.add(page.bodyClass);
 
   async function loadPageTemplate() {
+    const pageRoot = document.getElementById("page-root");
+
+    if (!pageRoot) {
+      console.error(
+        "Portfolio Page System: #page-root not found."
+      );
+      return;
+    }
+
     try {
       const response = await fetch("page-template.html");
 
@@ -64,30 +75,28 @@
       const html = await response.text();
 
       const parser = new DOMParser();
-      const documentTemplate = parser.parseFromString(
+
+      const templateDocument = parser.parseFromString(
         html,
         "text/html"
       );
 
-      const template = documentTemplate.getElementById(
+      const template = templateDocument.getElementById(
         page.template
       );
 
       if (!template) {
-        throw new Error("Page template not found: " + page.template);
-      }
-
-      const pageRoot = document.getElementById("page-root");
-
-      if (!pageRoot) {
         throw new Error(
-          'Missing <div id="page-root"></div> in the page HTML.'
+          "Page template not found: " + page.template
         );
       }
 
       pageRoot.replaceChildren(
         template.content.cloneNode(true)
       );
+
+      initializeSharedPage();
+      initializeLanguageSystem();
 
       if (pageName === "qr.html") {
         initializeQR();
@@ -103,28 +112,79 @@
       );
 
     } catch (error) {
-      console.error("Portfolio Page System:", error);
+      console.error(
+        "Portfolio Page System:",
+        error
+      );
 
-      const pageRoot = document.getElementById("page-root");
-
-      if (pageRoot) {
-        pageRoot.textContent =
-          "This page could not be loaded. Please refresh.";
-      }
+      pageRoot.textContent =
+        "This page could not be loaded. Please refresh.";
     }
   }
 
-  // QR Code functionality
+  // Shared page initialization.
+  function initializeSharedPage() {
+    document.documentElement.dataset.portfolioPage =
+      pageName.replace(".html", "");
+
+    // Shared Header and Footer will be connected
+    // after their templates are added.
+  }
+
+  // Language Engine integration.
+  function initializeLanguageSystem() {
+    const engine = window.EULLIYANS_LANG;
+
+    if (!engine) {
+      console.warn(
+        "Portfolio Page System: Language Engine not found."
+      );
+      return;
+    }
+
+    if (typeof engine.init === "function") {
+      engine.init();
+    }
+
+    const currentLanguage =
+      typeof engine.getLanguage === "function"
+        ? engine.getLanguage() || "en"
+        : "en";
+
+    document.documentElement.lang = currentLanguage;
+
+    document.documentElement.dir =
+      currentLanguage === "ar" ||
+      currentLanguage === "ur"
+        ? "rtl"
+        : "ltr";
+
+    document.dispatchEvent(
+      new CustomEvent("portfolio:languageReady", {
+        detail: {
+          language: currentLanguage
+        }
+      })
+    );
+  }
+
+  // QR Code functionality.
   function initializeQR() {
     const portfolioURL =
       "https://eulliyans.github.io/personal-portfolio/";
 
-    const qrContainer = document.getElementById("qrcode");
-    const status = document.getElementById("qrStatus");
+    const qrContainer =
+      document.getElementById("qrcode");
+
+    const status =
+      document.getElementById("qrStatus");
+
     const downloadButton =
       document.getElementById("downloadQRButton");
 
-    if (!qrContainer || !status || !downloadButton) return;
+    if (!qrContainer || !status || !downloadButton) {
+      return;
+    }
 
     function generateQR() {
       if (typeof QRCode === "undefined") {
@@ -148,8 +208,11 @@
     }
 
     function downloadQR() {
-      const canvas = qrContainer.querySelector("canvas");
-      const image = qrContainer.querySelector("img");
+      const canvas =
+        qrContainer.querySelector("canvas");
+
+      const image =
+        qrContainer.querySelector("img");
 
       let imageURL = "";
 
@@ -160,18 +223,24 @@
       }
 
       if (!imageURL) {
-        status.textContent = "QR Code is not ready yet.";
+        status.textContent =
+          "QR Code is not ready yet.";
         return;
       }
 
       const link = document.createElement("a");
 
       link.href = imageURL;
-      link.download = "eulliyans-portfolio-qr.png";
+      link.download =
+        "eulliyans-portfolio-qr.png";
+
       link.click();
     }
 
-    downloadButton.addEventListener("click", downloadQR);
+    downloadButton.addEventListener(
+      "click",
+      downloadQR
+    );
 
     if (typeof QRCode !== "undefined") {
       generateQR();
