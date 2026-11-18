@@ -2,171 +2,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <!-- =====================================
+       01. PAGE INFORMATION
+       STATUS: ACTIVE
+  ====================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | EULLIYAN</title>
-  <meta name="description" content="Learn about EULLIYAN, a Web Developer and Digital Creator.">
 
-<link rel="stylesheet" href="common.css">
+  <title>About Me | EULLIYAN</title>
+
+  <meta
+    name="description"
+    content="Learn about EULLIYAN, a Web Developer and Digital Creator."
+  >
+
+  <!-- =====================================
+       02. SHARED STYLES
+       STATUS: ACTIVE
+  ====================================== -->
+  <link rel="stylesheet" href="common.css">
 </head>
 
-<body class="about-page">
+<body>
 
-<header>
-  <a href="index.html" class="logo">EULLIYAN’S</a>
+  <!-- =====================================
+       03. SHARED PAGE ROOT
+       STATUS: ACTIVE
+  ====================================== -->
+  <div id="page-root"></div>
 
-  <nav>
-   <a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="websites.html">Websites</a>
-<a href="videos.html">Videos</a>
-<a href="reels.html">Reels</a>
-<a href="qr.html">QR</a>
-  </nav>
+  <!-- =====================================
+       04. CORE LANGUAGE ENGINE
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
 
-  <div class="languages">
-    <button
-      class="language-toggle"
-      id="languageToggle"
-      type="button"
-      aria-expanded="false"
-      aria-label="Select language">
-      🌐 <span id="currentLanguage">EN</span>⌄
-    </button>
+  <!-- =====================================
+       05. PORTFOLIO LANGUAGE DICTIONARY
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="languages/portfolio-dictionary.js"></script>
 
-    <div class="language-menu" id="languageMenu">
-      <button type="button" data-language="en">English</button>
-      <button type="button" data-language="bn">বাংলা</button>
-      <button type="button" data-language="ar">العربية</button>
-      <button type="button" data-language="hi">हिन्दी</button>
-      <button type="button" data-language="ur">اردو</button>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <p class="eyebrow" data-i18n="aboutPage.eyebrow">
-    ABOUT ME
-  </p>
-
-  <h1 data-i18n="aboutPage.title">
-    Who Is EULLIYAN?
-  </h1>
-
-  <p class="intro" data-i18n="aboutPage.intro">
-    I’m EULLIYAN, a Web Developer and Digital Creator who believes in learning, creating, and building a better future through technology.
-  </p>
-
-  <section class="section">
-    <h2 data-i18n="aboutPage.journeyTitle">My Journey</h2>
-    <p data-i18n="aboutPage.journeyText">
-      I started with curiosity and a dream. Step by step, I learned web development and built my first website. That small beginning gave me the confidence to dream bigger.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2 data-i18n="aboutPage.visionTitle">My Vision</h2>
-    <p data-i18n="aboutPage.visionText">
-      I’m still learning, growing, and creating. My goal is to turn ideas into meaningful digital experiences. With hard work and Allah’s blessings, InshaAllah, I’ll keep moving forward.
-    </p>
-  </section>
-
-  <p class="motto" data-i18n="aboutPage.motto">
-    Still Learning. Still Building. Still Dreaming.
-  </p>
-
-  <p class="tagline" data-i18n="aboutPage.tagline">
-    Build, Create, Preserve.
-  </p>
-
-</main>
-
-<footer>
-  © EULLIYAN’S — <span data-i18n="footer.copyright">All Rights Reserved</span>
-</footer>
-
-<!-- Language System -->
-<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
-
-<!-- Language Dictionaries -->
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
-
-<script>
-(function () {
-  const engine = window.EULLIYANS_LANG;
-
-  if (!engine) {
-    console.error("EULLIYAN Language Engine failed to load.");
-    return;
-  }
-
-  engine.init();
-
-  const toggle = document.getElementById("languageToggle");
-  const menu = document.getElementById("languageMenu");
-  const currentLabel = document.getElementById("currentLanguage");
-  const buttons = document.querySelectorAll("[data-language]");
-
-  const codes = {
-    en: "EN",
-    bn: "BN",
-    ar: "AR",
-    hi: "HI",
-    ur: "UR"
-  };
-
-  function updateLanguageSelector() {
-    const current = engine.getLanguage();
-
-    currentLabel.textContent = codes[current] || "EN";
-
-    buttons.forEach(function (button) {
-      const active = button.dataset.language === current;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-  }
-
-  toggle.addEventListener("click", function () {
-    const isOpen = menu.classList.toggle("show");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      const language = button.dataset.language;
-
-      if (engine.hasLanguage(language)) {
-        engine.setLanguage(language);
-        updateLanguageSelector();
-      }
-
-      menu.classList.remove("show");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!event.target.closest(".languages")) {
-      menu.classList.remove("show");
-      toggle.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  updateLanguageSelector();
-
-  window.addEventListener(
-    "eulliyans:languageChanged",
-    updateLanguageSelector
-  );
-})();
-</script>
+  <!-- =====================================
+       06. SHARED PAGE SYSTEM
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="page-system.js"></script>
 
 </body>
 </html>
