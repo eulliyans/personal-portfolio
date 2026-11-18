@@ -2,11 +2,16 @@
 /*
   EULLIYAN'S PERSONAL PORTFOLIO
   Shared Page System
-  Version: 1.2.0
+  Version: 1.3.0
 */
 
 (function () {
   "use strict";
+
+  // ==========================================
+  // 01. PAGE CONFIGURATION
+  // STATUS: ACTIVE
+  // ==========================================
 
   const PAGE_CONFIG = {
     "about.html": {
@@ -46,6 +51,12 @@
   if (!page) return;
 
   document.body.classList.add(page.bodyClass);
+
+
+  // ==========================================
+  // 02. LOAD SHARED PAGE TEMPLATE
+  // STATUS: ACTIVE
+  // ==========================================
 
   async function loadPageTemplate() {
     const pageRoot = document.getElementById("page-root");
@@ -91,11 +102,11 @@
         contentTemplate.content.cloneNode(true)
       );
 
-      // Add shared header.
+      // Create shared header.
       const header = headerTemplate.content
         .firstElementChild.cloneNode(true);
 
-      // Add shared footer.
+      // Create shared footer.
       const footer = footerTemplate.content
         .firstElementChild.cloneNode(true);
 
@@ -106,9 +117,15 @@
       pageRoot.before(header);
       pageRoot.after(footer);
 
+      // Prepare translation targets.
+      preparePageTranslationTargets(footer);
+
       initializeSharedPage();
+
+      // Initialize language system.
       initializeLanguageSystem();
 
+      // Initialize QR functionality.
       if (pageName === "qr.html") {
         initializeQR();
       }
@@ -130,7 +147,65 @@
     }
   }
 
-  // Shared page setup.
+
+  // ==========================================
+  // 03. PREPARE TRANSLATION TARGETS
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function preparePageTranslationTargets(footer) {
+
+    // Projects page.
+    if (pageName === "projects.html") {
+      document.getElementById("pageTitle")
+        ?.setAttribute("data-i18n", "projectsPage.title");
+
+      document.getElementById("pageDescription")
+        ?.setAttribute("data-i18n", "projectsPage.description");
+    }
+
+    // Videos page.
+    if (pageName === "videos.html") {
+      document.getElementById("pageTitle")
+        ?.setAttribute("data-i18n", "videosPage.title");
+
+      document.getElementById("pageDescription")
+        ?.setAttribute("data-i18n", "videosPage.description");
+
+      document.getElementById("placeholderTitle")
+        ?.setAttribute("data-i18n", "videosPage.placeholderTitle");
+
+      document.getElementById("placeholderDescription")
+        ?.setAttribute("data-i18n", "videosPage.placeholderDescription");
+    }
+
+    // Reels page.
+    if (pageName === "reels.html") {
+      document.getElementById("pageTitle")
+        ?.setAttribute("data-i18n", "reelsPage.title");
+
+      document.getElementById("pageDescription")
+        ?.setAttribute("data-i18n", "reelsPage.description");
+
+      document.getElementById("placeholderTitle")
+        ?.setAttribute("data-i18n", "reelsPage.placeholderTitle");
+
+      document.getElementById("placeholderDescription")
+        ?.setAttribute("data-i18n", "reelsPage.placeholderDescription");
+    }
+
+    // Shared footer.
+    if (footer) {
+      footer.setAttribute("data-i18n", "pageFooter");
+    }
+  }
+
+
+  // ==========================================
+  // 04. SHARED PAGE SETUP
+  // STATUS: ACTIVE
+  // ==========================================
+
   function initializeSharedPage() {
     document.documentElement.dataset.portfolioPage =
       pageName.replace(".html", "");
@@ -144,7 +219,70 @@
     }
   }
 
-  // Shared Language System.
+
+  // ==========================================
+  // 05. NESTED DICTIONARY SUPPORT
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function getNestedValue(object, path) {
+    if (!object || !path) return undefined;
+
+    return path.split(".").reduce(function (value, key) {
+      if (
+        !value ||
+        typeof value !== "object" ||
+        !Object.prototype.hasOwnProperty.call(value, key)
+      ) {
+        return undefined;
+      }
+
+      return value[key];
+    }, object);
+  }
+
+
+  // ==========================================
+  // 06. PROJECTS PAGE TRANSLATIONS
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function translateProjects(language, dictionary) {
+    if (pageName !== "projects.html") return;
+
+    const projects = getNestedValue(
+      dictionary[language],
+      "projectsPage.projects"
+    );
+
+    if (!Array.isArray(projects)) return;
+
+    const projectCards = document.querySelectorAll(".project-box");
+
+    projectCards.forEach(function (card, index) {
+      const project = projects[index];
+
+      if (!Array.isArray(project)) return;
+
+      const title = card.querySelector("h2");
+      const description = card.querySelector("p");
+
+      if (title && typeof project[0] === "string") {
+        title.textContent = project[0];
+      }
+
+      if (description && typeof project[1] === "string") {
+        description.textContent = project[1];
+      }
+    });
+  }
+
+
+  // ==========================================
+  // 07. SHARED LANGUAGE SYSTEM
+  // STATUS: ACTIVE
+  // ==========================================
+
   function initializeLanguageSystem() {
     const engine = window.EULLIYANS_LANG;
     const dictionary = window.PORTFOLIO_DICTIONARY;
@@ -164,12 +302,35 @@
       "ur"
     ];
 
+    // Register page-compatible dictionaries.
     supportedLanguages.forEach(function (language) {
-      if (dictionary[language]) {
-        engine.register(language, dictionary[language]);
+      if (!dictionary[language]) return;
+
+      const pageDictionary = Object.assign(
+        {},
+        dictionary[language]
+      );
+
+      // Websites page uses flat data-i18n keys.
+      if (pageName === "websites.html") {
+        Object.assign(
+          pageDictionary,
+          pageDictionary.websitesPage || {}
+        );
       }
+
+      // QR page uses flat data-i18n keys.
+      if (pageName === "qr.html") {
+        Object.assign(
+          pageDictionary,
+          pageDictionary.qrPage || {}
+        );
+      }
+
+      engine.register(language, pageDictionary);
     });
 
+    // Initialize Core Language Engine.
     engine.init({
       defaultLanguage: "en",
       fallbackLanguage: "en",
@@ -190,13 +351,22 @@
 
     if (!toggle || !menu || !currentLanguage) return;
 
+    // Update language button.
     function updateLanguageButton(language) {
       currentLanguage.textContent =
         language.toUpperCase();
     }
 
+    // Apply page-specific translations.
+    function applyPageTranslations(language) {
+      translateProjects(language, dictionary);
+    }
+
     updateLanguageButton(engine.getLanguage());
 
+    applyPageTranslations(engine.getLanguage());
+
+    // Open and close language menu.
     toggle.addEventListener("click", function () {
       const isOpen = menu.classList.toggle("show");
 
@@ -206,6 +376,7 @@
       );
     });
 
+    // Select language.
     menu.querySelectorAll("[data-language]").forEach(
       function (button) {
         button.addEventListener("click", function () {
@@ -213,38 +384,53 @@
 
           if (engine.setLanguage(language)) {
             updateLanguageButton(language);
+            applyPageTranslations(language);
+
             menu.classList.remove("show");
+
             toggle.setAttribute("aria-expanded", "false");
           }
         });
       }
     );
 
+    // Close menu when clicking outside.
     document.addEventListener("click", function (event) {
       if (
         !toggle.contains(event.target) &&
         !menu.contains(event.target)
       ) {
         menu.classList.remove("show");
+
         toggle.setAttribute("aria-expanded", "false");
       }
     });
 
+    // Listen for language changes from other components.
     document.addEventListener(
       "eulliyans:languageChanged",
       function (event) {
-        updateLanguageButton(event.detail.language);
+        const language = event.detail.language;
+
+        updateLanguageButton(language);
+        applyPageTranslations(language);
       }
     );
   }
 
-  // QR Code functionality.
+
+  // ==========================================
+  // 08. QR CODE FUNCTIONALITY
+  // STATUS: ACTIVE
+  // ==========================================
+
   function initializeQR() {
     const portfolioURL =
       "https://eulliyans.github.io/personal-portfolio/";
 
     const qrContainer = document.getElementById("qrcode");
     const status = document.getElementById("qrStatus");
+
     const downloadButton =
       document.getElementById("downloadQRButton");
 
@@ -254,6 +440,7 @@
       if (typeof QRCode === "undefined") {
         status.textContent =
           "QR Code could not load. Please refresh.";
+
         return;
       }
 
@@ -279,6 +466,7 @@
 
       if (canvas) {
         imageURL = canvas.toDataURL("image/png");
+
       } else if (image && image.src) {
         imageURL = image.src;
       }
@@ -286,6 +474,7 @@
       if (!imageURL) {
         status.textContent =
           "QR Code is not ready yet.";
+
         return;
       }
 
@@ -293,11 +482,13 @@
 
       link.href = imageURL;
       link.download = "eulliyans-portfolio-qr.png";
+
       link.click();
     }
 
     downloadButton.addEventListener("click", downloadQR);
 
+    // Load QRCode library when needed.
     if (typeof QRCode !== "undefined") {
       generateQR();
       return;
@@ -317,6 +508,12 @@
 
     document.head.appendChild(script);
   }
+
+
+  // ==========================================
+  // 09. START SHARED PAGE SYSTEM
+  // STATUS: ACTIVE
+  // ==========================================
 
   loadPageTemplate();
 
