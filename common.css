@@ -548,60 +548,7 @@ body.websites-page {
   color: #f3aaaa;
 }
 
-/* LANGUAGE */
 
-.websites-page header  .language {
-  position: relative;
-  margin-left: 0;
-  flex-shrink: 0;
-}
-
-.websites-page header  .language > button {
-  background: transparent;
-  border: 1px solid #80aaa0;
-  color: #fff;
-  padding: 6px 9px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-.websites-page header  .language-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 6px);
-  right: 0;
-  left: auto;
-  min-width: 120px;
-  background: #fff;
-  border: 1px solid #80aaa0;
-  border-radius: 7px;
-  overflow: hidden;
-  z-index: 9999;
-  box-shadow: 0 5px 15px #0002;
-}
-
-.websites-page header  .language-menu.show {
-  display: block;
-}
-
-.websites-page header  .language-menu button {
-  display: block;
-  width: 100%;
-  color: #111827;
-  border: none;
-  border-radius: 0;
-  background: #fff;
-  text-align: left;
-  padding: 9px 11px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.websites-page header  .language-menu button:hover {
-  background: #e0f2f1;
-}
 
 /* MAIN */
 
