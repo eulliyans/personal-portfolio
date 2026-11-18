@@ -1,278 +1,48 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Websites | EULLIYAN'S</title>
-<link rel="stylesheet" href="common.css">
+  <!-- =====================================
+       01. PAGE INFORMATION
+       STATUS: ACTIVE
+  ====================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Websites | EULLIYAN’S</title>
+
+  <!-- =====================================
+       02. SHARED STYLES
+       STATUS: ACTIVE
+  ====================================== -->
+  <link rel="stylesheet" href="common.css">
 </head>
 
-<body class="websites-page">
+<body>
 
-<header>
-  <a href="index.html" class="logo">EULLIYAN’S</a>
+  <!-- =====================================
+       03. SHARED PAGE ROOT
+       STATUS: ACTIVE
+  ====================================== -->
+  <div id="page-root"></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="websites.html">Websites</a>
-    <a href="videos.html">Videos</a>
-    <a href="reels.html">Reels</a>
-    <a href="qr.html">QR</a>
-  </nav>
-      <div class="language">
-      <button onclick="toggleLanguages()" id="languageButton">🌐 EN⌄</button>
-      <div class="language-menu" id="languageMenu"> 
-      <button onclick="changeLanguage('en')">English</button>
-      <button onclick="changeLanguage('bn')">বাংলা</button>
-      <button onclick="changeLanguage('ar')">العربية</button>
-      <button onclick="changeLanguage('hi')">हिन्दी</button>
-      <button onclick="changeLanguage('ur')">اردو</button>
-    </div>
-  </div>
-</header>
-  
-<main>
+  <!-- =====================================
+       04. CORE LANGUAGE ENGINE
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
 
-  <section class="page-heading">
-    <h1 data-i18n="title">Websites I've Built</h1>
-    <p data-i18n="subtitle">Explore my live websites and digital creations.</p>
-  </section>
+  <!-- =====================================
+       05. PORTFOLIO LANGUAGE DICTIONARY
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="languages/portfolio-dictionary.js"></script>
 
-  <section class="website-grid">
-
-    <article class="website-card">
-      <div class="preview preview-prayer">
-        <div class="preview-window">
-          <div class="preview-dots"><span></span><span></span><span></span></div>
-          <div class="preview-lines">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="preview-blocks"><span></span><span></span><span></span></div>
-        </div>
-      </div>
-      <div class="card-content">
-        <h2 data-i18n="prayerTitle">PRAYER BOARD</h2>
-        <p data-i18n="prayerDesc">A digital mosque prayer board displaying prayer times and useful information.</p>
-        <a class="visit-link" href="https://eulliyans.github.io/masjid-prayer-board/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
-      </div>
-    </article>
-
-    <article class="website-card">
-      <div class="preview preview-cafeteria">
-        <div class="preview-window">
-          <div class="preview-dots"><span></span><span></span><span></span></div>
-          <div class="preview-lines">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="preview-blocks"><span></span><span></span><span></span></div>
-        </div>
-      </div>
-      <div class="card-content">
-        <h2 data-i18n="fawazTitle">FAWAZ CAFETERIA</h2>
-        <p data-i18n="fawazDesc">A cafeteria website with food menus and online ordering features.</p>
-        <a class="visit-link" href="https://eulliyans.github.io/Fawaz-Cafeteria/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
-      </div>
-    </article>
-
-    <article class="website-card">
-      <div class="preview preview-bufia">
-        <div class="preview-window">
-          <div class="preview-dots"><span></span><span></span><span></span></div>
-          <div class="preview-lines">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="preview-blocks"><span></span><span></span><span></span></div>
-        </div>
-      </div>
-      <div class="card-content">
-        <h2 data-i18n="bufiaTitle">BUFIA ZAMZAM</h2>
-        <p data-i18n="bufiaDesc">A food and rewards marketplace connecting customers with offers.</p>
-        <a class="visit-link" href="https://eulliyans.github.io/Bufia-Zamzam/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
-      </div>
-    </article>
-
-    <article class="website-card">
-      <div class="preview preview-finance">
-        <div class="preview-window">
-          <div class="preview-dots"><span></span><span></span><span></span></div>
-          <div class="preview-lines">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="preview-blocks"><span></span><span></span><span></span></div>
-        </div>
-      </div>
-      <div class="card-content">
-        <h2 data-i18n="arthikTitle">ARTHIK SWACHCHHOTA</h2>
-        <p data-i18n="arthikDesc">A citizen-focused platform for financial transparency.</p>
-        <a class="visit-link" href="https://arthikswachchhota.github.io/Artik-cwachchhota-/" target="_blank" rel="noopener" data-i18n="visit">Visit Website →</a>
-      </div>
-    </article>
-
-  </section>
-</main>
-
-<footer data-i18n="footer">© EULLIYAN’S · Build, Create, Preserve.</footer>
-
-<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
-
-<script>
-const pageTranslations = {
-  en: {
-    home: "Home",
-    about: "About Us",
-    projects: "Our Projects",
-    websites: "Websites",
-    title: "Websites I've Built",
-    subtitle: "Explore my live websites and digital creations.",
-    prayerTitle: "PRAYER BOARD",
-    prayerDesc: "A digital mosque prayer board displaying prayer times and useful information.",
-    fawazTitle: "FAWAZ CAFETERIA",
-    fawazDesc: "A cafeteria website with food menus and online ordering features.",
-    bufiaTitle: "BUFIA ZAMZAM",
-    bufiaDesc: "A food and rewards marketplace connecting customers with offers.",
-    arthikTitle: "ARTHIK SWACHCHHOTA",
-    arthikDesc: "A citizen-focused platform for financial transparency.",
-    visit: "Visit Website →",
-    footer: "© EULLIYAN’S · Build, Create, Preserve."
-  },
-  bn: {
-    home: "হোম",
-    about: "আমার পরিচিতি",
-    projects: "আমার প্রজেক্ট",
-    websites: "ওয়েবসাইট",
-    title: "আমার তৈরি ওয়েবসাইট",
-    subtitle: "আমার লাইভ ওয়েবসাইট ও ডিজিটাল কাজগুলো দেখুন।",
-    prayerTitle: "প্রেয়ার বোর্ড",
-    prayerDesc: "নামাজের সময়সূচি ও প্রয়োজনীয় তথ্য প্রদর্শনের ডিজিটাল মসজিদ বোর্ড।",
-    fawazTitle: "ফাওয়াজ ক্যাফেটেরিয়া",
-    fawazDesc: "খাবারের মেনু ও অনলাইন অর্ডার সুবিধাসহ একটি ক্যাফেটেরিয়া ওয়েবসাইট।",
-    bufiaTitle: "বুফিয়া যমযম",
-    bufiaDesc: "খাবার ও পুরস্কারের অফার নিয়ে তৈরি একটি মার্কেটপ্লেস।",
-    arthikTitle: "আর্থিক স্বচ্ছতা",
-    arthikDesc: "আর্থিক স্বচ্ছতার জন্য নাগরিকদের উপযোগী একটি প্ল্যাটফর্ম।",
-    visit: "ওয়েবসাইট দেখুন →",
-    footer: "© EULLIYAN’S · তৈরি, সৃষ্টি, সংরক্ষণ।"
-  },
-  ar: {
-    home: "الرئيسية",
-    about: "من أنا",
-    projects: "مشاريعي",
-    websites: "المواقع",
-    title: "مواقع قمت بإنشائها",
-    subtitle: "اكتشف مواقعي المباشرة وإبداعاتي الرقمية.",
-    prayerTitle: "لوحة الصلاة",
-    prayerDesc: "لوحة رقمية للمسجد تعرض أوقات الصلاة والمعلومات المفيدة.",
-    fawazTitle: "كافتيريا فواز",
-    fawazDesc: "موقع كافتيريا يضم قوائم الطعام وخدمة الطلب عبر الإنترنت.",
-    bufiaTitle: "بوفيا زمزم",
-    bufiaDesc: "سوق للطعام والمكافآت يربط العملاء بالعروض.",
-    arthikTitle: "الشفافية المالية",
-    arthikDesc: "منصة موجهة للمواطنين لتعزيز الشفافية المالية.",
-    visit: "زيارة الموقع ←",
-    footer: "© EULLIYAN’S · نبني ونبدع ونحافظ."
-  },
-  hi: {
-    home: "होम",
-    about: "मेरे बारे में",
-    projects: "मेरे प्रोजेक्ट",
-    websites: "वेबसाइट",
-    title: "मेरे बनाए हुए वेबसाइट",
-    subtitle: "मेरी लाइव वेबसाइट और डिजिटल रचनाएँ देखें।",
-    prayerTitle: "प्रेयर बोर्ड",
-    prayerDesc: "नमाज़ के समय और उपयोगी जानकारी दिखाने वाला डिजिटल मस्जिद बोर्ड।",
-    fawazTitle: "फवाज़ कैफेटेरिया",
-    fawazDesc: "खाने के मेनू और ऑनलाइन ऑर्डर की सुविधा वाली कैफेटेरिया वेबसाइट।",
-    bufiaTitle: "बुफिया ज़मज़म",
-    bufiaDesc: "खाने और रिवॉर्ड ऑफ़र का एक मार्केटप्लेस।",
-    arthikTitle: "आर्थिक स्वच्छता",
-    arthikDesc: "वित्तीय पारदर्शिता के लिए नागरिक-केंद्रित प्लेटफ़ॉर्म।",
-    visit: "वेबसाइट देखें →",
-    footer: "© EULLIYAN’S · बनाएँ, रचें, सुरक्षित रखें।"
-  },
-  ur: {
-    home: "ہوم",
-    about: "تعارف",
-    projects: "میرے منصوبے",
-    websites: "ویب سائٹس",
-    title: "میری بنائی ہوئی ویب سائٹس",
-    subtitle: "میری لائیو ویب سائٹس اور ڈیجیٹل تخلیقات دیکھیں۔",
-    prayerTitle: "نماز بورڈ",
-    prayerDesc: "مسجد کے لیے ایک ڈیجیٹل بورڈ جو نماز کے اوقات اور مفید معلومات دکھاتا ہے۔",
-    fawazTitle: "فواز کیفے ٹیریا",
-    fawazDesc: "کھانے کے مینو اور آن لائن آرڈر کی سہولت والی ویب سائٹ۔",
-    bufiaTitle: "بوفیا زمزم",
-    bufiaDesc: "کھانے اور انعامات کی پیشکشوں کا ایک مارکیٹ پلیس۔",
-    arthikTitle: "مالی شفافیت",
-    arthikDesc: "مالی شفافیت کے لیے شہریوں پر مرکوز ایک پلیٹ فارم۔",
-    visit: "ویب سائٹ دیکھیں ←",
-    footer: "© EULLIYAN’S · بنائیں، تخلیق کریں، محفوظ رکھیں۔"
-  }
-};
-
-function toggleLanguages() {
-  document.getElementById("languageMenu").classList.toggle("show");
-}
-
-function changeLanguage(code) {
-  const engine = window.EULLIYANS_LANG;
-
-  if (engine && engine.hasLanguage(code)) {
-    engine.setLanguage(code);
-  }
-
-  applyPageLanguage(code);
-  document.getElementById("languageButton").textContent =
-    "🌐 " + code.toUpperCase() + "⌄";
-
-  document.getElementById("languageMenu").classList.remove("show");
-}
-
-function applyPageLanguage(code) {
-  const translations = pageTranslations[code] || pageTranslations.en;
-
-  document.querySelectorAll("[data-i18n]").forEach(element => {
-    const key = element.getAttribute("data-i18n");
-    if (translations[key]) {
-      element.textContent = translations[key];
-    }
-  });
-}
-
-document.addEventListener("click", function(event) {
-  if (!event.target.closest(".language")) {
-    document.getElementById("languageMenu").classList.remove("show");
-  }
-});
-
-window.addEventListener("load", function() {
-  const engine = window.EULLIYANS_LANG;
-  let current = "en";
-
-  if (engine) {
-    if (typeof engine.init === "function") {
-      engine.init();
-    }
-    if (typeof engine.getLanguage === "function") {
-      current = engine.getLanguage() || "en";
-    }
-  }
-
-  if (!pageTranslations[current]) current = "en";
-
-  applyPageLanguage(current);
-  document.getElementById("languageButton").textContent =
-    "🌐 " + current.toUpperCase() + "⌄";
-});
-</script>
+  <!-- =====================================
+       06. SHARED PAGE SYSTEM
+       STATUS: ACTIVE
+  ====================================== -->
+  <script src="page-system.js"></script>
 
 </body>
 </html>
