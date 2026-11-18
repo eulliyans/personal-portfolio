@@ -2,7 +2,7 @@
 /*!
  * EULLIYAN'S Portfolio Dictionary
  * Compatible with EULLIYAN Universal Language System
- * Version: 1.0.0
+ * Version: 1.1.0
  */
 
 (function (window) {
@@ -17,99 +17,165 @@
       websites: "Websites",
       videos: "Videos",
       reels: "Reels",
-      qr: "QR Code",
-
-      projectTitle: "My Projects",
-      projectSubtitle: "Explore my digital creations and projects.",
-
-      profileIntro: "Welcome to my personal portfolio. Explore my projects, websites and digital works. Let's build something great together!",
-      profileBio: "I am a web developer and digital creator passionate about building useful digital experiences.",
-
+      greeting: "Assalamu Alaikum!",
+      heroQuote: "Dream Big, Build Better.",
+      roles: "Web Developer | Digital Creator | Problem Solver",
+      intro: "Welcome to my personal portfolio. Explore my projects, websites and digital works. Let’s build something great together!",
+      viewProjects: "View My Projects",
+      watchVideos: "Watch Videos",
+      skillWeb: "Web Development",
+      skillTech: "HTML, CSS, JavaScript",
+      skillSupabase: "Supabase",
+      skillDatabase: "Database & Auth",
+      skillSolutions: "Digital Solutions",
+      skillMobile: "Web & Mobile Ready",
+      skillValues: "Islamic Values",
+      skillPeace: "Peace & Positivity",
+      aboutMe: "ABOUT ME",
+      who: "Who Is EULLIYAN?",
+      bio: "I’m EULLIYAN, a Web Developer and Digital Creator passionate about building modern, responsive and user-friendly digital solutions. I work with HTML, CSS, JavaScript, GitHub and Supabase.",
+      goal: "My goal is to turn creative ideas into useful digital experiences.",
+      motto: "Build, Create, Preserve.",
+      myProjects: "My Projects",
+      projectSubtitle: "Innovative solutions for a better community",
+      connect: "Connect With Me",
+      follow: "Follow for updates & more",
+      scanQR: "Scan QR",
+      mediaTitle: "Videos & Reels",
+      mediaSubtitle: "Watch my latest content",
+      watchNow: "Watch Now",
+      quickLinks: "Quick Links",
+      contact: "Contact",
+      stayConnected: "Stay Connected",
+      duaLine1: "May Allah accept",
+      duaLine2: "our efforts. Ameen.",
+      rights: "All rights reserved.",
+      designed: "Designed with ♥ for a better digital world.",
       viewProject: "View Project",
       projectDescriptions: [
-        "A digital mosque prayer board project.",
-        "A modern cafeteria website project.",
-        "A digital website project for Bufia Zamzam.",
-        "A project focused on financial transparency."
+        "Live prayer times & Adhkar",
+        "Restaurant Website with Online Ordering",
+        "Food & Rewards Marketplace",
+        "Citizen Financial Transparency"
       ],
       projectLabels: [
-        "Mosque Project",
-        "Cafeteria Project",
-        "Digital Project",
-        "Transparency Project"
-      ],
-
-      footerText: "Thank you for visiting my portfolio.",
-      contact: "Contact",
-      language: "Language"
+        "PRAYER BOARD",
+        "FAWAZ CAFETERIA",
+        "BUFIA ZAMZAM",
+        "CIVIC PROJECT"
+      ]
     },
 
     bn: {
       home: "হোম",
-      about: "আমার সম্পর্কে",
-      projects: "প্রজেক্ট",
+      about: "পরিচিতি",
+      projects: "প্রজেক্টসমূহ",
       websites: "ওয়েবসাইট",
       videos: "ভিডিও",
       reels: "রিলস",
-      qr: "QR কোড",
-
-      projectTitle: "আমার প্রজেক্টসমূহ",
-      projectSubtitle: "আমার ডিজিটাল কাজ ও প্রজেক্টগুলো দেখুন।",
-
-      profileIntro: "আমার ব্যক্তিগত পোর্টফোলিওতে স্বাগতম। আমার প্রজেক্ট, ওয়েবসাইট এবং ডিজিটাল কাজগুলো দেখুন। চলুন একসঙ্গে দারুণ কিছু তৈরি করি!",
-      profileBio: "আমি একজন ওয়েব ডেভেলপার এবং ডিজিটাল ক্রিয়েটর।",
-
+      greeting: "আসসালামু আলাইকুম!",
+      heroQuote: "“বড় স্বপ্ন দেখো,\nআরও ভালো কিছু গড়ো।",
+      roles: "ওয়েব ডেভেলপার | ডিজিটাল ক্রিয়েটর | সমস্যা সমাধানকারী",
+      intro: "আমার ব্যক্তিগত পোর্টফোলিওতে স্বাগতম। আমার প্রজেক্ট, ওয়েবসাইট ও ডিজিটাল কাজগুলো দেখুন। চলুন একসাথে সুন্দর কিছু তৈরি করি!",
+      viewProjects: "আমার প্রজেক্ট দেখুন",
+      watchVideos: "ভিডিও দেখুন",
+      skillWeb: "ওয়েব ডেভেলপমেন্ট",
+      skillTech: "HTML, CSS, JavaScript",
+      skillSupabase: "সুপাবেস",
+      skillDatabase: "ডেটাবেস ও অথেনটিকেশন",
+      skillSolutions: "ডিজিটাল সমাধান",
+      skillMobile: "ওয়েব ও মোবাইল উপযোগী",
+      skillValues: "ইসলামিক মূল্যবোধ",
+      skillPeace: "শান্তি ও ইতিবাচকতা",
+      aboutMe: "আমার পরিচিতি",
+      who: "EULLIYAN কে?",
+      bio: "আমি EULLIYAN, একজন ওয়েব ডেভেলপার ও ডিজিটাল ক্রিয়েটর। আধুনিক, রেসপনসিভ ও ব্যবহারবান্ধব ডিজিটাল সমাধান তৈরি করতে ভালোবাসি। আমি HTML, CSS, JavaScript, GitHub ও Supabase নিয়ে কাজ করি।",
+      goal: "আমার লক্ষ্য সৃজনশীল ধারণাকে কার্যকর ডিজিটাল অভিজ্ঞতায় রূপান্তর করা।",
+      motto: "গড়ি, সৃষ্টি করি, সংরক্ষণ করি।",
+      myProjects: "আমার প্রজেক্টসমূহ",
+      projectSubtitle: "উন্নত সমাজের জন্য উদ্ভাবনী সমাধান",
+      connect: "আমার সাথে যোগাযোগ",
+      follow: "নতুন আপডেট পেতে অনুসরণ করুন",
+      scanQR: "QR স্ক্যান করুন",
+      mediaTitle: "ভিডিও ও রিলস",
+      mediaSubtitle: "আমার সাম্প্রতিক কনটেন্ট দেখুন",
+      watchNow: "এখনই দেখুন",
+      quickLinks: "দ্রুত লিংক",
+      contact: "যোগাযোগ",
+      stayConnected: "সংযুক্ত থাকুন",
+      duaLine1: "আল্লাহ আমাদের",
+      duaLine2: "প্রচেষ্টা কবুল করুন। আমিন।",
+      rights: "সর্বস্বত্ব সংরক্ষিত।",
+      designed: "একটি সুন্দর ডিজিটাল বিশ্বের জন্য ♥ দিয়ে তৈরি।",
       viewProject: "প্রজেক্ট দেখুন",
       projectDescriptions: [
-        "ডিজিটাল মসজিদ নামাজের বোর্ড প্রজেক্ট।",
-        "একটি আধুনিক ক্যাফেটেরিয়া ওয়েবসাইট।",
-        "বুফিয়া জমজমের জন্য একটি ডিজিটাল ওয়েবসাইট।",
-        "আর্থিক স্বচ্ছতা নিয়ে তৈরি একটি প্রজেক্ট।"
+        "নামাজের সময় ও আজকার",
+        "অনলাইন অর্ডারসহ রেস্টুরেন্ট ওয়েবসাইট",
+        "খাবার ও রিওয়ার্ড মার্কেটপ্লেস",
+        "নাগরিক আর্থিক স্বচ্ছতা"
       ],
       projectLabels: [
-        "মসজিদ প্রজেক্ট",
-        "ক্যাফেটেরিয়া প্রজেক্ট",
-        "ডিজিটাল প্রজেক্ট",
-        "স্বচ্ছতা প্রজেক্ট"
-      ],
-
-      footerText: "আমার পোর্টফোলিও ভিজিট করার জন্য ধন্যবাদ।",
-      contact: "যোগাযোগ",
-      language: "ভাষা"
+        "নামাজ বোর্ড",
+        "ফাওয়াজ ক্যাফেটেরিয়া",
+        "বুফিয়া জমজম",
+        "সিভিক প্রজেক্ট"
+      ]
     },
 
     ar: {
       home: "الرئيسية",
-      about: "من أنا",
+      about: "نبذة عني",
       projects: "المشاريع",
       websites: "المواقع",
       videos: "الفيديوهات",
       reels: "ريلز",
-      qr: "رمز QR",
-
-      projectTitle: "مشاريعي",
-      projectSubtitle: "استكشف أعمالي ومشاريعي الرقمية.",
-
-      profileIntro: "مرحباً بك في معرض أعمالي الشخصي. استكشف مشاريعي ومواقعي وأعمالي الرقمية. لنبنِ شيئاً رائعاً معاً!",
-      profileBio: "أنا مطور مواقع ومنشئ محتوى رقمي.",
-
+      greeting: "السلام عليكم!",
+      heroQuote: "احلم كبيرًا، واصنع الأفضل.",
+      roles: "مطور ويب | صانع محتوى رقمي | حلّال المشكلات",
+      intro: "مرحباً بكم في موقعي الشخصي. استكشفوا مشاريعي ومواقعي وأعمالي الرقمية. لنبنِ شيئاً رائعاً معاً!",
+      viewProjects: "استعرض مشاريعي",
+      watchVideos: "شاهد الفيديوهات",
+      skillWeb: "تطوير الويب",
+      skillTech: "HTML, CSS, JavaScript",
+      skillSupabase: "سوبابيس",
+      skillDatabase: "قواعد البيانات والمصادقة",
+      skillSolutions: "حلول رقمية",
+      skillMobile: "متوافق مع الويب والجوال",
+      skillValues: "القيم الإسلامية",
+      skillPeace: "السلام والإيجابية",
+      aboutMe: "نبذة عني",
+      who: "من هو EULLIYAN؟",
+      bio: "أنا EULLIYAN، مطور ويب وصانع محتوى رقمي، أهتم ببناء حلول رقمية حديثة ومتجاوبة وسهلة الاستخدام. أعمل باستخدام HTML وCSS وJavaScript وGitHub وSupabase.",
+      goal: "هدفي تحويل الأفكار الإبداعية إلى تجارب رقمية مفيدة.",
+      motto: "نبني، نبدع، نحافظ.",
+      myProjects: "مشاريعي",
+      projectSubtitle: "حلول مبتكرة من أجل مجتمع أفضل",
+      connect: "تواصل معي",
+      follow: "تابعني لمعرفة آخر التحديثات",
+      scanQR: "امسح رمز QR",
+      mediaTitle: "الفيديوهات والريلز",
+      mediaSubtitle: "شاهد أحدث محتوياتي",
+      watchNow: "شاهد الآن",
+      quickLinks: "روابط سريعة",
+      contact: "اتصل بي",
+      stayConnected: "ابقَ على تواصل",
+      duaLine1: "نسأل الله أن يتقبل",
+      duaLine2: "جهودنا. آمين.",
+      rights: "جميع الحقوق محفوظة.",
+      designed: "صُمم ♥ من أجل عالم رقمي أفضل.",
       viewProject: "عرض المشروع",
       projectDescriptions: [
-        "مشروع لوحة صلاة رقمية للمساجد.",
-        "مشروع موقع كافتيريا حديث.",
-        "مشروع موقع رقمي لبوفيا زمزم.",
-        "مشروع يركز على الشفافية المالية."
+        "مواقيت الصلاة والأذكار",
+        "موقع مطعم مع الطلب عبر الإنترنت",
+        "سوق الطعام والمكافآت",
+        "الشفافية المالية للمواطنين"
       ],
       projectLabels: [
-        "مشروع المسجد",
-        "مشروع الكافتيريا",
-        "مشروع رقمي",
-        "مشروع الشفافية"
-      ],
-
-      footerText: "شكراً لزيارة معرض أعمالي.",
-      contact: "اتصل بي",
-      language: "اللغة"
+        "لوحة الصلاة",
+        "كافتيريا فواز",
+        "بوفيه زمزم",
+        "مشروع مدني"
+      ]
     },
 
     hi: {
@@ -119,31 +185,53 @@
       websites: "वेबसाइट",
       videos: "वीडियो",
       reels: "रील्स",
-      qr: "QR कोड",
-
-      projectTitle: "मेरे प्रोजेक्ट",
-      projectSubtitle: "मेरे डिजिटल कार्यों और प्रोजेक्ट्स को देखें।",
-
-      profileIntro: "मेरे व्यक्तिगत पोर्टफोलियो में आपका स्वागत है। मेरे प्रोजेक्ट, वेबसाइट और डिजिटल कार्य देखें। आइए मिलकर कुछ शानदार बनाएं!",
-      profileBio: "मैं एक वेब डेवलपर और डिजिटल क्रिएटर हूँ।",
-
+      greeting: "अस्सलामु अलैकुम!",
+      heroQuote: "बड़े सपने देखें, बेहतर निर्माण करें।",
+      roles: "वेब डेवलपर | डिजिटल क्रिएटर | समस्या समाधानकर्ता",
+      intro: "मेरे व्यक्तिगत पोर्टफोलियो में आपका स्वागत है। मेरे प्रोजेक्ट, वेबसाइट और डिजिटल कार्य देखें। आइए मिलकर कुछ शानदार बनाएं!",
+      viewProjects: "मेरे प्रोजेक्ट देखें",
+      watchVideos: "वीडियो देखें",
+      skillWeb: "वेब डेवलपमेंट",
+      skillTech: "HTML, CSS, JavaScript",
+      skillSupabase: "सुपाबेस",
+      skillDatabase: "डेटाबेस और प्रमाणीकरण",
+      skillSolutions: "डिजिटल समाधान",
+      skillMobile: "वेब और मोबाइल के लिए तैयार",
+      skillValues: "इस्लामी मूल्य",
+      skillPeace: "शांति और सकारात्मकता",
+      aboutMe: "मेरे बारे में",
+      who: "EULLIYAN कौन हैं?",
+      bio: "मैं EULLIYAN हूँ, एक वेब डेवलपर और डिजिटल क्रिएटर। मुझे आधुनिक, रिस्पॉन्सिव और उपयोगकर्ता-अनुकूल डिजिटल समाधान बनाना पसंद है। मैं HTML, CSS, JavaScript, GitHub और Supabase के साथ काम करता हूँ।",
+      goal: "मेरा लक्ष्य रचनात्मक विचारों को उपयोगी डिजिटल अनुभवों में बदलना है।",
+      motto: "निर्माण करें, सृजन करें, सुरक्षित रखें।",
+      myProjects: "मेरे प्रोजेक्ट",
+      projectSubtitle: "बेहतर समुदाय के लिए अभिनव समाधान",
+      connect: "मुझसे जुड़ें",
+      follow: "अपडेट और अधिक जानकारी के लिए फॉलो करें",
+      scanQR: "QR स्कैन करें",
+      mediaTitle: "वीडियो और रील्स",
+      mediaSubtitle: "मेरी नवीनतम सामग्री देखें",
+      watchNow: "अभी देखें",
+      quickLinks: "त्वरित लिंक",
+      contact: "संपर्क",
+      stayConnected: "जुड़े रहें",
+      duaLine1: "अल्लाह हमारी",
+      duaLine2: "कोशिशें कबूल करे। आमीन।",
+      rights: "सर्वाधिकार सुरक्षित।",
+      designed: "एक बेहतर डिजिटल दुनिया के लिए ♥ से बनाया गया।",
       viewProject: "प्रोजेक्ट देखें",
       projectDescriptions: [
-        "डिजिटल मस्जिद नमाज़ बोर्ड प्रोजेक्ट।",
-        "एक आधुनिक कैफेटेरिया वेबसाइट।",
-        "बुफिया ज़मज़म के लिए एक डिजिटल वेबसाइट।",
-        "वित्तीय पारदर्शिता पर आधारित प्रोजेक्ट।"
+        "नमाज़ के समय और अज़कार",
+        "ऑनलाइन ऑर्डरिंग वाली रेस्टोरेंट वेबसाइट",
+        "खाद्य और रिवॉर्ड मार्केटप्लेस",
+        "नागरिक वित्तीय पारदर्शिता"
       ],
       projectLabels: [
-        "मस्जिद प्रोजेक्ट",
-        "कैफेटेरिया प्रोजेक्ट",
-        "डिजिटल प्रोजेक्ट",
-        "पारदर्शिता प्रोजेक्ट"
-      ],
-
-      footerText: "मेरा पोर्टफोलियो देखने के लिए धन्यवाद।",
-      contact: "संपर्क",
-      language: "भाषा"
+        "नमाज़ बोर्ड",
+        "फवाज़ कैफेटेरिया",
+        "बुफिया ज़मज़म",
+        "नागरिक परियोजना"
+      ]
     },
 
     ur: {
@@ -153,31 +241,53 @@
       websites: "ویب سائٹس",
       videos: "ویڈیوز",
       reels: "ریلز",
-      qr: "QR کوڈ",
-
-      projectTitle: "میرے پروجیکٹس",
-      projectSubtitle: "میرے ڈیجیٹل کام اور پروجیکٹس دیکھیں۔",
-
-      profileIntro: "میرے ذاتی پورٹ فولیو میں خوش آمدید۔ میرے پروجیکٹس، ویب سائٹس اور ڈیجیٹل کام دیکھیں۔ آئیے مل کر کچھ شاندار بنائیں!",
-      profileBio: "میں ایک ویب ڈویلپر اور ڈیجیٹل کریئیٹر ہوں۔",
-
+      greeting: "السلام علیکم!",
+      heroQuote: "بڑے خواب دیکھیں، بہتر تعمیر کریں۔",
+      roles: "ویب ڈویلپر | ڈیجیٹل کریئیٹر | مسائل حل کرنے والا",
+      intro: "میرے ذاتی پورٹ فولیو میں خوش آمدید۔ میرے پروجیکٹس، ویب سائٹس اور ڈیجیٹل کام دیکھیں۔ آئیے مل کر کچھ شاندار بنائیں!",
+      viewProjects: "میرے پروجیکٹس دیکھیں",
+      watchVideos: "ویڈیوز دیکھیں",
+      skillWeb: "ویب ڈویلپمنٹ",
+      skillTech: "HTML, CSS, JavaScript",
+      skillSupabase: "سپابیس",
+      skillDatabase: "ڈیٹابیس اور تصدیق",
+      skillSolutions: "ڈیجیٹل حل",
+      skillMobile: "ویب اور موبائل کے لیے تیار",
+      skillValues: "اسلامی اقدار",
+      skillPeace: "امن اور مثبت سوچ",
+      aboutMe: "میرا تعارف",
+      who: "EULLIYAN کون ہیں؟",
+      bio: "میں EULLIYAN ہوں، ایک ویب ڈویلپر اور ڈیجیٹل کریئیٹر۔ مجھے جدید، ریسپانسیو اور صارف دوست ڈیجیٹل حل بنانا پسند ہے۔ میں HTML، CSS، JavaScript، GitHub اور Supabase کے ساتھ کام کرتا ہوں۔",
+      goal: "میرا مقصد تخلیقی خیالات کو مفید ڈیجیٹل تجربات میں بدلنا ہے۔",
+      motto: "تعمیر کریں، تخلیق کریں، محفوظ رکھیں۔",
+      myProjects: "میرے پروجیکٹس",
+      projectSubtitle: "ایک بہتر معاشرے کے لیے جدید حل",
+      connect: "مجھ سے رابطہ کریں",
+      follow: "تازہ ترین معلومات کے لیے فالو کریں",
+      scanQR: "QR اسکین کریں",
+      mediaTitle: "ویڈیوز اور ریلز",
+      mediaSubtitle: "میرا تازہ ترین مواد دیکھیں",
+      watchNow: "ابھی دیکھیں",
+      quickLinks: "فوری لنکس",
+      contact: "رابطہ",
+      stayConnected: "رابطے میں رہیں",
+      duaLine1: "اللہ ہماری",
+      duaLine2: "کوششیں قبول فرمائے۔ آمین۔",
+      rights: "جملہ حقوق محفوظ ہیں۔",
+      designed: "ایک بہتر ڈیجیٹل دنیا کے لیے ♥ سے بنایا گیا۔",
       viewProject: "پروجیکٹ دیکھیں",
       projectDescriptions: [
-        "ڈیجیٹل مسجد نماز بورڈ پروجیکٹ۔",
-        "ایک جدید کیفے ٹیریا ویب سائٹ۔",
-        "بوفیا زمزم کے لیے ایک ڈیجیٹل ویب سائٹ۔",
-        "مالی شفافیت پر مبنی ایک پروجیکٹ۔"
+        "نماز کے اوقات اور اذکار",
+        "آن لائن آرڈرنگ کے ساتھ ریسٹورنٹ ویب سائٹ",
+        "کھانے اور انعامات کا مارکیٹ پلیس",
+        "شہری مالی شفافیت"
       ],
       projectLabels: [
-        "مسجد پروجیکٹ",
-        "کیفے ٹیریا پروجیکٹ",
-        "ڈیجیٹل پروجیکٹ",
-        "شفافیت پروجیکٹ"
-      ],
-
-      footerText: "میرا پورٹ فولیو دیکھنے کا شکریہ۔",
-      contact: "رابطہ",
-      language: "زبان"
+        "نماز بورڈ",
+        "فواز کیفے ٹیریا",
+        "بوفیہ زمزم",
+        "شہری منصوبہ"
+      ]
     },
 
     fr: {
@@ -187,31 +297,53 @@
       websites: "Sites web",
       videos: "Vidéos",
       reels: "Reels",
-      qr: "Code QR",
-
-      projectTitle: "Mes projets",
-      projectSubtitle: "Découvrez mes créations et projets numériques.",
-
-      profileIntro: "Bienvenue sur mon portfolio personnel. Découvrez mes projets, mes sites web et mes créations numériques. Créons quelque chose de formidable ensemble !",
-      profileBio: "Je suis développeur web et créateur numérique.",
-
+      greeting: "Assalamu Alaikum !",
+      heroQuote: "Rêvez grand, construisez mieux.",
+      roles: "Développeur web | Créateur numérique | Résolveur de problèmes",
+      intro: "Bienvenue sur mon portfolio personnel. Découvrez mes projets, mes sites web et mes créations numériques. Créons quelque chose de formidable ensemble !",
+      viewProjects: "Voir mes projets",
+      watchVideos: "Regarder les vidéos",
+      skillWeb: "Développement web",
+      skillTech: "HTML, CSS, JavaScript",
+      skillSupabase: "Supabase",
+      skillDatabase: "Base de données et authentification",
+      skillSolutions: "Solutions numériques",
+      skillMobile: "Adapté au web et au mobile",
+      skillValues: "Valeurs islamiques",
+      skillPeace: "Paix et positivité",
+      aboutMe: "À PROPOS DE MOI",
+      who: "Qui est EULLIYAN ?",
+      bio: "Je suis EULLIYAN, développeur web et créateur numérique. Je suis passionné par la création de solutions numériques modernes, adaptatives et faciles à utiliser. Je travaille avec HTML, CSS, JavaScript, GitHub et Supabase.",
+      goal: "Mon objectif est de transformer des idées créatives en expériences numériques utiles.",
+      motto: "Construire, créer, préserver.",
+      myProjects: "Mes projets",
+      projectSubtitle: "Des solutions innovantes pour une meilleure communauté",
+      connect: "Contactez-moi",
+      follow: "Suivez-moi pour les actualités et plus",
+      scanQR: "Scanner le QR",
+      mediaTitle: "Vidéos et Reels",
+      mediaSubtitle: "Regardez mes dernières créations",
+      watchNow: "Regarder maintenant",
+      quickLinks: "Liens rapides",
+      contact: "Contact",
+      stayConnected: "Restons en contact",
+      duaLine1: "Qu’Allah accepte",
+      duaLine2: "nos efforts. Amine.",
+      rights: "Tous droits réservés.",
+      designed: "Créé avec ♥ pour un monde numérique meilleur.",
       viewProject: "Voir le projet",
       projectDescriptions: [
-        "Un projet de tableau de prière numérique pour mosquée.",
-        "Un projet de site web moderne pour une cafétéria.",
-        "Un projet de site web numérique pour Bufia Zamzam.",
-        "Un projet consacré à la transparence financière."
+        "Horaires de prière et Adhkar en direct",
+        "Site de restaurant avec commande en ligne",
+        "Marché de nourriture et de récompenses",
+        "Transparence financière citoyenne"
       ],
       projectLabels: [
-        "Projet de mosquée",
-        "Projet de cafétéria",
-        "Projet numérique",
-        "Projet de transparence"
-      ],
-
-      footerText: "Merci de visiter mon portfolio.",
-      contact: "Contact",
-      language: "Langue"
+        "TABLEAU DE PRIÈRE",
+        "FAWAZ CAFÉTÉRIA",
+        "BUFIA ZAMZAM",
+        "PROJET CITOYEN"
+      ]
     }
 
   };
