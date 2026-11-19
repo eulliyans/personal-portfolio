@@ -39,7 +39,9 @@ body.qr-page {
 .videos-page footer,
 .reels-page footer,
 .qr-page footer {
-  margin-top: auto;
+margin-top: auto;
+margin-top: auto;
+margin-bottom: 16px;
 }
 
 /* 2. HEADER */
