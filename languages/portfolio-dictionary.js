@@ -40,7 +40,7 @@
       projectSubtitle: "Innovative solutions for a better community",
       connect: "Connect With Me",
       follow: "Follow for updates & more",
-      scanQR: "Scan QR",
+      scanQR: "QR Scan",
       mediaTitle: "Videos & Reels",
       mediaSubtitle: "Watch my latest content",
       watchNow: "Watch Now",
