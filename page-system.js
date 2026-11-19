@@ -52,7 +52,15 @@
   // Keep compatibility with existing page system logic.
   const pageName = pageKey + ".html";
 
-  document.body.classList.add(page.bodyClass);
+    // Prepare shared page root.
+  document.querySelector("header")?.remove();
+  document.querySelector("main")?.remove();
+  document.querySelector("footer")?.remove();
+
+  const pageRoot = document.createElement("div");
+  pageRoot.id = "page-root";
+
+  document.body.appendChild(pageRoot);
 
 
   // ==========================================
