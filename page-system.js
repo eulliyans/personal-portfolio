@@ -62,7 +62,11 @@
 
   document.body.appendChild(pageRoot);
 
-
+  // Load shared page styles.
+  const pageStyles = document.createElement("link");
+  pageStyles.rel = "stylesheet";
+  pageStyles.href = "common.css";
+  document.head.appendChild(pageStyles);
   // ==========================================
   // 02. LOAD SHARED PAGE TEMPLATE
   // STATUS: ACTIVE
