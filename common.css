@@ -11,11 +11,35 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-  color: #111827;
-  line-height: 1.8;
+/* SHARED PAGE & FOOTER POSITION */
+
+body.about-page,
+body.projects-page,
+body.websites-page,
+body.videos-page,
+body.reels-page,
+body.qr-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page main,
+.projects-page main,
+.websites-page main,
+.videos-page main,
+.reels-page main,
+.qr-page main {
+  flex: 1;
+}
+
+.about-page footer,
+.projects-page footer,
+.websites-page footer,
+.videos-page footer,
+.reels-page footer,
+.qr-page footer {
+  margin-top: auto;
 }
 
 /* 2. HEADER */
