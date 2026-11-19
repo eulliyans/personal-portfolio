@@ -13,42 +13,44 @@
   // STATUS: ACTIVE
   // ==========================================
 
-  const PAGE_CONFIG = {
-    "about.html": {
+   const PAGE_CONFIG = {
+    about: {
       template: "about-content",
       bodyClass: "about-page"
     },
-    "projects.html": {
+    projects: {
       template: "projects-content",
       bodyClass: "projects-page"
     },
-    "websites.html": {
+    websites: {
       template: "websites-content",
       bodyClass: "websites-page"
     },
-    "videos.html": {
+    videos: {
       template: "videos-content",
       bodyClass: "videos-page"
     },
-    "reels.html": {
+    reels: {
       template: "reels-content",
       bodyClass: "reels-page"
     },
-    "qr.html": {
+    qr: {
       template: "qr-content",
       bodyClass: "qr-page"
     }
   };
 
-  const pageName = window.location.pathname
-    .split("/")
-    .pop()
-    .toLowerCase();
+  const pageKey = new URLSearchParams(
+    window.location.search
+  ).get("page");
 
-  const page = PAGE_CONFIG[pageName];
+  const page = PAGE_CONFIG[pageKey];
 
   // Never interfere with Home.
   if (!page) return;
+
+  // Keep compatibility with existing page system logic.
+  const pageName = pageKey + ".html";
 
   document.body.classList.add(page.bodyClass);
 
