@@ -1198,3 +1198,102 @@ html[dir="rtl"] .connect-card .qr-area img {
     grid-template-columns: minmax(0, 1fr) 85px !important;
   }
 }
+/* ========================================
+   15. HOME PAGE STYLE PROTECTION
+   Preserve original Home page design
+======================================== */
+
+/* HOME BODY */
+body:not(.about-page):not(.projects-page):not(.websites-page):not(.videos-page):not(.reels-page):not(.qr-page) {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  line-height: normal;
+}
+
+/* HOME HEADER */
+.site-header {
+  height: 74px;
+  padding: 0 max(26px, calc((100vw - 1180px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 24px;
+  background: linear-gradient(100deg, var(--deep-2), #005b59);
+  border-bottom: 0;
+}
+
+/* HOME BRAND */
+.site-header .brand {
+  margin: 0;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+
+/* HOME NAVIGATION */
+.site-header .main-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(13px, 2.2vw, 30px);
+}
+
+.site-header .main-nav a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 27px 0 23px;
+  border-bottom: 3px solid transparent;
+  transition: none;
+}
+
+.site-header .main-nav a:hover,
+.site-header .main-nav a.active {
+  color: #57e5df;
+  border-color: #57e5df;
+}
+
+/* HOME LANGUAGE BUTTON */
+.site-header .language-button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #1ab8b4;
+  border-radius: 24px;
+  padding: 9px 15px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* HOME EYEBROW */
+.hero-copy .eyebrow {
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: normal;
+  margin: 0 0 8px;
+}
+
+/* HOME FOOTER */
+.site-footer {
+  padding: 0;
+}
+
+/* HOME MOBILE HEADER */
+@media (max-width: 640px) {
+  .site-header {
+    height: 66px;
+    padding: 0 15px;
+    gap: 10px;
+  }
+
+  .site-header .main-nav {
+    flex-wrap: nowrap;
+  }
+
+  .site-header .language-button {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+}
