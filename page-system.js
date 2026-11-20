@@ -1,154 +1,520 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#063f3d">
-  <meta name="description" content="EULLIYAN’S — Build, Create, Preserve. Personal portfolio and digital projects.">
-  <title>EULLIYAN’S | Personal Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="EULLIYAN’S home">
-      <span class="brand-mark">E</span>
-      <span><strong>EULLIYAN’S</strong><small>Build, Create, Preserve.</small></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="main-nav" id="mainNav">
-      <a class="active" href="#home" data-i18n="home">Home</a>
-     <a href="about.html" data-i18n="about">About</a>
-      <a href="projects.html" data-i18n="projects">Projects</a>
-      <a href="websites.html" data-i18n="websites">Websites</a>
-      <a href="videos.html" data-i18n="videos">Videos</a>
-<a href="reels.html" data-i18n="reels">Reels</a>
-<a href="qr.html">QR</a>
-    </nav>
-    <button class="language-button" type="button" aria-label="Language selector">◎ <span>EN</span>⌄</button>
-  </header>
 
-  <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow" data-i18n="greeting">Assalamu Alaikum!</p>
-        <h1>I’m <span data-profile="displayName">EULLIYAN</span></h1>
-        <p class="roles" data-profile="roles" data-i18n="roles">Web Developer&nbsp; | &nbsp;Digital Creator&nbsp; | &nbsp;Problem Solver</p>
-        <p class="intro" data-profile="intro" data-i18n="intro">Welcome to my personal portfolio. Explore my projects, websites and digital works. Let’s build something great together!</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">▣ &nbsp; <span data-i18n="viewProjects">View My Projects</span> <span>→</span></a>
-          <a class="button button-outline" href="#media">▶ &nbsp; <span data-i18n="watchVideos">Watch Videos</span></a>
-        </div>
-      </div>
-      <div class="hero-art" aria-label="Decorative teal gradient waves">
-        <div class="quote-mark">“</div>
-        <p class="hero-quote" data-i18n="heroQuote">Dream Big,<br>Build Better.</p>
-        <div class="portrait-placeholder">
-  <img src="eulliyans-profile.png" alt="EULLIYAN Profile Photo">
-</div>
-      </div>
-    </section>
+/*
+  EULLIYAN'S PERSONAL PORTFOLIO
+  Shared Page System
+  Version: 1.3.0
+*/
 
-    <section class="skills-strip section-wrap" id="about" aria-label="Skills and values">
-  <article><span class="skill-icon">&lt;/&gt;</span><div><strong data-i18n="skillWeb">Web Development</strong><small data-i18n="skillTech">HTML, CSS, JavaScript</small></div></article>
-  <article><span class="skill-icon">▤</span><div><strong data-i18n="skillSupabase">Supabase</strong><small data-i18n="skillDatabase">Database &amp; Auth</small></div></article>
-  <article><span class="skill-icon">◎</span><div><strong data-i18n="skillSolutions">Digital Solutions</strong><small data-i18n="skillMobile">Web &amp; Mobile Ready</small></div></article>
-  <article><span class="skill-icon">♥</span><div><strong data-i18n="skillValues">Islamic Values</strong><small data-i18n="skillPeace">Peace &amp; Positivity</small></div></article>
-</section>
+(function () {
+  "use strict";
 
-    <section class="about-section section-wrap" id="about-me">
-      <div class="about-content">
-        <span class="about-label" data-i18n="aboutMe">ABOUT ME</span>
-<h2 data-i18n="who">Who Is EULLIYAN?</h2>
-<p data-profile="bio" data-i18n="bio">
-          I’m EULLIYAN, a Web Developer and Digital Creator passionate about building modern, responsive and user-friendly digital solutions.
-        </p>
-        <p data-i18n="goal">My goal is to turn creative ideas into useful digital experiences.</p>
-        <strong data-i18n="motto">Build, Create, Preserve.</strong>
-      </div>
-    </section>
+  // ==========================================
+  // 01. PAGE CONFIGURATION
+  // STATUS: ACTIVE
+  // ==========================================
 
-    
-    <section class="projects-section section-wrap" id="projects">
-      <div class="section-heading">
-        <span></span>
-        <div>
-          <h2><span>🚀</span> <span data-i18n="myProjects">My Projects</span></h2>
-          <p data-i18n="projectSubtitle">Innovative solutions for a better community</p>
-        </div>
-        <span></span>
-      </div>
-      <div class="project-grid" id="projectGrid"></div>
-    </section>
+  const PAGE_CONFIG = {
+    "about.html": {
+      template: "about-content",
+      bodyClass: "about-page"
+    },
+    "projects.html": {
+      template: "projects-content",
+      bodyClass: "projects-page"
+    },
+    "websites.html": {
+      template: "websites-content",
+      bodyClass: "websites-page"
+    },
+    "videos.html": {
+      template: "videos-content",
+      bodyClass: "videos-page"
+    },
+    "reels.html": {
+      template: "reels-content",
+      bodyClass: "reels-page"
+    },
+    "qr.html": {
+      template: "qr-content",
+      bodyClass: "qr-page"
+    }
+  };
 
-    <section class="lower-grid section-wrap">
-      <section class="connect-card" id="connect">
-        <div class="connect-copy">
-          <span class="large-icon">●</span>
-          <div>
-            <h2 data-i18n="connect">Connect With Me</h2>
-            <p data-i18n="follow">Follow for updates &amp; more</p>
-          </div>
-        </div>
-        <div class="social-links" id="socialLinks"></div>
-        <div class="qr-area">
-          <img src="eulliyans-portfolio-qr.png" alt="Portfolio QR" width="100" style="display:block;">
-          <small style="display:block; text-align:center;" data-i18n="scanQR">QR Scan</small>
-        </div>
-      </section>
+  const pageName = window.location.pathname
+    .split("/")
+    .pop()
+    .toLowerCase();
 
-      <section class="media-card" id="media">
-        <div class="media-copy">
-          <span class="play-icon">▶</span>
-          <div>
-            <h2 data-i18n="mediaTitle">Videos &amp; Reels</h2>
-            <p data-i18n="mediaSubtitle">Watch my latest content</p>
-            <a class="button button-primary" data-link="videos" href="#media">
-              <span data-i18n="watchNow">Watch Now</span>&nbsp; →
-            </a>
-          </div>
-        </div>
-        <div class="media-preview"><span>▶</span><small>EULLIYAN’S</small></div>
-      </section>
-    </section>
-  </main>
+  const page = PAGE_CONFIG[pageName];
 
-  <footer class="site-footer" id="websites">
-    <div class="footer-main section-wrap">
-      <div class="footer-brand">
-        <strong>EULLIYAN’S</strong>
-        <span data-i18n="motto">Build, Create, Preserve.</span>
-      </div>
-      <div>
-        <h3 data-i18n="quickLinks">Quick Links</h3>
-        <a href="#home">⌂ &nbsp; <span data-i18n="home">Home</span></a>
-        <a href="#projects">▣ &nbsp; <span data-i18n="projects">Projects</span></a>
-        <a href="#media">▶ &nbsp; <span data-i18n="videos">Videos</span></a>
-        <a href="#connect">✉ &nbsp; <span data-i18n="contact">Contact</span></a>
-     <a href="websites.html">🌐 &nbsp; <span data-i18n="websites">Websites</span></a>
-      </div>
-      <div>
-        <h3 data-i18n="stayConnected">Stay Connected</h3>
-        <div class="footer-social" id="footerSocial"></div>
-      </div>
-      <p class="footer-dua">
-        <span data-i18n="duaLine1">May Allah accept</span><br>
-        <span data-i18n="duaLine2">our efforts. Ameen.</span>
-      </p>
-    </div>
-    <div class="copyright">
-      © <span id="year"></span> EULLIYAN’S.
-      <span data-i18n="rights">All rights reserved.</span>
-      &nbsp; | &nbsp;
-      <span data-i18n="designed">Designed with ♥ for a better digital world.</span>
-    </div>
-  </footer>
+  // Never interfere with Home.
+  if (!page) return;
 
-  <script src="data.js"></script>
-<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
-<script src="languages/portfolio-dictionary.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+  document.body.classList.add(page.bodyClass);
+
+
+  // ==========================================
+  // 02. LOAD SHARED PAGE TEMPLATE
+  // STATUS: ACTIVE
+  // ==========================================
+
+  async function loadPageTemplate() {
+    const pageRoot = document.getElementById("page-root");
+
+    if (!pageRoot) {
+      console.error(
+        "Portfolio Page System: #page-root not found."
+      );
+      return;
+    }
+
+    try {
+      const response = await fetch("page-template.html");
+
+      if (!response.ok) {
+        throw new Error("Template file could not be loaded.");
+      }
+
+      const html = await response.text();
+
+      const parser = new DOMParser();
+
+      const templateDocument = parser.parseFromString(
+        html,
+        "text/html"
+      );
+
+      const contentTemplate =
+        templateDocument.getElementById(page.template);
+
+      const headerTemplate =
+        templateDocument.getElementById("shared-header");
+
+      const footerTemplate =
+        templateDocument.getElementById("shared-footer");
+
+      if (!contentTemplate || !headerTemplate || !footerTemplate) {
+        throw new Error("A required page template is missing.");
+      }
+
+      // Load page content.
+      pageRoot.replaceChildren(
+        contentTemplate.content.cloneNode(true)
+      );
+
+      // Create shared header.
+      const header = headerTemplate.content
+        .firstElementChild.cloneNode(true);
+
+      // Create shared footer.
+      const footer = footerTemplate.content
+        .firstElementChild.cloneNode(true);
+
+      // Prevent duplicate shared elements.
+      document.querySelector("header")?.remove();
+      document.querySelector("footer")?.remove();
+
+      pageRoot.before(header);
+      pageRoot.after(footer);
+
+      // Prepare translation targets.
+      preparePageTranslationTargets(footer);
+
+      initializeSharedPage();
+
+      // Initialize language system.
+      initializeLanguageSystem();
+
+      // Initialize QR functionality.
+      if (pageName === "qr.html") {
+        initializeQR();
+      }
+
+      document.dispatchEvent(
+        new CustomEvent("portfolio:pageLoaded", {
+          detail: {
+            page: pageName,
+            template: page.template
+          }
+        })
+      );
+
+    } catch (error) {
+      console.error("Portfolio Page System:", error);
+
+      pageRoot.textContent =
+        "This page could not be loaded. Please refresh.";
+    }
+  }
+
+
+  // ==========================================
+  // 03. PREPARE TRANSLATION TARGETS
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function preparePageTranslationTargets(footer) {
+
+    // Projects page.
+    if (pageName === "projects.html") {
+      document.getElementById("pageTitle")
+        ?.setAttribute("data-i18n", "projectsPage.title");
+
+      document.getElementById("pageDescription")
+        ?.setAttribute("data-i18n", "projectsPage.description");
+    }
+
+    // Videos page.
+    if (pageName === "videos.html") {
+      document.getElementById("pageTitle")
+        ?.setAttribute("data-i18n", "videosPage.title");
+
+      document.getElementById("pageDescription")
+        ?.setAttribute("data-i18n", "videosPage.description");
+
+      document.getElementById("placeholderTitle")
+        ?.setAttribute("data-i18n", "videosPage.placeholderTitle");
+
+      document.getElementById("placeholderDescription")
+        ?.setAttribute("data-i18n", "videosPage.placeholderDescription");
+    }
+
+    // Reels page.
+    if (pageName === "reels.html") {
+      document.getElementById("pageTitle")
+        ?.setAttribute("data-i18n", "reelsPage.title");
+
+      document.getElementById("pageDescription")
+        ?.setAttribute("data-i18n", "reelsPage.description");
+
+      document.getElementById("placeholderTitle")
+        ?.setAttribute("data-i18n", "reelsPage.placeholderTitle");
+
+      document.getElementById("placeholderDescription")
+        ?.setAttribute("data-i18n", "reelsPage.placeholderDescription");
+    }
+
+    // Shared footer.
+    if (footer) {
+      footer.setAttribute("data-i18n", "pageFooter");
+    }
+  }
+
+
+  // ==========================================
+  // 04. SHARED PAGE SETUP
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function initializeSharedPage() {
+    document.documentElement.dataset.portfolioPage =
+      pageName.replace(".html", "");
+
+    const homeLink = document.querySelector(
+      '.main-nav a[href="index.html"]'
+    );
+
+    if (homeLink) {
+      homeLink.href = "index.html";
+    }
+  }
+
+
+  // ==========================================
+  // 05. NESTED DICTIONARY SUPPORT
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function getNestedValue(object, path) {
+    if (!object || !path) return undefined;
+
+    return path.split(".").reduce(function (value, key) {
+      if (
+        !value ||
+        typeof value !== "object" ||
+        !Object.prototype.hasOwnProperty.call(value, key)
+      ) {
+        return undefined;
+      }
+
+      return value[key];
+    }, object);
+  }
+
+
+  // ==========================================
+  // 06. PROJECTS PAGE TRANSLATIONS
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function translateProjects(language, dictionary) {
+    if (pageName !== "projects.html") return;
+
+    const projects = getNestedValue(
+      dictionary[language],
+      "projectsPage.projects"
+    );
+
+    if (!Array.isArray(projects)) return;
+
+    const projectCards = document.querySelectorAll(".project-box");
+
+    projectCards.forEach(function (card, index) {
+      const project = projects[index];
+
+      if (!Array.isArray(project)) return;
+
+      const title = card.querySelector("h2");
+      const description = card.querySelector("p");
+
+      if (title && typeof project[0] === "string") {
+        title.textContent = project[0];
+      }
+
+      if (description && typeof project[1] === "string") {
+        description.textContent = project[1];
+      }
+    });
+  }
+
+
+  // ==========================================
+  // 07. SHARED LANGUAGE SYSTEM
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function initializeLanguageSystem() {
+    const engine = window.EULLIYANS_LANG;
+    const dictionary = window.PORTFOLIO_DICTIONARY;
+
+    if (!engine || !dictionary) {
+      console.warn(
+        "Portfolio Page System: Language Engine or dictionary not found."
+      );
+      return;
+    }
+
+    const supportedLanguages = [
+      "en",
+      "bn",
+      "ar",
+      "hi",
+      "ur"
+    ];
+
+    // Register page-compatible dictionaries.
+    supportedLanguages.forEach(function (language) {
+      if (!dictionary[language]) return;
+
+      const pageDictionary = Object.assign(
+        {},
+        dictionary[language]
+      );
+
+      // Websites page uses flat data-i18n keys.
+      if (pageName === "websites.html") {
+        Object.assign(
+          pageDictionary,
+          pageDictionary.websitesPage || {}
+        );
+      }
+
+      // QR page uses flat data-i18n keys.
+      if (pageName === "qr.html") {
+        Object.assign(
+          pageDictionary,
+          pageDictionary.qrPage || {}
+        );
+      }
+
+      engine.register(language, pageDictionary);
+    });
+
+    // Initialize Core Language Engine.
+    engine.init({
+      defaultLanguage: "en",
+      fallbackLanguage: "en",
+      storageKey: "eulliyans_language",
+      directionMap: {
+        en: "ltr",
+        bn: "ltr",
+        ar: "rtl",
+        hi: "ltr",
+        ur: "rtl"
+      }
+    });
+
+    const toggle = document.getElementById("languageToggle");
+    const menu = document.getElementById("languageMenu");
+    const currentLanguage =
+      document.getElementById("currentLanguage");
+
+    if (!toggle || !menu || !currentLanguage) return;
+
+    // Update language button.
+    function updateLanguageButton(language) {
+      currentLanguage.textContent =
+        language.toUpperCase();
+    }
+
+    // Apply page-specific translations.
+    function applyPageTranslations(language) {
+      translateProjects(language, dictionary);
+    }
+
+    updateLanguageButton(engine.getLanguage());
+
+    applyPageTranslations(engine.getLanguage());
+
+    // Open and close language menu.
+    toggle.addEventListener("click", function () {
+      const isOpen = menu.classList.toggle("show");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+    });
+
+    // Select language.
+    menu.querySelectorAll("[data-language]").forEach(
+      function (button) {
+        button.addEventListener("click", function () {
+          const language = button.dataset.language;
+
+          if (engine.setLanguage(language)) {
+            updateLanguageButton(language);
+            applyPageTranslations(language);
+
+            menu.classList.remove("show");
+
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    );
+
+    // Close menu when clicking outside.
+    document.addEventListener("click", function (event) {
+      if (
+        !toggle.contains(event.target) &&
+        !menu.contains(event.target)
+      ) {
+        menu.classList.remove("show");
+
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Listen for language changes from other components.
+    document.addEventListener(
+      "eulliyans:languageChanged",
+      function (event) {
+        const language = event.detail.language;
+
+        updateLanguageButton(language);
+        applyPageTranslations(language);
+      }
+    );
+  }
+
+
+  // ==========================================
+  // 08. QR CODE FUNCTIONALITY
+  // STATUS: ACTIVE
+  // ==========================================
+
+  function initializeQR() {
+    const portfolioURL =
+      "https://eulliyans.github.io/personal-portfolio/";
+
+    const qrContainer = document.getElementById("qrcode");
+    const status = document.getElementById("qrStatus");
+
+    const downloadButton =
+      document.getElementById("downloadQRButton");
+
+    if (!qrContainer || !status || !downloadButton) return;
+
+    function generateQR() {
+      if (typeof QRCode === "undefined") {
+        status.textContent =
+          "QR Code could not load. Please refresh.";
+
+        return;
+      }
+
+      qrContainer.replaceChildren();
+
+      new QRCode(qrContainer, {
+        text: portfolioURL,
+        width: 170,
+        height: 170,
+        colorDark: "#123b2b",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      status.textContent = "QR Code ready!";
+    }
+
+    function downloadQR() {
+      const canvas = qrContainer.querySelector("canvas");
+      const image = qrContainer.querySelector("img");
+
+      let imageURL = "";
+
+      if (canvas) {
+        imageURL = canvas.toDataURL("image/png");
+
+      } else if (image && image.src) {
+        imageURL = image.src;
+      }
+
+      if (!imageURL) {
+        status.textContent =
+          "QR Code is not ready yet.";
+
+        return;
+      }
+
+      const link = document.createElement("a");
+
+      link.href = imageURL;
+      link.download = "eulliyans-portfolio-qr.png";
+
+      link.click();
+    }
+
+    downloadButton.addEventListener("click", downloadQR);
+
+    // Load QRCode library when needed.
+    if (typeof QRCode !== "undefined") {
+      generateQR();
+      return;
+    }
+
+    const script = document.createElement("script");
+
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
+
+    script.onload = generateQR;
+
+    script.onerror = function () {
+      status.textContent =
+        "QR Code could not load. Please refresh.";
+    };
+
+    document.head.appendChild(script);
+  }
+
+
+  // ==========================================
+  // 09. START SHARED PAGE SYSTEM
+  // STATUS: ACTIVE
+  // ==========================================
+
+  loadPageTemplate();
+
+})();
