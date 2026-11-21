@@ -40,10 +40,14 @@
     }
   };
 
-  const pageName = window.location.pathname
+    const rawPageName = window.location.pathname
     .split("/")
     .pop()
     .toLowerCase();
+
+  const pageName = rawPageName && !rawPageName.endsWith(".html")
+    ? `${rawPageName}.html`
+    : rawPageName;
 
   const page = PAGE_CONFIG[pageName];
 
