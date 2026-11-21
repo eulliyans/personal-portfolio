@@ -1172,92 +1172,93 @@ body.reels-page {
 }
 
 
+
 /* ========================================
    APPS & TOOLS PAGE
 ======================================== */
 
 .apps-page-content {
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .apps-page-content .apps-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
+  gap: 12px;
+  margin: 22px auto 0;
 }
 
 .apps-page-content .app-card {
   background: #e8faff;
-  border: 1px solid #9bddea;
-  border-radius: 14px;
-  padding: 18px;
+  border: 1px solid #b8e5ef;
+  border-radius: 10px;
+  padding: 13px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
 .apps-page-content .app-card:hover {
-  transform: translateY(-3px);
-  background: #dcf6fc;
-  box-shadow: 0 5px 15px rgba(0, 150, 180, 0.10);
+  transform: translateY(-2px);
+  background: #def6fb;
 }
 
 .apps-page-content .app-icon {
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: #bceef7;
+  border-radius: 9px;
+  background: #c5eff7;
   color: #07566a;
   font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 13px;
+  margin-bottom: 7px;
 }
 
 .apps-page-content .app-card h2 {
   color: #07566a;
-  font-size: 21px;
-  margin: 0 0 6px;
+  font-size: 16px;
+  margin: 0 0 5px;
 }
 
 .apps-page-content .app-card p {
   color: #59666a;
-  line-height: 1.6;
-  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0 0 8px;
   flex-grow: 1;
 }
 
 .apps-page-content .app-card a {
   color: #07566a;
+  font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   border-bottom: 1px solid #83d5e5;
-  padding-bottom: 4px;
-}
-
-.apps-page-content .app-card a:hover {
-  color: #087f9b;
+  padding-bottom: 2px;
 }
 
 .apps-page-content .app-card span {
   color: #71858a;
-  font-size: 12px;
-  margin-top: 9px;
+  font-size: 10px;
+  margin-top: 6px;
 }
 
-/* Mobile Layout */
 @media (max-width: 600px) {
   .apps-page-content .apps-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 16px;
   }
 
   .apps-page-content .app-card {
-    padding: 16px;
+    padding: 11px;
   }
 }
+
