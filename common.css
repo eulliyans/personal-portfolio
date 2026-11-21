@@ -1171,6 +1171,7 @@ body.reels-page {
   }
 }
 
+
 /* ========================================
    APPS & TOOLS PAGE
 ======================================== */
@@ -1182,79 +1183,81 @@ body.reels-page {
 .apps-page-content .apps-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 35px;
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .apps-page-content .app-card {
-  background: #ffffff;
-  border: 1px solid #d9e7df;
+  background: #e8faff;
+  border: 1px solid #9bddea;
   border-radius: 14px;
-  padding: 25px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .apps-page-content .app-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(18, 59, 43, 0.09);
+  transform: translateY(-3px);
+  background: #dcf6fc;
+  box-shadow: 0 5px 15px rgba(0, 150, 180, 0.10);
 }
 
 .apps-page-content .app-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: #123b2b;
-  color: #ffffff;
+  background: #bceef7;
+  color: #07566a;
   font-weight: 700;
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .apps-page-content .app-card h2 {
-  color: #123b2b;
+  color: #07566a;
   font-size: 21px;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 }
 
 .apps-page-content .app-card p {
-  color: #59665f;
-  line-height: 1.7;
-  margin: 0 0 18px;
+  color: #59666a;
+  line-height: 1.6;
+  margin: 0 0 12px;
   flex-grow: 1;
 }
 
 .apps-page-content .app-card a {
-  color: #123b2b;
+  color: #07566a;
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 1px solid #e5b8c5;
+  border-bottom: 1px solid #83d5e5;
   padding-bottom: 4px;
 }
 
 .apps-page-content .app-card a:hover {
-  color: #38785a;
+  color: #087f9b;
 }
 
 .apps-page-content .app-card span {
-  color: #8a8a8a;
+  color: #71858a;
   font-size: 12px;
-  margin-top: 14px;
+  margin-top: 9px;
 }
 
 /* Mobile Layout */
 @media (max-width: 600px) {
   .apps-page-content .apps-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .apps-page-content .app-card {
-    padding: 21px;
+    padding: 16px;
   }
 }
