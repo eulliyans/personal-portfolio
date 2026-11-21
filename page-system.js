@@ -37,7 +37,11 @@
     "qr.html": {
       template: "qr-content",
       bodyClass: "qr-page"
-    }
+    } ,
+    "apps.html": {
+    template: "apps-content",
+    bodyClass: "apps-page"
+  }
   };
 
     const rawPageName = window.location.pathname
