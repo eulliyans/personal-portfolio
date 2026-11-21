@@ -1181,6 +1181,7 @@ body.reels-page {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .apps-page-content .apps-grid {
