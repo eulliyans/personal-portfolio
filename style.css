@@ -857,7 +857,11 @@ a {
     height: 205px;
     border-radius: 35px;
   }
-
+.hero > .hero-actions {
+  justify-content: center;
+  margin-top: 12px;
+  padding-bottom: 5px;
+}
   .portrait-placeholder {
     width: 115px;
     height: 155px;
